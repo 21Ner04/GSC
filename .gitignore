@@ -206,7 +206,8 @@ temp/
 ehthumbs.db
 Thumbs.db
 
-
+# Vercel
+.vercel
 
 # Turbo
 .turbo
