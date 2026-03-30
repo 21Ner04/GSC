@@ -17,7 +17,7 @@ const TEAM = [
 export default function Team() {
   return (
     <div className="w-full pb-24">
-      <div className="bg-foreground py-20 text-center">
+      <div className="bg-gradient-to-br from-black via-black to-primary py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Meet Our Team</h1>
           <p className="text-xl text-gray-300">Dedicated mortgage professionals working for you.</p>

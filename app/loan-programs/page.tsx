@@ -16,10 +16,10 @@ const PROGRAMS = [
 export default function LoanPrograms() {
   return (
     <div className="w-full pb-24">
-      <div className="bg-foreground py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="bg-gradient-to-br from-black via-black to-primary py-20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Loan Programs</h1>
-          <p className="text-xl text-gray-300 max-w-2xl">Discover the right financing solution for your unique needs.</p>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Discover the right financing solution for your unique needs.</p>
         </div>
       </div>
 

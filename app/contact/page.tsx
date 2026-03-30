@@ -22,7 +22,7 @@ export default function Contact() {
 
   return (
     <div className="w-full pb-24">
-      <div className="bg-foreground py-20 text-center">
+      <div className="bg-gradient-to-br from-foreground via-foreground/95 to-secondary/60 py-20 text-center">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Contact Us</h1>
         <p className="text-xl text-gray-300">We're here to help. Reach out to our team today.</p>
       </div>

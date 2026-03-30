@@ -6,7 +6,7 @@ export const metadata = { title: "About Us | Green Street Capital" };
 export default function About() {
   return (
     <div className="w-full">
-      <div className="bg-foreground py-24 text-center">
+      <div className="bg-gradient-to-br from-black via-black to-secondary py-24 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">About Green Street Capital</h1>
           <p className="text-xl text-gray-300">Dedicated to transforming the mortgage experience through transparency, speed, and exceptional service.</p>
@@ -31,8 +31,8 @@ export default function About() {
             <div className="absolute inset-0 bg-primary/20 rounded-3xl translate-x-4 translate-y-4 -z-10" />
             <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl shadow-xl w-full h-[500px] flex items-center justify-center">
               <div className="text-center p-8">
-                <div className="w-32 h-32 mx-auto mb-8 bg-white/90 rounded-full flex items-center justify-center shadow-xl">
-                  <span className="text-4xl font-serif font-bold text-foreground">GSC</span>
+                <div className="w-32 h-32 mx-auto mb-8 bg-white/90 rounded-full overflow-hidden shadow-xl">
+                  <img src="/IMG_2841.PNG" alt="Green Street Capital" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-foreground mb-2">20+ Years</h3>
                 <p className="text-lg text-muted-foreground">Of Trusted Service</p>

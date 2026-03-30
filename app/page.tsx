@@ -5,12 +5,36 @@ import { ShieldCheck, TrendingUp, Zap, Users, ArrowRight, CheckCircle2, PlayCirc
 import { Button } from "@/components/ui/button";
 
 const REVIEWS = [
-  { text: "Green Street Capital", name: "David David", location: "Brooklyn" },
-  { text: "Green Street Capital", name: "David David", location: "Queens" },
-  { text: "Green Street Capital", name: "David David", location: "Staten Island" },
-  { text: "Green Street Capital", name: "David David", location: "Manhattan" },
-  { text: "Green Street Capital", name: "David David", location: "Brooklyn" },
-  { text: "Green Street Capital", name: "David David", location: "New Jersey" },
+  { 
+    text: "Ruslan and his team were spot on throughout the entire process. He was always prepared with clear answers to any of my questions and stayed on top of every deadline all the way to closing. I never had to reach out more than once for anything—his responsiveness and organization made everything feel seamless. At times, it even felt like he had answers before I asked the questions. I would definitely recommend Ruslan and will gladly use his team again in the future. Thank you so much for everything.", 
+    name: "Dee A. Bacchus", 
+    location: "Brooklyn" 
+  },
+  { 
+    text: "My experience with Green Street Capital while securing my mortgage has been nothing short of exceptional. From the very beginning, they treated me with a level of empathy and understanding that made me feel like part of their family rather than just another client. Their team took the time to listen to my unique situation, patiently answering all my questions and addressing my concerns with genuine care.", 
+    name: "S C", 
+    location: "Manhattan" 
+  },
+  { 
+    text: "Maxim was fantastic to work with from start to finish. He moved my application through quickly, got me approved faster than I expected, and kept me updated at every step so I never had to wonder what was going on. His communication was clear, prompt, and friendly, and he was always easy to reach whenever I had a question.", 
+    name: "Mihai S", 
+    location: "Queens" 
+  },
+  { 
+    text: "I had a great experience getting my mortgage loan. The process was smooth and easy to understand, and the team was always available to answer my questions. They explained everything clearly and helped me get a great rate. I'm very happy with the service and would definitely recommend them.", 
+    name: "Nigina", 
+    location: "Staten Island" 
+  },
+  { 
+    text: "Cannot say enough great things about the entire team at Green Street Capital. They were always responsive answering all of my questions and concerns. There were no delays throughout the process of getting a mortgage. I would absolutely recommend them to anyone looking for a mortgage.", 
+    name: "Aleksey Feygin", 
+    location: "New Jersey" 
+  },
+  { 
+    text: "Ruslan and Marina were incredible to work with. They made the whole mortgage process easy and stress free, always taking the time to explain everything and answer my questions. I truly felt supported from start to finish. I am grateful for all their help and highly recommend them.", 
+    name: "Eric Ashrafov", 
+    location: "Brooklyn" 
+  },
 ];
 
 export default function Home() {
@@ -200,10 +224,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-4 pt-4 border-t border-gray-100">
                   <div className="flex items-start"><MapPin className="w-5 h-5 text-primary mr-3 mt-1 shrink-0" /><p className="text-foreground font-medium">2709 Coney Island Ave, 3rd Floor<br />Brooklyn, NY 11235</p></div>
-                  <div className="flex items-center"><Phone className="w-5 h-5 text-primary mr-3 shrink-0" /><p className="text-foreground font-medium">Direct: 646-261-8023</p></div>
-                  <div className="flex items-center"><Phone className="w-5 h-5 text-primary mr-3 shrink-0" /><p className="text-foreground font-medium">Office: 718-615-4545</p></div>
                   <div className="flex items-center"><Phone className="w-5 h-5 text-primary mr-3 shrink-0" /><p className="text-foreground font-medium">Toll Free: 855-615-4545</p></div>
-                  <div className="flex items-center"><Phone className="w-5 h-5 text-primary mr-3 shrink-0" /><p className="text-foreground font-medium">Fax: 718-819-1127</p></div>
                   <div className="flex items-center"><Mail className="w-5 h-5 text-primary mr-3 shrink-0" /><p className="text-foreground font-medium">RKushnir@GSCMortgage.com</p></div>
                 </div>
                 <div className="pt-6 flex flex-col gap-3">
@@ -213,7 +234,7 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:col-span-7 flex flex-col gap-8">
-              <div className="w-full h-64 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+              <div className="w-full h-96 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
                 <iframe src="https://maps.google.com/maps?q=2709+Coney+Island+Ave+Brooklyn+NY+11235&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -226,7 +247,7 @@ export default function Home() {
                   { name: "Contact", link: "/contact" },
                 ].map((item, i) => (
                   <Link key={i} href={item.link}>
-                    <div className="bg-white border border-gray-100 hover:border-primary p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-center h-full">
+                    <div className="bg-white border border-gray-100 hover:border-primary p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-all cursor-pointer">
                       <span className="font-semibold text-foreground">{item.name}</span>
                     </div>
                   </Link>

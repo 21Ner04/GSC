@@ -8,9 +8,9 @@ export const metadata = { title: "Useful Links & Forms | Green Street Capital" }
 export default function UsefulLinks() {
   return (
     <div className="w-full pb-24">
-      <div className="bg-muted py-20 text-center border-b border-gray-200">
-        <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">Useful Links & Forms</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Everything you need to manage your mortgage application in one place.</p>
+      <div className="bg-gradient-to-br from-black via-black to-secondary py-20 text-center border-b border-gray-200">
+        <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Useful Links & Forms</h1>
+        <p className="text-xl text-gray-300 max-w-2xl mx-auto">Everything you need to manage your mortgage application in one place.</p>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">

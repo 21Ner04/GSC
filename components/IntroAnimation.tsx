@@ -6,13 +6,14 @@ export function IntroAnimation() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const hasSeenIntro = sessionStorage.getItem("hasSeenGSCIntro");
-    if (!hasSeenIntro) {
+    // Временно отключаем кэширование для тестирования анимации
+    // const hasSeenIntro = sessionStorage.getItem("hasSeenGSCIntro");
+    // if (!hasSeenIntro) {
       setShow(true);
       sessionStorage.setItem("hasSeenGSCIntro", "true");
-      const timer = setTimeout(() => setShow(false), 2000);
+      const timer = setTimeout(() => setShow(false), 3000);
       return () => clearTimeout(timer);
-    }
+    // }
   }, []);
 
   return (
@@ -31,8 +32,8 @@ export function IntroAnimation() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="flex flex-col items-center"
           >
-            <div className="w-36 h-36 md:w-48 md:h-48 mb-6 bg-gray-200 rounded-full flex items-center justify-center">
-              <div className="w-16 h-16 bg-gray-300 rounded"></div>
+            <div className="w-48 h-48 md:w-64 md:h-64 mb-8 rounded-full overflow-hidden">
+              <img src="/IMG_2841.PNG" alt="Green Street Capital" className="w-full h-full object-contain" />
             </div>
             <h1 className="font-serif text-3xl md:text-5xl text-foreground text-center tracking-tight">
               Green Street <span className="text-primary">Capital</span>

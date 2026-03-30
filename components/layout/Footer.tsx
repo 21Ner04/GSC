@@ -1,16 +1,16 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-white pt-20 pb-10">
+    <footer className="bg-foreground text-white pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
 
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-16 h-16 bg-gray-600 rounded p-3 flex items-center justify-center">
-                <div className="w-8 h-8 bg-gray-500 rounded"></div>
+              <div className="w-20 h-20 rounded-lg overflow-hidden">
+                <img src="/IMG_2841.PNG" alt="Green Street Capital" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-xl leading-none text-white">Green Street</span>
@@ -21,6 +21,18 @@ export function Footer() {
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/gsc.mortgage" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors">
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://www.facebook.com/greenstreetcapital" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="https://twitter.com/greenstreetcap" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="https://www.linkedin.com/company/green-street-capital" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://www.youtube.com/@greenstreetcapital" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors">
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -46,19 +58,7 @@ export function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-primary shrink-0" />
-                <span className="text-gray-400 text-sm">Direct: 646-261-8023</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-3 text-primary shrink-0" />
-                <span className="text-gray-400 text-sm">Office: 718-615-4545</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-3 text-primary shrink-0" />
                 <span className="text-gray-400 text-sm">Toll Free: 855-615-4545</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-3 text-primary shrink-0" />
-                <span className="text-gray-400 text-sm">Fax: 718-819-1127</span>
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-primary shrink-0" />

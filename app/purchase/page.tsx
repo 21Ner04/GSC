@@ -7,7 +7,7 @@ export const metadata = { title: "Purchase a Home | Green Street Capital" };
 export default function Purchase() {
   return (
     <div className="w-full">
-      <div className="bg-foreground py-20 md:py-32 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-black via-black to-primary py-20 md:py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Purchase a Home</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">From pre-approval to the closing table, we make buying your dream home simple and stress-free.</p>
