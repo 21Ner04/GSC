@@ -84,7 +84,7 @@ dist
 
 # Gatsby files
 .cache/
-public
+
 
 # Storybook build outputs
 .out
@@ -206,8 +206,7 @@ temp/
 ehthumbs.db
 Thumbs.db
 
-# Vercel
-.vercel
+
 
 # Turbo
 .turbo
