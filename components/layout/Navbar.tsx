@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,7 +38,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg overflow-hidden">
-              <img src="/images/logo.png" alt="Green Street Capital" className="w-full h-full object-contain" />
+              <img src="/images/logo.png" alt="Green Street Capital" className="w-full h-full object-contain" onError={(e) => { const target = e.target as HTMLImageElement; target.style.display='none'; console.error('Logo failed to load'); }} />
             </div>
             <div className="flex flex-col">
               <span className="font-serif font-bold text-xl md:text-2xl leading-none text-foreground tracking-tight">Green Street</span>
