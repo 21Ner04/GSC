@@ -11,7 +11,7 @@ export function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
               <div className="w-20 h-20 rounded-lg overflow-hidden">
-                <Image src="/IMG_2841.PNG" alt="Green Street Capital" width={80} height={80} className="w-full h-full object-contain" />
+                <Image src="/img_2841.png" alt="Green Street Capital" width={80} height={80} className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-xl leading-none text-white">Green Street</span>

@@ -39,7 +39,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg overflow-hidden">
-              <Image src="/IMG_2841.PNG" alt="Green Street Capital" width={56} height={56} className="w-full h-full object-contain" />
+              <Image src="/img_2841.png" alt="Green Street Capital" width={56} height={56} className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="font-serif font-bold text-xl md:text-2xl leading-none text-foreground tracking-tight">Green Street</span>
