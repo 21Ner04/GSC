@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export function IntroAnimation() {
   const [show, setShow] = useState(false);
@@ -33,7 +34,7 @@ export function IntroAnimation() {
             className="flex flex-col items-center"
           >
             <div className="w-48 h-48 md:w-64 md:h-64 mb-8 rounded-full overflow-hidden">
-              <img src="/IMG_2841.PNG" alt="Green Street Capital" className="w-full h-full object-contain" />
+              <Image src="/IMG_2841.PNG" alt="Green Street Capital" width={256} height={256} className="w-full h-full object-contain" />
             </div>
             <h1 className="font-serif text-3xl md:text-5xl text-foreground text-center tracking-tight">
               Green Street <span className="text-primary">Capital</span>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export const metadata = { title: "About Us | Green Street Capital" };
@@ -32,7 +33,7 @@ export default function About() {
             <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl shadow-xl w-full h-[500px] flex items-center justify-center">
               <div className="text-center p-8">
                 <div className="w-32 h-32 mx-auto mb-8 bg-white/90 rounded-full overflow-hidden shadow-xl">
-                  <img src="/IMG_2841.PNG" alt="Green Street Capital" className="w-full h-full object-contain" />
+                  <Image src="/IMG_2841.PNG" alt="Green Street Capital" width={128} height={128} className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-foreground mb-2">20+ Years</h3>
                 <p className="text-lg text-muted-foreground">Of Trusted Service</p>
