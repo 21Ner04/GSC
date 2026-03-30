@@ -37,8 +37,11 @@ export function Navbar() {
       <header className={cn("sticky top-0 z-50 w-full transition-all duration-300", isScrolled ? "glass-nav py-3" : "bg-white py-5 border-b border-gray-100")}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg overflow-hidden">
-              <img src="/images/logo.png" alt="Green Street Capital" className="w-full h-full object-contain" onError={(e) => { const target = e.target as HTMLImageElement; target.style.display='none'; console.error('Logo failed to load'); }} />
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg overflow-hidden bg-primary/10 flex items-center justify-center relative">
+              <img src="/images/logo.png" alt="Green Street Capital" className="w-full h-full object-contain absolute inset-0" onError={(e) => { const target = e.target as HTMLImageElement; target.style.display='none'; console.error('Logo failed to load'); }} />
+              <div className="absolute inset-0 flex items-center justify-center bg-primary/20">
+                <span className="text-primary font-bold text-xs text-center">GSC</span>
+              </div>
             </div>
             <div className="flex flex-col">
               <span className="font-serif font-bold text-xl md:text-2xl leading-none text-foreground tracking-tight">Green Street</span>
