@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -38,7 +39,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg overflow-hidden bg-primary/10 flex items-center justify-center relative">
-              <img src="/images/logo.png" alt="Green Street Capital" className="w-full h-full object-contain absolute inset-0" onError={(e) => { const target = e.target as HTMLImageElement; target.style.display='none'; console.error('Logo failed to load'); }} />
+              <Image src="/images/logo.png" alt="Green Street Capital" width={100} height={100} className="w-full h-full object-contain absolute inset-0" onError={(e) => { const target = e.target as HTMLImageElement; target.style.display='none'; console.error('Logo failed to load'); }} />
               <div className="absolute inset-0 flex items-center justify-center bg-primary/20">
                 <span className="text-primary font-bold text-xs text-center">GSC</span>
               </div>
