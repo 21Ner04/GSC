@@ -51,7 +51,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl text-center">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl text-center ml-0 md:ml-20 lg:ml-36">
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-montserrat font-bold text-white leading-tight mb-8">
               Your Path to <span className="text-primary">Homeownership</span>
             </h1>

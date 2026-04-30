@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { IntroAnimation } from "@/components/IntroAnimation";
+import UserWayWidget from "@/components/UserWayWidget";
 
 export const metadata: Metadata = {
   title: "Green Street Capital | Mortgage Broker Brooklyn NY & NJ | Purchase & Refinance",
@@ -20,25 +21,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "https://cdn.userway.org/widget.js";
-                fjs.parentNode.insertBefore(js, fjs);
-              })(document, "script", "userway-widget-js");
-              var userway = userway || {};
-              userway.account = "greenstreetcapital";
-              userway.position = "bottom_right";
-              userway.color = "blue";
-              userway.size = "small";
-            `,
-          }}
-        />
+        <IntroAnimation />
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-1 w-full">{children}</main>
+          <Footer />
+        </div>
+        <UserWayWidget />
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -66,12 +55,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
-        <IntroAnimation />
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-1 w-full">{children}</main>
-          <Footer />
-        </div>
       </body>
     </html>
   );
