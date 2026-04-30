@@ -4,6 +4,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [],
   theme: {
     extend: {
       colors: {
@@ -34,8 +35,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Libre Baskerville', 'serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        manrope: ['Manrope', 'sans-serif'],
       },
       borderRadius: {
         lg: '0.75rem',

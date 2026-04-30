@@ -11,7 +11,7 @@ export default function Apply() {
         <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
           <FileText className="w-10 h-10 text-primary" />
         </div>
-        <h1 className="font-serif text-3xl font-bold mb-4">Apply Now</h1>
+        <h1 className="font-montserrat text-3xl font-bold mb-4">Apply Now</h1>
         <p className="text-muted-foreground mb-8">
           You are being redirected to our secure borrower portal to complete your application and upload documents safely.
         </p>

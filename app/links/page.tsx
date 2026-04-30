@@ -9,13 +9,13 @@ export default function UsefulLinks() {
   return (
     <div className="w-full pb-24">
       <div className="bg-gradient-to-br from-black via-black to-secondary py-20 text-center border-b border-gray-200">
-        <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Useful Links & Forms</h1>
+        <h1 className="text-4xl md:text-5xl font-montserrat font-bold text-white mb-4">Useful Links & Forms</h1>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto">Everything you need to manage your mortgage application in one place.</p>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
         <section>
-          <h2 className="text-2xl font-serif font-bold text-foreground mb-8 border-b border-gray-200 pb-4">Apply & Contact</h2>
+          <h2 className="text-2xl font-montserrat font-bold text-foreground mb-8 border-b border-gray-200 pb-4">Apply & Contact</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: "Apply Now", icon: FileText, link: "/apply", primary: true },
@@ -34,7 +34,7 @@ export default function UsefulLinks() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-serif font-bold text-foreground mb-8 border-b border-gray-200 pb-4">Forms & Documents</h2>
+          <h2 className="text-2xl font-montserrat font-bold text-foreground mb-8 border-b border-gray-200 pb-4">Forms & Documents</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
               <UploadCloud className="w-8 h-8 text-secondary mb-4" />
@@ -76,7 +76,31 @@ export default function UsefulLinks() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-serif font-bold text-foreground mb-8 border-b border-gray-200 pb-4">Useful Resources</h2>
+          <h2 className="text-2xl font-montserrat font-bold text-foreground mb-8 border-b border-gray-200 pb-4">Disclosures & Compliance</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
+              <FileText className="w-8 h-8 text-accent mb-4" />
+              <h3 className="font-bold text-lg mb-2">Loan Estimate</h3>
+              <p className="text-sm text-muted-foreground mb-4">Standardized 3-page form showing loan terms and closing costs.</p>
+              <Button variant="outline" className="w-full">Sample PDF</Button>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
+              <FileText className="w-8 h-8 text-accent mb-4" />
+              <h3 className="font-bold text-lg mb-2">Closing Disclosure</h3>
+              <p className="text-sm text-muted-foreground mb-4">Final loan terms and closing costs provided 3 days before closing.</p>
+              <Button variant="outline" className="w-full">Sample PDF</Button>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
+              <FileText className="w-8 h-8 text-accent mb-4" />
+              <h3 className="font-bold text-lg mb-2">HELOC TILA</h3>
+              <p className="text-sm text-muted-foreground mb-4">Truth in Lending Act disclosure for home equity lines of credit.</p>
+              <Button variant="outline" className="w-full">Sample PDF</Button>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-montserrat font-bold text-foreground mb-8 border-b border-gray-200 pb-4">Useful Resources</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <MortgageCalculator />
             <div className="space-y-6">
@@ -94,6 +118,30 @@ export default function UsefulLinks() {
                   <h3 className="font-bold text-lg mb-1">CFPB</h3>
                   <p className="text-sm text-muted-foreground mb-3">Consumer Financial Protection Bureau.</p>
                   <a href="https://www.consumerfinance.gov" target="_blank" rel="noopener noreferrer" className="text-sm text-primary font-bold hover:underline">Visit CFPB →</a>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex items-start space-x-4">
+                <ExternalLink className="w-8 h-8 text-accent shrink-0" />
+                <div>
+                  <h3 className="font-bold text-lg mb-1">Fannie Mae</h3>
+                  <p className="text-sm text-muted-foreground mb-3">Mortgage guidelines and home buying resources.</p>
+                  <a href="https://www.fanniemae.com" target="_blank" rel="noopener noreferrer" className="text-sm text-primary font-bold hover:underline">Visit FannieMae.com →</a>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex items-start space-x-4">
+                <ExternalLink className="w-8 h-8 text-accent shrink-0" />
+                <div>
+                  <h3 className="font-bold text-lg mb-1">Freddie Mac</h3>
+                  <p className="text-sm text-muted-foreground mb-3">Home buying guides and mortgage education.</p>
+                  <a href="https://www.freddiemac.com" target="_blank" rel="noopener noreferrer" className="text-sm text-primary font-bold hover:underline">Visit FreddieMac.com →</a>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex items-start space-x-4">
+                <ExternalLink className="w-8 h-8 text-accent shrink-0" />
+                <div>
+                  <h3 className="font-bold text-lg mb-1">NMLS Consumer Access</h3>
+                  <p className="text-sm text-muted-foreground mb-3">Verify mortgage professional licenses.</p>
+                  <a href="https://www.nmlsconsumeraccess.org" target="_blank" rel="noopener noreferrer" className="text-sm text-primary font-bold hover:underline">Check License →</a>
                 </div>
               </div>
             </div>

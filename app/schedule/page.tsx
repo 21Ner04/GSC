@@ -11,7 +11,7 @@ export default function Schedule() {
         <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
           <Calendar className="w-10 h-10 text-secondary" />
         </div>
-        <h1 className="font-serif text-3xl font-bold mb-4">Schedule a Call</h1>
+        <h1 className="font-montserrat text-3xl font-bold mb-4">Schedule a Call</h1>
         <p className="text-muted-foreground mb-8">
           Select a convenient time for a brief consultation with one of our mortgage advisors.
         </p>

@@ -16,10 +16,10 @@ const PROGRAMS = [
 export default function LoanPrograms() {
   return (
     <div className="w-full pb-24">
-      <div className="bg-gradient-to-br from-black via-black to-primary py-20 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-gray-50 to-white py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Loan Programs</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Discover the right financing solution for your unique needs.</p>
+          <h1 className="text-4xl md:text-5xl font-montserrat font-bold text-foreground mb-6">Loan Programs</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Discover the right financing solution for your unique needs.</p>
         </div>
       </div>
 
@@ -42,7 +42,7 @@ export default function LoanPrograms() {
         </div>
 
         <div className="mt-20 bg-primary/10 border border-primary/20 rounded-3xl p-10 text-center">
-          <h2 className="text-2xl font-serif font-bold text-foreground mb-4">Not sure which program is right for you?</h2>
+          <h2 className="text-2xl font-montserrat font-bold text-foreground mb-4">Not sure which program is right for you?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">Contact us to discuss your goals and we'll match you with the perfect loan product.</p>
           <Link href="/contact"><Button size="lg">Contact an Advisor</Button></Link>
         </div>

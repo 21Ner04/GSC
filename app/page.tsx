@@ -41,38 +41,50 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 pb-32 overflow-hidden">
+      <section className="relative h-screen flex items-end justify-center overflow-hidden pb-32">
         <div className="absolute inset-0 z-0">
-          <div className="w-full h-full bg-gradient-to-br from-foreground via-foreground/95 to-secondary/60" />
+          <img 
+            src="/MAIN PAGE PIC.jpg" 
+            alt="Green Street Capital Team" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary mb-6">
-              <Star className="w-4 h-4 mr-2 fill-primary" />
-              <span className="text-sm font-medium">5-Star Rated Mortgage Broker</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6">
-              Your Path to <span className="text-primary">Homeownership</span> Starts Here
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-montserrat font-bold text-white leading-tight mb-8">
+              Your Path to <span className="text-primary">Homeownership</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
-              Trusted mortgage solutions for first-time buyers, refinance clients, and everyone in between.
+            <p className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl leading-relaxed font-manrope mx-auto">
+              Trusted mortgage solutions. Fast approvals. Competitive rates.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/apply"><Button size="lg" className="w-full sm:w-auto text-lg h-14 px-8">Get a Quote</Button></Link>
-              <Link href="/schedule"><Button size="lg" variant="secondary" className="w-full sm:w-auto text-lg h-14 px-8">Book Time with Me</Button></Link>
-              <Link href="/contact"><Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-8 border-white/30 text-white hover:bg-white hover:text-foreground">Contact Us</Button></Link>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link href="/apply"><Button size="lg" className="w-full sm:w-auto text-lg h-16 px-10 font-montserrat shadow-xl hover:shadow-2xl transition-all">Get Pre-Approved</Button></Link>
+              <Link href="/contact"><Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-16 px-10 border-white/40 text-white hover:bg-white hover:text-foreground font-montserrat backdrop-blur-sm transition-all">Talk to Expert</Button></Link>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Reviews */}
-      <section className="py-24 bg-muted">
+      <motion.section 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+        className="py-24 bg-muted"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">What Our Clients Say</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Families across NY, NJ, FL, CT, and PA trust Green Street Capital.</p>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-foreground mb-4">Trusted by Homeowners</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto font-manrope">5-star service across NY, NJ, FL, and PA</p>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {REVIEWS.map((review, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
@@ -89,21 +101,21 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why Work With Us */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">Experience the Green Street Difference</h2>
-              <p className="text-lg text-muted-foreground mb-8">With over two decades in the industry, we navigate the complexities so you don't have to.</p>
+              <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-foreground mb-6">Why Choose Green Street</h2>
+              <p className="text-lg text-muted-foreground mb-8 font-manrope">20+ years of trusted mortgage expertise.</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {[
-                  { icon: ShieldCheck, title: "20+ Years Experience", desc: "Decades of proven industry knowledge." },
-                  { icon: TrendingUp, title: "Competitive Rates", desc: "Access to the best wholesale rates available." },
-                  { icon: Zap, title: "Fast Approvals", desc: "Streamlined process to get you to the closing table." },
-                  { icon: Users, title: "Personal Service", desc: "Dedicated advisor from application to funding." },
+                  { icon: ShieldCheck, title: "20+ Years Experience", desc: "Proven industry expertise." },
+                  { icon: TrendingUp, title: "Best Rates", desc: "Competitive wholesale pricing." },
+                  { icon: Zap, title: "Fast Closing", desc: "Streamlined approval process." },
+                  { icon: Users, title: "Dedicated Support", desc: "Personal advisor from start to finish." },
                 ].map((f, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -117,13 +129,13 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
               <div className="text-center p-8">
                 <div className="w-24 h-24 mx-auto mb-6 bg-white/90 rounded-full flex items-center justify-center shadow-xl">
-                  <span className="text-3xl font-serif font-bold text-foreground">$1B+</span>
+                  <span className="text-3xl font-montserrat font-bold text-foreground">$1B+</span>
                 </div>
-                <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider mb-1">Total Funded</p>
-                <p className="text-3xl font-serif font-bold text-secondary">Trusted by Thousands</p>
+                <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider mb-1 font-manrope">Total Funded</p>
+                <p className="text-3xl font-montserrat font-bold text-accent">Thousands Trust Us</p>
               </div>
             </motion.div>
           </div>
@@ -135,10 +147,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Comprehensive Loan Programs</h2>
-              <p className="text-gray-400">Whatever your situation, we have a customized mortgage solution for you.</p>
+              <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-4">Loan Programs</h2>
+              <p className="text-gray-400 font-manrope">Right solution for your situation.</p>
             </div>
-            <Link href="/loan-programs"><Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-foreground">View All Programs</Button></Link>
+            <Link href="/loan-programs"><Button variant="accent" className="text-white hover:bg-accent/90">View All Programs</Button></Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -166,44 +178,141 @@ export default function Home() {
       {/* Team Preview */}
       <section className="py-24 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Meet Our Leadership</h2>
-          <p className="text-muted-foreground mb-16 max-w-2xl mx-auto">Expert advisors committed to your success.</p>
+          <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-foreground mb-4">Meet Our Team</h2>
+          <p className="text-muted-foreground mb-16 max-w-xl mx-auto font-manrope">Expert mortgage advisors dedicated to your success.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
             {[
               { name: "Ruslan Kushnir", title: "Branch Manager / Sr. Loan Officer", nmls: "71488" },
-              { name: "Ruslan Kushnir", title: "Branch Manager / Sr. Loan Officer", nmls: "71488" },
-              { name: "Ruslan Kushnir", title: "Branch Manager / Sr. Loan Officer", nmls: "71488" },
+              { name: "Senior Loan Officer", title: "Loan Officer", nmls: "TBD" },
+              { name: "Loan Officer", title: "Loan Officer", nmls: "TBD" },
             ].map((m, i) => (
               <div key={i} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 group">
                 <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
                   <span className="text-2xl font-bold text-primary">{m.name.split(' ').map(n => n[0]).join('')}</span>
                 </div>
                 <h3 className="text-xl font-bold text-foreground">{m.name}</h3>
-                <p className="text-secondary font-medium text-sm mt-1">{m.title}</p>
+                <p className="text-accent font-medium text-sm mt-1">{m.title}</p>
                 {m.nmls && <p className="text-xs text-muted-foreground mt-2">NMLS #{m.nmls}</p>}
               </div>
             ))}
           </div>
-          <Link href="/team"><Button size="lg" className="px-10">Meet the Full Team</Button></Link>
+          <Link href="/team"><Button size="lg" variant="accent" className="px-10">Meet the Full Team</Button></Link>
         </div>
       </section>
 
-      {/* Video */}
+      {/* Video & Updates */}
       <section className="py-24 bg-white border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">Company Updates & Insights</h2>
-          <p className="text-muted-foreground mb-16 max-w-2xl mx-auto">Stay informed with the latest mortgage insights, market updates, and company news.</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["First-Time Homebuyer Guide 2024", "When Is The Right Time To Refinance?", "Understanding Mortgage Rates"].map((title, i) => (
-              <div key={i} className="flex flex-col">
-                <div className="aspect-video bg-muted rounded-xl relative overflow-hidden flex items-center justify-center border border-gray-200 group cursor-pointer shadow-md mb-4">
-                  <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=60" alt="Video" className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/20 transition-colors" />
-                  <PlayCircle className="w-16 h-16 text-white relative z-10 group-hover:scale-110 transition-transform" />
-                </div>
-                <h3 className="font-bold text-lg text-foreground text-left">{title}</h3>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-foreground mb-4">Company Updates & Insights</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto font-manrope">Expert guidance, market updates, and valuable resources for your home buying journey.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            {/* Video Content */}
+            <div>
+              <h3 className="text-2xl font-montserrat font-bold text-foreground mb-6">Featured Videos</h3>
+              <div className="space-y-6">
+                {[
+                  { 
+                    title: "Buying vs Renting in 2024", 
+                    desc: "Is it better to buy or rent in today's market?",
+                    duration: "8:24",
+                    link: "https://www.youtube.com/@GSC.MORTGAGE"
+                  },
+                  { 
+                    title: "Mortgage Rates Explained", 
+                    desc: "How mortgage rates work and what affects them",
+                    duration: "12:15",
+                    link: "https://www.youtube.com/@GSC.MORTGAGE"
+                  },
+                  { 
+                    title: "First-Time Homebuyer Tips", 
+                    desc: "Essential tips for first-time home buyers",
+                    duration: "15:30",
+                    link: "https://www.youtube.com/@GSC.MORTGAGE"
+                  }
+                ].map((video, i) => (
+                  <a key={i} href={video.link} target="_blank" rel="noopener noreferrer" className="flex gap-4 p-4 bg-muted rounded-xl hover:bg-muted/80 transition-colors cursor-pointer group no-underline">
+                    <div className="relative w-32 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&auto=format&fit=crop&q=60" alt="Video thumbnail" className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                        <PlayCircle className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{video.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-2">{video.desc}</p>
+                      <p className="text-xs text-primary font-medium">{video.duration}</p>
+                    </div>
+                  </a>
+                ))}
               </div>
-            ))}
+              <div className="mt-6 text-center">
+                <a href="https://www.youtube.com/@GSC.MORTGAGE" target="_blank" rel="noopener noreferrer" className="no-underline">
+                  <Button variant="outline" className="w-full">View All Videos</Button>
+                </a>
+              </div>
+            </div>
+
+            {/* Market Updates */}
+            <div>
+              <h3 className="text-2xl font-montserrat font-bold text-foreground mb-6">Market Updates</h3>
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Fed Rate Decision Impact",
+                    date: "2 days ago",
+                    category: "Market Analysis",
+                    preview: "Latest Federal Reserve decision affects mortgage rates and housing market outlook..."
+                  },
+                  {
+                    title: "Spring Market Preview 2024",
+                    date: "1 week ago", 
+                    category: "Market Trends",
+                    preview: "What to expect in the upcoming spring buying season and how to prepare..."
+                  },
+                  {
+                    title: "New FHA Guidelines Explained",
+                    date: "2 weeks ago",
+                    category: "Policy Updates", 
+                    preview: "Recent changes to FHA loan requirements and how they benefit buyers..."
+                  }
+                ].map((article, i) => (
+                  <div key={i} className="p-4 bg-white rounded-xl border border-gray-100 hover:shadow-md transition-shadow cursor-pointer group">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">{article.category}</span>
+                      <span className="text-xs text-muted-foreground">{article.date}</span>
+                    </div>
+                    <h4 className="font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{article.title}</h4>
+                    <p className="text-sm text-muted-foreground line-clamp-2">{article.preview}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 text-center">
+                <Button variant="outline" className="w-full">Read All Updates</Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Resources */}
+          <div className="bg-muted rounded-2xl p-8">
+            <h3 className="text-xl font-montserrat font-bold text-foreground mb-6 text-center">Quick Resources</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                "Mortgage Calculator",
+                "Rate Tracker", 
+                "Home Buying Guide",
+                "Glossary"
+              ].map((resource, i) => (
+                <div key={i} className="bg-white p-4 rounded-xl text-center hover:shadow-md transition-shadow cursor-pointer group">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
+                    <span className="text-primary font-bold">{resource.charAt(0)}</span>
+                  </div>
+                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{resource}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -214,22 +323,22 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-5 space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">Let's Connect</h2>
-                <p className="text-muted-foreground text-lg">Ready to take the next step? Our team is here to guide you home.</p>
+                <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-foreground mb-6">Get Started</h2>
+                <p className="text-muted-foreground text-lg font-manrope">Ready to take the next step? Our team is here to help.</p>
               </div>
               <div className="space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                 <div>
-                  <h4 className="font-bold text-xl text-foreground">Green Street Capital, LLC</h4>
+                  <h4 className="font-montserrat font-bold text-xl text-foreground">Green Street Capital, LLC</h4>
                   <p className="text-sm text-muted-foreground">NMLS #2066586</p>
                 </div>
                 <div className="space-y-4 pt-4 border-t border-gray-100">
                   <div className="flex items-start"><MapPin className="w-5 h-5 text-primary mr-3 mt-1 shrink-0" /><p className="text-foreground font-medium">2709 Coney Island Ave, 3rd Floor<br />Brooklyn, NY 11235</p></div>
                   <div className="flex items-center"><Phone className="w-5 h-5 text-primary mr-3 shrink-0" /><p className="text-foreground font-medium">Toll Free: 855-615-4545</p></div>
-                  <div className="flex items-center"><Mail className="w-5 h-5 text-primary mr-3 shrink-0" /><p className="text-foreground font-medium">RKushnir@GSCMortgage.com</p></div>
+                  <div className="flex items-center"><Mail className="w-5 h-5 text-primary mr-3 shrink-0" /><p className="text-foreground font-medium">Info@GSCMortgage.com</p></div>
                 </div>
                 <div className="pt-6 flex flex-col gap-3">
-                  <Link href="/schedule"><Button className="w-full" size="lg">Book Time with Me</Button></Link>
-                  <Link href="/apply"><Button variant="secondary" className="w-full" size="lg">Apply Now</Button></Link>
+                  <Link href="/team"><Button variant="accent" className="w-full" size="lg">Meet Our Team</Button></Link>
+                  <Link href="/apply"><Button className="w-full" size="lg">Apply Now</Button></Link>
                 </div>
               </div>
             </div>
