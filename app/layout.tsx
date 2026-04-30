@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               div[id*="userway"],
               button[class*="userway"] {
                 position: fixed !important;
-                bottom: 20px !important;
+                bottom: 7px !important;
                 right: 20px !important;
                 top: auto !important;
                 left: auto !important;
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               }
               .userway-widget-trigger {
                 position: fixed !important;
-                bottom: 20px !important;
+                bottom: 7px !important;
                 right: 20px !important;
                 top: auto !important;
                 left: auto !important;
