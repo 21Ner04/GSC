@@ -33,7 +33,7 @@ export default function LoanPrograms() {
               <h3 className="text-2xl font-bold text-foreground mb-4">{prog.name}</h3>
               <p className="text-muted-foreground leading-relaxed flex-grow">{prog.desc}</p>
               <div className="mt-8 pt-6 border-t border-gray-100">
-                <Link href="/apply">
+                <Link href="/team">
                   <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Apply for {prog.name.split(" ")[0]}</Button>
                 </Link>
               </div>
@@ -44,7 +44,7 @@ export default function LoanPrograms() {
         <div className="mt-20 bg-primary/10 border border-primary/20 rounded-3xl p-10 text-center">
           <h2 className="text-2xl font-montserrat font-bold text-foreground mb-4">Not sure which program is right for you?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">Contact us to discuss your goals and we'll match you with the perfect loan product.</p>
-          <Link href="/contact"><Button size="lg">Contact an Advisor</Button></Link>
+          <Link href="/team"><Button size="lg">Contact an Advisor</Button></Link>
         </div>
       </div>
     </div>

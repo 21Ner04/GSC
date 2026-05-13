@@ -7,10 +7,15 @@ export const metadata = { title: "Refinance | Green Street Capital" };
 export default function Refinance() {
   return (
     <div className="w-full">
-      <div className="bg-gradient-to-br from-black via-black to-accent py-20 md:py-32 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-montserrat font-bold text-white mb-6">Refinance Your Home</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">Lower your payments, shorten your term, or access your home's equity.</p>
+      <div className="border-b border-gray-200 bg-white py-20 text-center md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h1 className="mb-6 font-montserrat text-4xl font-bold text-foreground md:text-6xl">
+            Refinance Your Home
+          </h1>
+          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+            Lower your payments, shorten your term, or access your home&apos;s
+            equity.
+          </p>
         </div>
       </div>
 
@@ -31,7 +36,7 @@ export default function Refinance() {
               <li className="flex items-center text-sm font-medium"><TrendingDown className="w-5 h-5 mr-3 text-primary" /> Lower monthly payments</li>
               <li className="flex items-center text-sm font-medium"><CalendarDays className="w-5 h-5 mr-3 text-primary" /> Pay off loan faster</li>
             </ul>
-            <Link href="/apply"><Button className="w-full">Explore Rate & Term</Button></Link>
+            <Link href="/team"><Button className="w-full">Explore Rate & Term</Button></Link>
           </div>
 
           <div className="bg-foreground text-white p-10 rounded-3xl shadow-xl">
@@ -44,14 +49,14 @@ export default function Refinance() {
               <li className="flex items-center text-sm font-medium text-gray-200"><Coins className="w-5 h-5 mr-3 text-secondary" /> Fund home renovations</li>
               <li className="flex items-center text-sm font-medium text-gray-200"><RefreshCw className="w-5 h-5 mr-3 text-secondary" /> Consolidate high-interest debt</li>
             </ul>
-            <Link href="/apply"><Button variant="secondary" className="w-full">Explore Cash-Out</Button></Link>
+            <Link href="/team"><Button variant="secondary" className="w-full">Explore Cash-Out</Button></Link>
           </div>
         </div>
 
         <div className="bg-muted p-12 rounded-3xl text-center max-w-4xl mx-auto">
           <h2 className="text-2xl font-montserrat font-bold mb-4 text-foreground">Want to see how much you could save?</h2>
           <p className="text-muted-foreground mb-8">Schedule a brief 15-minute call. We'll run a free, no-obligation cost-benefit analysis.</p>
-          <Link href="/schedule"><Button size="lg" className="px-12">Schedule a Free Analysis</Button></Link>
+          <Link href="/team"><Button size="lg" className="px-12">Schedule a Free Analysis</Button></Link>
         </div>
       </div>
     </div>

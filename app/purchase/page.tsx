@@ -7,10 +7,15 @@ export const metadata = { title: "Purchase a Home | Green Street Capital" };
 export default function Purchase() {
   return (
     <div className="w-full">
-      <div className="bg-gradient-to-br from-black via-black to-primary py-20 md:py-32 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-montserrat font-bold text-white mb-6">Purchase a Home</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">From pre-approval to the closing table, we make buying your dream home simple and stress-free.</p>
+      <div className="border-b border-gray-200 bg-white py-20 text-center md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h1 className="mb-6 font-montserrat text-4xl font-bold text-foreground md:text-6xl">
+            Purchase a Home
+          </h1>
+          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+            From pre-approval to the closing table, we make buying your dream
+            home simple and stress-free.
+          </p>
         </div>
       </div>
 
@@ -21,8 +26,8 @@ export default function Purchase() {
             <p className="text-lg text-muted-foreground mb-6">Buying a home is one of the most significant financial decisions you'll ever make. Having the right team by your side ensures you get the best terms and close on time.</p>
             <p className="text-lg text-muted-foreground mb-8">At Green Street Capital, we offer a wide variety of purchase loans tailored to first-time buyers, move-up buyers, and investors.</p>
             <div className="flex gap-4 flex-wrap">
-              <Link href="/apply"><Button size="lg">Apply Now</Button></Link>
-              <Link href="/schedule"><Button variant="outline" size="lg">Schedule Consultation</Button></Link>
+              <Link href="/team"><Button size="lg">Apply Now</Button></Link>
+              <Link href="/team"><Button variant="outline" size="lg">Schedule Consultation</Button></Link>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-6">

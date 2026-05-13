@@ -4,51 +4,61 @@ import { Button } from "@/components/ui/button";
 export const metadata = { title: "Meet Our Team | Green Street Capital" };
 
 const TEAM = [
-  { 
-    name: "Ruslan Kushnir", 
-    title: "Branch Manager / Sr. Loan Officer", 
-    nmls: "71488", 
+  {
+    name: "Ruslan Kushnir",
+    title: "Branch Manager / Sr. Loan Officer",
+    nmls: "71488",
     directLine: "646-261-8023",
     email: "RKushnir@GSCMortgage.com",
     licensedStates: "NY, NJ, FL, PA",
-    bio: "Over 20 years of experience helping families achieve homeownership across the tri-state area." 
+    bio: "Over 20 years of experience helping families achieve homeownership across the tri-state area.",
+    applyPortalUrl: "https://www.greenstreetcapitalgroup.com",
   },
-  { 
-    name: "Senior Loan Officer", 
-    title: "Loan Officer", 
-    nmls: "TBD", 
+  {
+    name: "Senior Loan Officer",
+    title: "Loan Officer",
+    nmls: "TBD",
     directLine: "TBD",
     email: "TBD@GSCMortgage.com",
     licensedStates: "NY, NJ, FL, PA",
-    bio: "Experienced mortgage professional dedicated to finding the right loan solutions for clients." 
+    bio: "Experienced mortgage professional dedicated to finding the right loan solutions for clients.",
   },
-  { 
-    name: "Loan Officer", 
-    title: "Loan Officer", 
-    nmls: "TBD", 
+  {
+    name: "Loan Officer",
+    title: "Loan Officer",
+    nmls: "TBD",
     directLine: "TBD",
     email: "TBD@GSCMortgage.com",
     licensedStates: "NY, NJ, FL, PA",
-    bio: "Specializing in first-time homebuyers and refinancing options." 
+    bio: "Specializing in first-time homebuyers and refinancing options.",
   },
-  { 
-    name: "Loan Processor", 
-    title: "Loan Processor", 
-    nmls: "N/A", 
+  {
+    name: "Loan Processor",
+    title: "Loan Processor",
+    nmls: "N/A",
     directLine: "N/A",
     email: "processing@GSCMortgage.com",
     licensedStates: "N/A",
-    bio: "Ensuring smooth and efficient loan processing from application to closing." 
+    bio: "Ensuring smooth and efficient loan processing from application to closing.",
   },
 ];
 
 export default function Team() {
   return (
     <div className="w-full pb-24">
-      <div className="bg-gradient-to-br from-black via-black to-primary py-20 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-montserrat font-bold text-white mb-4">Meet Our Team</h1>
-          <p className="text-xl text-gray-300">Dedicated mortgage professionals working for you.</p>
+      <div className="border-b border-gray-200 bg-white py-16 text-center">
+        <div className="mx-auto max-w-4xl px-4">
+          <h1 className="mb-4 font-montserrat text-4xl font-bold text-foreground md:text-5xl">
+            Meet Our Team
+          </h1>
+          <p className="text-lg text-muted-foreground md:text-xl">
+            Choose a loan officer for scheduling, applications, and secure
+            documents. Company contact options are always on our{" "}
+            <Link href="/contact" className="text-primary underline-offset-2 hover:underline">
+              Contact
+            </Link>{" "}
+            page.
+          </p>
         </div>
       </div>
 
@@ -84,8 +94,27 @@ export default function Team() {
                 
                 <p className="text-sm text-foreground/80 mb-6 flex-grow">{member.bio}</p>
                 <div className="flex flex-col gap-2 mt-auto">
-                  <Link href="/schedule"><Button className="w-full">Book Time with Me</Button></Link>
-                  <Link href="/apply"><Button variant="outline" className="w-full">Send Secure Docs</Button></Link>
+                  {member.applyPortalUrl ? (
+                    <>
+                      <Link href="/schedule">
+                        <Button className="w-full">Book Time with Me</Button>
+                      </Link>
+                      <a
+                        href={member.applyPortalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full"
+                      >
+                        <Button variant="outline" className="w-full">
+                          Apply with Me
+                        </Button>
+                      </a>
+                    </>
+                  ) : (
+                    <Link href="/contact">
+                      <Button className="w-full">Contact the office</Button>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
