@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { IntroAnimation } from "@/components/IntroAnimation";
 import UserWayWidget from "@/components/UserWayWidget";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Green Street Capital | Mortgage Broker Brooklyn NY & NJ | Purchase & Refinance",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning>
         <IntroAnimation />
         <div className="min-h-screen flex flex-col">
           <Navbar />

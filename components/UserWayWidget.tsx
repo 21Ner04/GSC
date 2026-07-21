@@ -1,45 +1,34 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-// Глобальные типы для UserWay
-declare global {
-  interface Window {
-    userway?: {
-      account?: string;
-      position?: string;
-      color?: string;
-      size?: string;
-    };
-  }
-}
+const USERWAY_ACCOUNT_ID = process.env.NEXT_PUBLIC_USERWAY_ACCOUNT_ID ?? "";
 
 export default function UserWayWidget() {
   useEffect(() => {
-    // Проверяем, что мы в браузере
-    if (typeof window !== 'undefined') {
-      // Проверяем, не загружен ли уже widget
-      if (!document.getElementById('userway-widget-js')) {
-        // Создаем скрипт
-        const script = document.createElement('script');
-        script.id = 'userway-widget-js';
-        script.src = 'https://cdn.userway.org/widget.js';
-        script.async = true;
-        
-        // Добавляем скрипт в head
-        document.head.appendChild(script);
-        
-        // Настраиваем UserWay после загрузки скрипта
-        script.onload = () => {
-          if (window.userway) {
-            window.userway.account = 'greenstreetcapital';
-            window.userway.position = 'bottom_right';
-            window.userway.color = 'blue';
-            window.userway.size = 'small';
-          }
-        };
-      }
+    if (typeof window === "undefined") return;
+    if (!USERWAY_ACCOUNT_ID) {
+      console.warn("UserWay: NEXT_PUBLIC_USERWAY_ACCOUNT_ID is not set.");
+      return;
     }
+    if (document.getElementById("userway-widget-js")) return;
+
+    const script = document.createElement("script");
+    script.id = "userway-widget-js";
+    script.src = "https://cdn.userway.org/widget.js";
+    script.async = true;
+    script.setAttribute("data-account", USERWAY_ACCOUNT_ID);
+
+    script.onerror = () => {
+      console.warn("UserWay: Failed to load accessibility widget.");
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      const existing = document.getElementById("userway-widget-js");
+      if (existing) existing.remove();
+    };
   }, []);
 
   return null;

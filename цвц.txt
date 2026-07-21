@@ -1,0 +1,63 @@
+Основные страницы
+page.tsx - Главная страница (Homepage)
+
+Hero секция с кнопками Apply Now, Mortgage Calculator, Find a Loan Officer
+Loan Programs секция
+Success Stories секция
+Google Reviews секция
+Featured Videos (3 видео)
+Market Updates (автоматически из RSS)
+Mortgage Calculator (мини-версия) + First-Time Homebuyer Book
+Contact + Map секция
+page.tsx - Страница About Us
+
+Hero с заголовком
+Our Story секция
+Why Choose Us (3 карточки)
+Company Culture с фото машины (easter egg)
+page.tsx - Полный калькулятор ипотеки
+
+Использует компонент MortgageCalculatorSection
+Полная версия с амортизацией, extra payments, etc.
+page.tsx - Видео блог
+
+Все видео в большом формате
+Кнопка на YouTube канал
+SEO Location Pages (Локации)
+page.tsx - Mortgage Broker in Brooklyn page.tsx - Mortgage Broker in New York City page.tsx - Mortgage Broker in Manhattan page.tsx - Mortgage Broker in New Jersey page.tsx - Mortgage Broker in Florida page.tsx - Mortgage Broker in Pennsylvania
+
+Каждая страница содержит: who we help, programs, local market insights, FAQ, CTA, contact, licensing.
+
+SEO Program Pages (Специализации)
+page.tsx - Mortgages for Truck Drivers page.tsx - Mortgages for Self-Employed Borrowers page.tsx - Bank Statement Loans page.tsx - 1099 Borrower Mortgages page.tsx - DSCR Loans for Investors page.tsx - First-Time Homebuyer Programs page.tsx - ITIN Mortgage Programs page.tsx - Foreign National Loans page.tsx - Commission and Bonus Income Mortgages page.tsx - Non-QM Loans
+
+Компоненты
+Navbar.tsx - Навигационное меню (шапка сайта)
+
+Логотип, ссылки на страницы, кнопки Meet the Team / Apply Now
+Мобильное меню
+Footer.tsx - Подвал сайта
+
+Логотип, соцсети
+Loan Programs ссылки
+Locations ссылки (Brooklyn, NYC, Manhattan, NJ, FL, PA)
+Loan Programs ссылки (First-Time, Self-Employed, Bank Statement, DSCR, Non-QM, Foreign National)
+Company Info с лицензированием
+MortgageCalculator.tsx - Полный калькулятор (977 строк)
+
+Все расчеты: PI, taxes, insurance, PMI, extra payments
+Amortization schedule
+Savings calculations
+MortgageCalculatorSection.tsx - Обёртка для калькулятора
+
+Заголовок и описание
+Вызывает MortgageCalculator компонент
+API
+route.ts - API для Market Updates
+
+Парсит RSS feed с Mortgage News Daily
+Возвращает заголовок, дату, описание, ссылку
+Другие файлы
+page.tsx - Страница Apply (существует) page.tsx - Страница Team (существует) page.tsx - Страница Contact (существует) page.tsx - Страница Purchase (существует) page.tsx - Страница Refinance (существует) page.tsx - Страница Loan Programs (существует)
+
+Все новые SEO страницы созданы с уникальным контентом и следуют одной структуре для SEO оптимизации.

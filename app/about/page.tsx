@@ -66,6 +66,29 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      {/* Company Culture - Car Easter Egg */}
+      <div className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-1">
+              <h2 className="text-3xl font-montserrat font-bold text-foreground mb-4">Company Culture</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                At Green Street Capital, we believe in hard work, dedication, and going the extra mile for our clients. Our team is committed to excellence in everything we do, from the first consultation to the closing table and beyond.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <div className="relative w-64 h-40 rounded-lg overflow-hidden shadow-md">
+                <img
+                  src="/caR PIC.png"
+                  alt="Company vehicle"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
