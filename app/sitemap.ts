@@ -1,15 +1,19 @@
 import type { MetadataRoute } from "next";
 import {
   getLocationSlugsAsync,
-  getSite,
+  getSiteAsync,
   getSpecialtySlugsAsync,
 } from "@/lib/cms";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const site = getSite();
+  const site = await getSiteAsync();
   const base = site.website.replace(/\/$/, "");
 
-  const staticPaths: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[0]["changeFrequency"] }[] = [
+  const staticPaths: {
+    path: string;
+    priority: number;
+    changeFrequency: MetadataRoute.Sitemap[0]["changeFrequency"];
+  }[] = [
     { path: "", priority: 1, changeFrequency: "weekly" },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" },
     { path: "/apply", priority: 0.9, changeFrequency: "monthly" },
@@ -35,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticEntries = staticPaths.map(({ path, priority, changeFrequency }) => ({
-    url: `${base}${path}`,
+    url: path ? `${base}${path}` : base,
     lastModified: now,
     changeFrequency,
     priority,

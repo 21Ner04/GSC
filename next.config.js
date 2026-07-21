@@ -5,9 +5,18 @@ const nextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
       {
         protocol: "https",
+        hostname: "www.greenstreetcapitalgroup.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "greenstreetcapitalgroup.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "gsc-sandy.vercel.app",
-        port: "",
-        pathname: "/images/**",
+        pathname: "/**",
       },
     ],
     unoptimized: true,

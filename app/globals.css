@@ -9,14 +9,39 @@
   }
   html {
     scroll-behavior: smooth;
+    /* Prevent horizontal “page shake” from full-bleed sections / shadows */
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Manrope', sans-serif;
+    overflow-x: hidden;
+    /* Space for floating Apply CTA on mobile */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
     font-family: 'Montserrat', sans-serif;
+  }
+  /* iOS zooms inputs under 16px — keep forms readable */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input,
+    select,
+    textarea {
+      font-size: inherit;
+    }
+  }
+  img,
+  video,
+  iframe {
+    max-width: 100%;
   }
 }
 
@@ -24,8 +49,9 @@
   .glass-nav {
     background-color: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(229, 231, 235, 0.5);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
   .text-balance {
     text-wrap: balance;
@@ -35,5 +61,35 @@
   }
   .font-manrope {
     font-family: 'Manrope', sans-serif;
+  }
+  /* Prevent long emails / URLs from blowing out layouts on mobile */
+  .break-anywhere {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  /* Full-width interactive wrappers (Link > Button patterns) */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Section vertical rhythm tuned for phones → desktop */
+  .section-pad {
+    @apply py-14 sm:py-16 md:py-20 lg:py-24;
+  }
+  .section-pad-sm {
+    @apply py-10 sm:py-12 md:py-16;
+  }
+  .page-hero {
+    @apply border-b border-gray-200 bg-white px-4 py-12 text-center sm:px-6 sm:py-16 md:py-20;
+  }
+  .page-hero-title {
+    @apply mx-auto max-w-4xl font-montserrat text-3xl font-bold leading-tight text-foreground sm:text-4xl md:text-5xl;
+  }
+  .page-hero-sub {
+    @apply mx-auto mt-3 max-w-2xl font-manrope text-base leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg md:text-xl;
+  }
+  /* Cards that should never overflow their grid cell */
+  .card-stable {
+    @apply min-w-0 max-w-full overflow-hidden;
   }
 }

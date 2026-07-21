@@ -21,27 +21,55 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    if (Array.isArray(body.paths)) paths = body.paths;
-    if (Array.isArray(body.tags)) tags = body.tags;
+    if (Array.isArray(body?.paths)) paths = body.paths;
+    if (Array.isArray(body?.tags) && body.tags.length) tags = body.tags;
   } catch {
     // empty body is fine — revalidate CMS tag only
   }
 
+  const revalidatedTags: string[] = [];
+  const revalidatedPaths: string[] = [];
+
   for (const tag of tags) {
+    if (typeof tag !== "string" || !tag) continue;
     // Cache tag used by lib/cms/wordpress fetch()
     revalidateTag(tag, "max");
+    revalidatedTags.push(tag);
   }
-  for (const path of paths) {
-    if (typeof path === "string" && path.startsWith("/")) {
-      revalidatePath(path);
+
+  // Always refresh major listing pages + reviews cache tags if requested
+  if (revalidatedTags.includes("wordpress-cms") || revalidatedTags.includes("google-reviews")) {
+    try {
+      revalidateTag("google-reviews", "max");
+    } catch {
+      /* ignore if tag unused */
     }
   }
 
-  // Always refresh major listing pages
-  revalidatePath("/");
-  revalidatePath("/locations");
-  revalidatePath("/specialties");
-  revalidatePath("/sitemap.xml");
+  const always = ["/", "/locations", "/specialties", "/sitemap.xml"];
+  const allPaths = [...new Set([...paths, ...always])];
 
-  return NextResponse.json({ ok: true, revalidated: true, paths, tags });
+  for (const path of allPaths) {
+    if (typeof path === "string" && path.startsWith("/")) {
+      revalidatePath(path);
+      revalidatedPaths.push(path);
+    }
+  }
+
+  return NextResponse.json({
+    ok: true,
+    revalidated: true,
+    paths: revalidatedPaths,
+    tags: revalidatedTags,
+  });
+}
+
+/** Simple health for uptime checks (no secret). */
+export async function GET() {
+  return NextResponse.json({
+    ok: true,
+    endpoint: "/api/revalidate",
+    method: "POST",
+    auth: "x-revalidate-secret header required",
+  });
 }

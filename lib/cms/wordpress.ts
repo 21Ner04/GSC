@@ -33,7 +33,9 @@ export async function wpGet<T>(path: string): Promise<T | null> {
     return null;
   }
 
-  const url = path.startsWith("http") ? path : `${base}${path.startsWith("/") ? path : `/${path}`}`;
+  const url = path.startsWith("http")
+    ? path
+    : `${base}${path.startsWith("/") ? path : `/${path}`}`;
 
   try {
     const res = await fetch(url, {
@@ -42,6 +44,10 @@ export async function wpGet<T>(path: string): Promise<T | null> {
         Accept: "application/json",
       },
     });
+    // 404 = intentional empty override (homepage/videos) → fall back to local
+    if (res.status === 404) {
+      return null;
+    }
     if (!res.ok) {
       console.error(`[cms/wordpress] ${res.status} ${url}`);
       return null;
@@ -51,6 +57,16 @@ export async function wpGet<T>(path: string): Promise<T | null> {
     console.error("[cms/wordpress]", err);
     return null;
   }
+}
+
+/** Optional health check for ops / deploy scripts. */
+export async function fetchWordPressHealth(): Promise<{
+  ok: boolean;
+  version?: string;
+  locationsPublished?: number;
+  specialtiesPublished?: number;
+} | null> {
+  return wpGet("/gsc/v1/health");
 }
 
 export async function fetchSiteFromWordPress(): Promise<SiteContent | null> {

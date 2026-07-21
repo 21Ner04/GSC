@@ -14,33 +14,36 @@ export function Footer() {
   const nav = getFooterNav();
 
   return (
-    <footer className="bg-foreground pb-8 pt-16 text-white">
+    <footer className="bg-foreground pb-[max(2rem,env(safe-area-inset-bottom))] pt-12 text-white sm:pt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-5">
-              <div className="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full sm:h-32 sm:w-32 md:h-36 md:w-36">
+        <div className="mb-10 grid grid-cols-1 gap-10 sm:mb-12 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand column */}
+          <div className="space-y-5 sm:space-y-6">
+            <Link href="/" className="flex items-center gap-3 sm:gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full sm:h-24 sm:w-24 md:h-28 md:w-28">
                 <Image
                   src="/images/logo.png"
                   alt={site.companyName}
-                  width={144}
-                  height={144}
+                  width={112}
+                  height={112}
                   className="h-full w-full object-contain"
                 />
               </div>
-              <div className="flex flex-col justify-center">
-                <span className="font-montserrat text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
+              <div className="min-w-0 flex flex-col justify-center">
+                <span className="font-montserrat text-xl font-bold leading-tight tracking-tight text-white sm:text-2xl md:text-3xl">
                   Green Street
                 </span>
-                <span className="font-manrope mt-1 text-sm font-bold uppercase tracking-[0.28em] text-primary md:text-base">
+                <span className="font-manrope mt-0.5 text-xs font-bold uppercase tracking-[0.22em] text-primary sm:mt-1 sm:text-sm sm:tracking-[0.28em] md:text-base">
                   Capital
                 </span>
               </div>
             </Link>
 
-            <p className="text-base leading-relaxed text-gray-400">{site.brandTagline}</p>
+            <p className="max-w-sm text-sm leading-relaxed text-gray-400 sm:text-base">
+              {site.brandTagline}
+            </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2.5 sm:gap-3">
               {(
                 [
                   [site.social.instagram, Instagram, "Instagram"],
@@ -55,7 +58,7 @@ export function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-accent"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-accent active:bg-accent/90"
                   aria-label={label}
                 >
                   <Icon className="h-5 w-5" />
@@ -65,15 +68,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 inline-block border-b border-white/10 pb-2 font-montserrat text-lg font-bold text-white">
+            <h3 className="mb-4 inline-block border-b border-white/10 pb-2 font-montserrat text-base font-bold text-white sm:mb-6 sm:text-lg">
               Loan Programs
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {nav.loanPrograms.map((item) => (
                 <li key={item.href + item.label}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 transition-colors hover:text-primary"
+                    className="text-sm text-gray-400 transition-colors hover:text-primary sm:text-base"
                   >
                     {item.label}
                   </Link>
@@ -83,15 +86,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 inline-block border-b border-white/10 pb-2 font-montserrat text-lg font-bold text-white">
+            <h3 className="mb-4 inline-block border-b border-white/10 pb-2 font-montserrat text-base font-bold text-white sm:mb-6 sm:text-lg">
               Locations & Specialties
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {nav.locations.slice(0, 4).map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 transition-colors hover:text-primary"
+                    className="text-sm text-gray-400 transition-colors hover:text-primary sm:text-base"
                   >
                     {item.label}
                   </Link>
@@ -101,20 +104,22 @@ export function Footer() {
                 <li key={item.href + item.label}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 transition-colors hover:text-primary"
+                    className="text-sm text-gray-400 transition-colors hover:text-primary sm:text-base"
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className="flex flex-wrap items-center gap-x-2 gap-y-1 pt-1 text-sm sm:text-base">
                 <Link
                   href="/locations"
                   className="text-primary transition-colors hover:underline"
                 >
                   All locations
                 </Link>
-                {" · "}
+                <span className="text-gray-600" aria-hidden>
+                  ·
+                </span>
                 <Link
                   href="/specialties"
                   className="text-primary transition-colors hover:underline"
@@ -126,15 +131,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 inline-block border-b border-white/10 pb-2 font-montserrat text-lg font-bold text-white">
+            <h3 className="mb-4 inline-block border-b border-white/10 pb-2 font-montserrat text-base font-bold text-white sm:mb-6 sm:text-lg">
               Company Info
             </h3>
-            <ul className="space-y-3 text-sm text-gray-400">
+            <ul className="space-y-2.5 text-sm text-gray-400 sm:space-y-3">
               <li>
                 <strong className="block text-white">{site.legalName}</strong>
               </li>
               <li>NMLS #{site.nmls}</li>
-              <li className="pt-1">{site.address.full}</li>
+              <li className="break-anywhere pt-1">{site.address.full}</li>
               <li>
                 <a
                   href={`tel:${site.phones.localTel}`}
@@ -152,7 +157,10 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${site.email}`} className="hover:text-primary">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="break-anywhere hover:text-primary"
+                >
                   {site.email}
                 </a>
               </li>
@@ -170,7 +178,7 @@ export function Footer() {
                 <strong className="mb-1 block text-white">States Served:</strong>
                 {site.statesServed.join(", ")}
               </li>
-              <li className="text-xs">
+              <li className="text-xs leading-relaxed">
                 {site.licensedIn.map((line) => (
                   <span key={line}>
                     {line}
@@ -182,9 +190,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-xs leading-relaxed text-gray-500">
+        <div className="border-t border-white/10 pt-6 text-center text-[11px] leading-relaxed text-gray-500 sm:pt-8 sm:text-xs">
           {site.footerDisclaimer.map((line) => (
-            <p key={line.slice(0, 40)} className="mb-2">
+            <p key={line.slice(0, 40)} className="mb-2 break-anywhere">
               {line}
             </p>
           ))}

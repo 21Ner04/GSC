@@ -2,31 +2,49 @@ import type { Metadata } from "next";
 import type { SeoMeta } from "@/lib/cms/types";
 import { getSite } from "@/lib/cms";
 
-/** Build consistent Metadata for any page (titles, OG, Twitter, robots). */
+export type BuildPageMetadataOptions = {
+  path: string;
+  type?: "website" | "article";
+  noIndex?: boolean;
+  /** Absolute URL or site-relative path for Open Graph / Twitter image */
+  image?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+};
+
+function resolveImageUrl(image: string | undefined, base: string): string {
+  if (!image) return `${base}/images/logo.png`;
+  if (image.startsWith("http://") || image.startsWith("https://")) return image;
+  return `${base}${image.startsWith("/") ? image : `/${image}`}`;
+}
+
+/** Build consistent Metadata for any page (titles, OG, Twitter, robots, canonical). */
 export function buildPageMetadata(
   seo: SeoMeta,
-  options: {
-    path: string;
-    type?: "website" | "article";
-    noIndex?: boolean;
-  }
+  options: BuildPageMetadataOptions
 ): Metadata {
   const site = getSite();
   const base = site.website.replace(/\/$/, "");
-  const url = `${base}${options.path.startsWith("/") ? options.path : `/${options.path}`}`;
+  const path = options.path.startsWith("/") ? options.path : `/${options.path}`;
+  const url = path === "/" ? base : `${base}${path}`;
   const title = seo.title;
   const description = seo.description;
-  const ogImage = `${base}/images/logo.png`;
+  const ogImage = resolveImageUrl(options.image, base);
+  const ogAlt = options.imageAlt || site.companyName;
 
   return {
-    title,
+    // absolute avoids layout template doubling (e.g. "... | Brand | Brand")
+    title: { absolute: title },
     description,
     keywords: seo.keywords,
     authors: [{ name: site.legalName }],
     creator: site.legalName,
     publisher: site.legalName,
+    category: "finance",
+    metadataBase: new URL(site.website),
     alternates: {
-      canonical: options.path,
+      canonical: path === "" ? "/" : path,
     },
     openGraph: {
       title,
@@ -38,9 +56,9 @@ export function buildPageMetadata(
       images: [
         {
           url: ogImage,
-          width: 512,
-          height: 512,
-          alt: site.companyName,
+          width: options.imageWidth ?? 1200,
+          height: options.imageHeight ?? 630,
+          alt: ogAlt,
         },
       ],
     },
@@ -71,4 +89,12 @@ export function absoluteUrl(path: string): string {
   const base = site.website.replace(/\/$/, "");
   if (!path || path === "/") return base;
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+/** Strip HTML for plain-text SEO / schema descriptions. */
+export function stripHtml(html: string): string {
+  return html
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }

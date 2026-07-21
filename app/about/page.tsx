@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 import type { Metadata } from "next";
@@ -22,40 +21,74 @@ export const metadata: Metadata = buildPageMetadata(
 
 export default function About() {
   return (
-    <div className="w-full">
-      <div className="bg-gradient-to-br from-gray-50 to-white py-24 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-montserrat font-bold text-foreground mb-6">About Green Street Capital</h1>
-          <p className="text-xl text-muted-foreground">Dedicated to transforming the mortgage experience through transparency, speed, and exceptional service.</p>
+    <div className="w-full overflow-x-hidden">
+      <div className="page-hero bg-gradient-to-br from-gray-50 to-white">
+        <div className="mx-auto max-w-4xl">
+          <h1 className="page-hero-title">About Green Street Capital</h1>
+          <p className="page-hero-sub">
+            Dedicated to transforming the mortgage experience through transparency, speed, and
+            exceptional service.
+          </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-montserrat font-bold text-foreground mb-6">Our Story</h2>
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-              <p>Green Street Capital was founded on the belief that every family deserves access to fair, transparent mortgage financing. With over 20 years in the industry, we've helped thousands of clients achieve their homeownership dreams across New York, New Jersey, Florida, and Pennsylvania.</p>
-              <p>As an independent mortgage broker, we don't work for a single bank — we work for you. We partner with dozens of the nation's top wholesale lenders to shop for the most competitive rates and terms available in the market today.</p>
-              <p>Our mission is simple: to provide a stress-free, fast, and educational mortgage process that puts our clients' financial well-being first.</p>
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="min-w-0">
+            <h2 className="mb-4 font-montserrat text-2xl font-bold text-foreground sm:mb-6 sm:text-3xl">
+              Our Story
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p>
+                Green Street Capital was founded on the belief that every family deserves access to
+                fair, transparent mortgage financing. With over 20 years in the industry, we&apos;ve
+                helped thousands of clients achieve their homeownership dreams across New York, New
+                Jersey, Florida, and Pennsylvania.
+              </p>
+              <p>
+                As an independent mortgage broker, we don&apos;t work for a single bank — we work for
+                you. We partner with dozens of the nation&apos;s top wholesale lenders to shop for the
+                most competitive rates and terms available in the market today.
+              </p>
+              <p>
+                Our mission is simple: to provide a stress-free, fast, and educational mortgage
+                process that puts our clients&apos; financial well-being first.
+              </p>
             </div>
-            <div className="mt-10 flex gap-4 flex-wrap">
-              <Link href="/team"><Button size="lg">Meet Our Team</Button></Link>
-              <Link href="/contact"><Button variant="outline" size="lg">Contact Us</Button></Link>
+            <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
+              <Link href="/team" className="block w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto">
+                  Meet Our Team
+                </Button>
+              </Link>
+              <Link href="/contact" className="block w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
-          <div className="relative">
-            <div className="absolute inset-0 bg-primary/20 rounded-3xl translate-x-4 translate-y-4 -z-10" />
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl shadow-xl w-full h-[500px] flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-32 h-32 mx-auto mb-8 bg-white/90 rounded-full overflow-hidden shadow-xl flex items-center justify-center">
-                  <img src="/images/logo.png" alt="Green Street Capital" className="w-full h-full object-contain" />
+
+          <div className="relative min-w-0 overflow-hidden sm:overflow-visible">
+            <div className="absolute inset-0 -z-10 hidden translate-x-4 translate-y-4 rounded-3xl bg-primary/20 sm:block" />
+            <div className="flex min-h-[22rem] w-full items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 shadow-xl sm:min-h-[28rem] sm:rounded-3xl md:h-[500px]">
+              <div className="p-6 text-center sm:p-8">
+                <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-white/90 shadow-xl sm:mb-8 sm:h-32 sm:w-32">
+                  <img
+                    src="/images/logo.png"
+                    alt="Green Street Capital"
+                    className="h-full w-full object-contain"
+                  />
                 </div>
-                <h3 className="text-2xl font-montserrat font-bold text-foreground mb-2">20+ Years</h3>
-                <p className="text-lg text-muted-foreground">Of Trusted Service</p>
-                <div className="mt-6 space-y-2">
-                  <p className="text-3xl font-bold text-primary">$1B+ Funded</p>
-                  <p className="text-lg text-muted-foreground">Thousands of Happy Clients</p>
+                <h3 className="mb-2 font-montserrat text-xl font-bold text-foreground sm:text-2xl">
+                  20+ Years
+                </h3>
+                <p className="text-base text-muted-foreground sm:text-lg">Of Trusted Service</p>
+                <div className="mt-5 space-y-2 sm:mt-6">
+                  <p className="text-2xl font-bold text-primary sm:text-3xl">$1B+ Funded</p>
+                  <p className="text-base text-muted-foreground sm:text-lg">
+                    Thousands of Happy Clients
+                  </p>
                 </div>
               </div>
             </div>
@@ -63,39 +96,59 @@ export default function About() {
         </div>
       </div>
 
-      <div className="bg-muted py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-montserrat font-bold text-center text-foreground mb-16">Why Choose Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold text-primary mb-4">Transparency</h3>
-              <p className="text-muted-foreground">No hidden fees, no last-minute surprises. We explain every cost and term clearly upfront so you can make informed decisions.</p>
+      <div className="bg-muted py-14 sm:py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-8 text-center font-montserrat text-2xl font-bold text-foreground sm:mb-12 sm:text-3xl md:mb-16">
+            Why Choose Us
+          </h2>
+          <div className="grid grid-cols-1 gap-5 sm:gap-8 md:grid-cols-3 md:gap-10">
+            <div className="card-stable rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+              <h3 className="mb-3 text-lg font-bold text-primary sm:mb-4 sm:text-xl">
+                Transparency
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                No hidden fees, no last-minute surprises. We explain every cost and term clearly
+                upfront so you can make informed decisions.
+              </p>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold text-secondary mb-4">Speed & Efficiency</h3>
-              <p className="text-muted-foreground">Our streamlined digital process and in-house expertise mean faster approvals and on-time closings, every time.</p>
+            <div className="card-stable rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+              <h3 className="mb-3 text-lg font-bold text-secondary sm:mb-4 sm:text-xl">
+                Speed & Efficiency
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Our streamlined digital process and in-house expertise mean faster approvals and
+                on-time closings, every time.
+              </p>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold text-accent mb-4">Client-First Approach</h3>
-              <p className="text-muted-foreground">We're relationship-focused. We build long-term partnerships to serve your lifetime real estate needs.</p>
+            <div className="card-stable rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+              <h3 className="mb-3 text-lg font-bold text-accent sm:mb-4 sm:text-xl">
+                Client-First Approach
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                We&apos;re relationship-focused. We build long-term partnerships to serve your
+                lifetime real estate needs.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Company Culture - Car Easter Egg */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1">
-              <h2 className="text-3xl font-montserrat font-bold text-foreground mb-4">Company Culture</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                At Green Street Capital, we believe in hard work, dedication, and going the extra mile for our clients. Our team is committed to excellence in everything we do, from the first consultation to the closing table and beyond.
+      {/* Company Culture */}
+      <div className="bg-white py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:gap-8">
+            <div className="min-w-0 flex-1">
+              <h2 className="mb-3 font-montserrat text-2xl font-bold text-foreground sm:mb-4 sm:text-3xl">
+                Company Culture
+              </h2>
+              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                At Green Street Capital, we believe in hard work, dedication, and going the extra
+                mile for our clients. Our team is committed to excellence in everything we do, from
+                the first consultation to the closing table and beyond.
               </p>
             </div>
-            <div className="flex-shrink-0">
-              <div className="relative h-40 w-64 overflow-hidden rounded-lg shadow-md">
-                {/* URL-encode space in filename; easy to replace/remove later */}
+            <div className="w-full shrink-0 md:w-auto">
+              <div className="relative mx-auto h-44 w-full max-w-sm overflow-hidden rounded-xl shadow-md sm:h-48 md:h-40 md:w-64">
                 <img
                   src={"/caR%20PIC.png"}
                   alt="Company vehicle"

@@ -3,12 +3,21 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getHomepage, getSite } from "@/lib/cms";
 
-export const metadata: Metadata = {
-  title: "Success Stories | Real Clients, Real Solutions",
-  description:
-    "Placeholder success stories from Green Street Capital clients: truck drivers, self-employed borrowers, first-time buyers, and investors. Results vary.",
-  alternates: { canonical: "/success-stories" },
-};
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = buildPageMetadata(
+  {
+    title: "Success Stories | Real Clients, Real Solutions | Green Street Capital",
+    description:
+      "Client success stories from Green Street Capital: truck drivers, self-employed borrowers, first-time buyers, and investors. Individual results vary. NMLS #2066586.",
+    keywords: [
+      "mortgage success stories",
+      "client testimonials mortgage",
+      "home loan case studies",
+    ],
+  },
+  { path: "/success-stories" }
+);
 
 export default function SuccessStoriesPage() {
   const home = getHomepage();

@@ -5,12 +5,19 @@ import { Footer } from "@/components/layout/Footer";
 import { IntroAnimation } from "@/components/IntroAnimation";
 import { FloatingApplyButton } from "@/components/FloatingApplyButton";
 import UserWayWidget from "@/components/UserWayWidget";
-import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
+import {
+  AggregateRatingJsonLd,
+  OrganizationJsonLd,
+  WebSiteJsonLd,
+} from "@/components/seo/JsonLd";
 import { getHomepage, getSite } from "@/lib/cms";
 
 const site = getSite();
 const home = getHomepage();
 const base = site.website.replace(/\/$/, "");
+const ogImage = home.hero?.image
+  ? `${base}${home.hero.image.startsWith("/") ? home.hero.image : `/${home.hero.image}`}`
+  : `${base}/images/logo.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.website),
@@ -24,6 +31,12 @@ export const metadata: Metadata = {
   creator: site.legalName,
   publisher: site.legalName,
   category: "finance",
+  applicationName: site.companyName,
+  icons: {
+    icon: [{ url: "/images/logo.png", type: "image/png" }],
+    apple: [{ url: "/images/logo.png" }],
+    shortcut: ["/images/logo.png"],
+  },
   openGraph: {
     title: home.seo.title,
     description: home.seo.description,
@@ -32,6 +45,12 @@ export const metadata: Metadata = {
     siteName: site.companyName,
     locale: "en_US",
     images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: home.hero?.imageAlt || site.companyName,
+      },
       {
         url: `${base}/images/logo.png`,
         width: 512,
@@ -44,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: home.seo.title,
     description: home.seo.description,
-    images: [`${base}/images/logo.png`],
+    images: [ogImage],
   },
   robots: {
     index: true,
@@ -60,9 +79,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
   verification: {
-    // Add when available:
-    // google: "your-google-search-console-token",
+    // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION or use env in production
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : {}),
   },
 };
 
@@ -72,13 +98,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <OrganizationJsonLd />
         <WebSiteJsonLd />
-        <link rel="alternate" type="application/rss+xml" title="Market updates proxy" href="/api/market-updates" />
+        <AggregateRatingJsonLd />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Market updates proxy"
+          href="/api/market-updates"
+        />
       </head>
       <body suppressHydrationWarning>
         <IntroAnimation />
         <div className="flex min-h-screen flex-col">
           <Navbar />
-          <main className="w-full flex-1">{children}</main>
+          <main className="w-full min-w-0 flex-1 overflow-x-hidden pb-16 sm:pb-0">
+            {children}
+          </main>
           <Footer />
         </div>
         <FloatingApplyButton />

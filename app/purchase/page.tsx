@@ -22,68 +22,116 @@ export const metadata: Metadata = buildPageMetadata(
 
 export default function Purchase() {
   return (
-    <div className="w-full">
-      <div className="border-b border-gray-200 bg-white py-20 text-center md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 font-montserrat text-4xl font-bold text-foreground md:text-6xl">
-            Purchase a Home
-          </h1>
-          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            From pre-approval to the closing table, we make buying your dream
-            home simple and stress-free.
+    <div className="w-full overflow-x-hidden">
+      <div className="page-hero">
+        <div className="mx-auto max-w-7xl">
+          <h1 className="page-hero-title">Purchase a Home</h1>
+          <p className="page-hero-sub">
+            From pre-approval to the closing table, we make buying your dream home simple and
+            stress-free.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-          <div>
-            <h2 className="text-3xl font-montserrat font-bold mb-6 text-foreground">Your First Step to Homeownership</h2>
-            <p className="text-lg text-muted-foreground mb-6">Buying a home is one of the most significant financial decisions you'll ever make. Having the right team by your side ensures you get the best terms and close on time.</p>
-            <p className="text-lg text-muted-foreground mb-8">At Green Street Capital, we offer a wide variety of purchase loans tailored to first-time buyers, move-up buyers, and investors.</p>
-            <div className="flex gap-4 flex-wrap">
-              <Link href="/team"><Button size="lg">Apply Now</Button></Link>
-              <Link href="/team"><Button variant="outline" size="lg">Schedule Consultation</Button></Link>
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+        <div className="mb-14 grid grid-cols-1 items-center gap-10 lg:mb-24 lg:grid-cols-2 lg:gap-16">
+          <div className="min-w-0">
+            <h2 className="mb-4 font-montserrat text-2xl font-bold text-foreground sm:mb-6 sm:text-3xl">
+              Your First Step to Homeownership
+            </h2>
+            <p className="mb-4 text-base text-muted-foreground sm:mb-6 sm:text-lg">
+              Buying a home is one of the most significant financial decisions you&apos;ll ever
+              make. Having the right team by your side ensures you get the best terms and close on
+              time.
+            </p>
+            <p className="mb-6 text-base text-muted-foreground sm:mb-8 sm:text-lg">
+              At Green Street Capital, we offer a wide variety of purchase loans tailored to
+              first-time buyers, move-up buyers, and investors.
+            </p>
+            <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <Link href="/team" className="block w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto">
+                  Apply Now
+                </Button>
+              </Link>
+              <Link href="/team" className="block w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                  Schedule Consultation
+                </Button>
+              </Link>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-muted p-6 rounded-2xl">
-              <PiggyBank className="w-10 h-10 text-primary mb-4" />
-              <h3 className="font-bold text-lg mb-2">Down Payment Options</h3>
-              <p className="text-sm text-muted-foreground">Programs available with as little as 0% to 3% down.</p>
+          <div className="grid grid-cols-2 gap-3 sm:gap-6">
+            <div className="card-stable rounded-2xl bg-muted p-4 sm:p-6">
+              <PiggyBank className="mb-3 h-8 w-8 text-primary sm:mb-4 sm:h-10 sm:w-10" />
+              <h3 className="mb-1.5 text-sm font-bold sm:mb-2 sm:text-lg">Down Payment Options</h3>
+              <p className="text-xs text-muted-foreground sm:text-sm">
+                Programs available with as little as 0% to 3% down.
+              </p>
             </div>
-            <div className="bg-muted p-6 rounded-2xl">
-              <Key className="w-10 h-10 text-secondary mb-4" />
-              <h3 className="font-bold text-lg mb-2">First-Time Buyers</h3>
-              <p className="text-sm text-muted-foreground">Specialized guidance and grants for your first purchase.</p>
+            <div className="card-stable rounded-2xl bg-muted p-4 sm:p-6">
+              <Key className="mb-3 h-8 w-8 text-secondary sm:mb-4 sm:h-10 sm:w-10" />
+              <h3 className="mb-1.5 text-sm font-bold sm:mb-2 sm:text-lg">First-Time Buyers</h3>
+              <p className="text-xs text-muted-foreground sm:text-sm">
+                Specialized guidance and grants for your first purchase.
+              </p>
             </div>
-            <div className="bg-muted p-6 rounded-2xl">
-              <HomeIcon className="w-10 h-10 text-accent mb-4" />
-              <h3 className="font-bold text-lg mb-2">Pre-Approvals</h3>
-              <p className="text-sm text-muted-foreground">Shop with confidence knowing your exact budget.</p>
+            <div className="card-stable rounded-2xl bg-muted p-4 sm:p-6">
+              <HomeIcon className="mb-3 h-8 w-8 text-accent sm:mb-4 sm:h-10 sm:w-10" />
+              <h3 className="mb-1.5 text-sm font-bold sm:mb-2 sm:text-lg">Pre-Approvals</h3>
+              <p className="text-xs text-muted-foreground sm:text-sm">
+                Shop with confidence knowing your exact budget.
+              </p>
             </div>
-            <div className="bg-primary/10 p-6 rounded-2xl border border-primary/20">
-              <CheckCircle2 className="w-10 h-10 text-primary mb-4" />
-              <h3 className="font-bold text-lg mb-2">Fast Closings</h3>
-              <p className="text-sm text-muted-foreground">On-time closings with dedicated processing support.</p>
+            <div className="card-stable rounded-2xl border border-primary/20 bg-primary/10 p-4 sm:p-6">
+              <CheckCircle2 className="mb-3 h-8 w-8 text-primary sm:mb-4 sm:h-10 sm:w-10" />
+              <h3 className="mb-1.5 text-sm font-bold sm:mb-2 sm:text-lg">Fast Closings</h3>
+              <p className="text-xs text-muted-foreground sm:text-sm">
+                On-time closings with dedicated processing support.
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl p-10 lg:p-16 shadow-xl border border-gray-100">
-          <h2 className="text-3xl font-montserrat font-bold mb-12 text-center text-foreground">The Purchase Process</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-0.5 bg-gray-200 z-0" />
+        <div className="card-stable rounded-2xl border border-gray-100 bg-white p-6 shadow-xl sm:rounded-3xl sm:p-10 lg:p-16">
+          <h2 className="mb-8 text-center font-montserrat text-2xl font-bold text-foreground sm:mb-12 sm:text-3xl">
+            The Purchase Process
+          </h2>
+          <div className="relative grid grid-cols-1 gap-8 md:grid-cols-4">
+            <div className="absolute left-[10%] right-[10%] top-8 z-0 hidden h-0.5 bg-gray-200 md:block" />
             {[
-              { step: "01", title: "Pre-Qualification", desc: "A quick review of your financials to estimate what you can afford." },
-              { step: "02", title: "Pre-Approval", desc: "Verified documentation yielding a firm commitment letter for sellers." },
-              { step: "03", title: "Property Search", desc: "Find your home and submit an offer backed by our pre-approval." },
-              { step: "04", title: "Closing", desc: "Final underwriting, clear to close, and getting your keys!" },
+              {
+                step: "01",
+                title: "Pre-Qualification",
+                desc: "A quick review of your financials to estimate what you can afford.",
+              },
+              {
+                step: "02",
+                title: "Pre-Approval",
+                desc: "Verified documentation yielding a firm commitment letter for sellers.",
+              },
+              {
+                step: "03",
+                title: "Property Search",
+                desc: "Find your home and submit an offer backed by our pre-approval.",
+              },
+              {
+                step: "04",
+                title: "Closing",
+                desc: "Final underwriting, clear to close, and getting your keys!",
+              },
             ].map((s, i) => (
-              <div key={i} className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mb-6 shadow-lg">{s.step}</div>
-                <h3 className="font-bold text-xl mb-3 text-foreground">{s.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+              <div
+                key={i}
+                className="relative z-10 flex flex-col items-center text-center"
+              >
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-lg font-bold text-white shadow-lg sm:mb-6 sm:h-16 sm:w-16 sm:text-xl">
+                  {s.step}
+                </div>
+                <h3 className="mb-2 text-lg font-bold text-foreground sm:mb-3 sm:text-xl">
+                  {s.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
               </div>
             ))}
           </div>

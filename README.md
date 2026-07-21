@@ -58,30 +58,57 @@ After editing JSON, restart or refresh the dev server.
 
 ## SEO
 
-- Unique metadata + Open Graph / Twitter cards on SEO routes  
-- `sitemap.xml`, `robots.txt`  
-- JSON-LD: Organization, WebSite, FAQ, BreadcrumbList, Service (locations/specialties)  
+- Unique metadata + Open Graph / Twitter on **all** marketing pages  
+- Absolute titles (no double brand suffix), canonical URLs, icons  
+- `sitemap.xml` (static + locations + specialties), `robots.txt` (blocks `/api/`)  
+- JSON-LD: Organization, WebSite, AggregateRating/Reviews, FAQ, BreadcrumbList, Service, VideoObject, ContactPage  
 - Breadcrumb UI on location/specialty pages  
 - City & program pages under `/locations/*` and `/specialties/*`
 
-Submit `https://your-domain/sitemap.xml` in Google Search Console.
+**Production domain:** `https://www.greenstreetcapitalgroup.com`  
+(set in `content/site.json` → `website` — used for canonical, OG, sitemap, JSON-LD)
+
+Submit `https://www.greenstreetcapitalgroup.com/sitemap.xml` in Google Search Console.  
+Optional: `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=…`
+
+### Live Google Reviews
+
+Homepage reviews load from **Google Places API** (`/api/google-reviews`).
+
+1. Create a key in [Google Cloud Console](https://console.cloud.google.com/) with **Places API** enabled  
+2. Add to env:
+
+```env
+GOOGLE_PLACES_API_KEY=...
+# optional but recommended:
+GOOGLE_PLACE_ID=ChIJ...
+```
+
+3. Without a key, the site uses `content/reviews.json` automatically  
+
+Google returns up to **5** reviews per request (API limit). “View All Reviews on Google” opens the full Maps listing.
 
 ## WordPress (headless CMS)
 
 Non-developers can edit text in WordPress; the public site stays on Next.js.
 
-1. Install plugin from `wordpress-plugin/gsc-cms`  
-2. Set env (see `.env.example`):
+1. Install plugin from `wordpress-plugin/gsc-cms` (v1.1+)  
+2. **Settings → GSC Site Settings**: company info + revalidate URL/secret  
+3. Create Locations / Specialties posts  
+4. Set env (see `.env.example`):
 
 ```env
 CONTENT_SOURCE=wordpress
-WORDPRESS_API_URL=https://cms.yourdomain.com/wp-json
+WORDPRESS_API_URL=https://cms.greenstreetcapitalgroup.com/wp-json
 WORDPRESS_REVALIDATE_SECRET=...
+WORDPRESS_REVALIDATE_SECONDS=60
 ```
 
-3. Full guide: `content/README.md`
+5. Health: `https://cms.greenstreetcapitalgroup.com/wp-json/gsc/v1/health`  
+6. Full guide: `content/README.md`
 
-Local JSON remains the fallback if WP is offline.
+Local JSON is the fallback if WP is offline; site fields **merge** with local defaults.  
+On save, the plugin can POST `/api/revalidate` so Next.js cache updates without redeploy.
 
 ## Still pending (by design)
 

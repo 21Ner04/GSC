@@ -1,8 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, Video } from "lucide-react";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = { title: "Schedule Time | Green Street Capital" };
+export const metadata: Metadata = buildPageMetadata(
+  {
+    title: "Schedule a Call | Green Street Capital",
+    description:
+      "Book a free 15-minute mortgage consultation with Green Street Capital. Speak with a licensed loan officer about purchase, refinance, or specialty programs.",
+    keywords: [
+      "schedule mortgage consultation",
+      "book loan officer call",
+      "mortgage appointment",
+    ],
+  },
+  { path: "/schedule" }
+);
 
 export default function Schedule() {
   return (

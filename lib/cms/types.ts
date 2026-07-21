@@ -72,6 +72,10 @@ export type GoogleReview = {
   rating: number;
   date: string;
   text: string;
+  /** Optional Google profile photo */
+  profilePhotoUrl?: string;
+  /** Optional Google author profile URL */
+  authorUrl?: string;
 };
 
 export type VideoItem = {

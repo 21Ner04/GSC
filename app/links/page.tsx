@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,8 +10,22 @@ import {
   Send,
 } from "lucide-react";
 import { MortgageCalculatorSection } from "@/components/MortgageCalculatorSection";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = { title: "Useful Links & Forms | Green Street Capital" };
+export const metadata: Metadata = buildPageMetadata(
+  {
+    title: "Useful Links & Forms | Green Street Capital",
+    description:
+      "Mortgage application links, borrower forms, disclosures, calculator, and secure document upload for Green Street Capital clients. NMLS #2066586.",
+    keywords: [
+      "mortgage forms",
+      "borrower portal",
+      "loan application forms",
+      "mortgage disclosures",
+    ],
+  },
+  { path: "/links" }
+);
 
 const applyItems = [
   { title: "Apply Now", icon: FileText, link: "/team", primary: true },

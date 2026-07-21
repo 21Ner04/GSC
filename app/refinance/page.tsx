@@ -22,57 +22,90 @@ export const metadata: Metadata = buildPageMetadata(
 
 export default function Refinance() {
   return (
-    <div className="w-full">
-      <div className="border-b border-gray-200 bg-white py-20 text-center md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 font-montserrat text-4xl font-bold text-foreground md:text-6xl">
-            Refinance Your Home
-          </h1>
-          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Lower your payments, shorten your term, or access your home&apos;s
-            equity.
+    <div className="w-full overflow-x-hidden">
+      <div className="page-hero">
+        <div className="mx-auto max-w-7xl">
+          <h1 className="page-hero-title">Refinance Your Home</h1>
+          <p className="page-hero-sub">
+            Lower your payments, shorten your term, or access your home&apos;s equity.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl font-montserrat font-bold mb-6 text-foreground">Is it the right time to refinance?</h2>
-          <p className="text-lg text-muted-foreground">Refinancing replaces your current mortgage with a new one, often with better terms. We can run the numbers to see if it makes sense for you.</p>
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+        <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16 lg:mb-20">
+          <h2 className="mb-4 font-montserrat text-2xl font-bold text-foreground sm:mb-6 sm:text-3xl">
+            Is it the right time to refinance?
+          </h2>
+          <p className="text-base text-muted-foreground sm:text-lg">
+            Refinancing replaces your current mortgage with a new one, often with better terms. We
+            can run the numbers to see if it makes sense for you.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-          <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
-            <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
-              <RefreshCw className="w-8 h-8 text-primary" />
+        <div className="mb-12 grid grid-cols-1 gap-6 sm:mb-16 sm:gap-8 md:grid-cols-2 md:gap-10 lg:mb-20 lg:gap-12">
+          <div className="card-stable rounded-2xl border border-gray-100 bg-white p-6 shadow-xl sm:rounded-3xl sm:p-8 md:p-10">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 sm:mb-8 sm:h-16 sm:w-16">
+              <RefreshCw className="h-7 w-7 text-primary sm:h-8 sm:w-8" />
             </div>
-            <h3 className="text-2xl font-bold mb-4">Rate & Term Refinance</h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">The most common type of refinance. Secure a lower interest rate, change the loan duration, or switch from an adjustable to a fixed rate.</p>
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-center text-sm font-medium"><TrendingDown className="w-5 h-5 mr-3 text-primary" /> Lower monthly payments</li>
-              <li className="flex items-center text-sm font-medium"><CalendarDays className="w-5 h-5 mr-3 text-primary" /> Pay off loan faster</li>
+            <h3 className="mb-3 text-xl font-bold sm:mb-4 sm:text-2xl">Rate & Term Refinance</h3>
+            <p className="mb-5 text-sm leading-relaxed text-muted-foreground sm:mb-6 sm:text-base">
+              The most common type of refinance. Secure a lower interest rate, change the loan
+              duration, or switch from an adjustable to a fixed rate.
+            </p>
+            <ul className="mb-6 space-y-3 sm:mb-8">
+              <li className="flex items-center text-sm font-medium">
+                <TrendingDown className="mr-3 h-5 w-5 shrink-0 text-primary" /> Lower monthly
+                payments
+              </li>
+              <li className="flex items-center text-sm font-medium">
+                <CalendarDays className="mr-3 h-5 w-5 shrink-0 text-primary" /> Pay off loan faster
+              </li>
             </ul>
-            <Link href="/team"><Button className="w-full">Explore Rate & Term</Button></Link>
+            <Link href="/team" className="block w-full">
+              <Button className="w-full">Explore Rate & Term</Button>
+            </Link>
           </div>
 
-          <div className="bg-foreground text-white p-10 rounded-3xl shadow-xl">
-            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8">
-              <Coins className="w-8 h-8 text-white" />
+          <div className="card-stable rounded-2xl bg-foreground p-6 text-white shadow-xl sm:rounded-3xl sm:p-8 md:p-10">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 sm:mb-8 sm:h-16 sm:w-16">
+              <Coins className="h-7 w-7 text-white sm:h-8 sm:w-8" />
             </div>
-            <h3 className="text-2xl font-bold mb-4">Cash-Out Refinance</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">Tap into the equity you've built in your home. A cash-out refinance replaces your mortgage with a larger loan, giving you the difference in cash.</p>
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-center text-sm font-medium text-gray-200"><Coins className="w-5 h-5 mr-3 text-secondary" /> Fund home renovations</li>
-              <li className="flex items-center text-sm font-medium text-gray-200"><RefreshCw className="w-5 h-5 mr-3 text-secondary" /> Consolidate high-interest debt</li>
+            <h3 className="mb-3 text-xl font-bold sm:mb-4 sm:text-2xl">Cash-Out Refinance</h3>
+            <p className="mb-5 text-sm leading-relaxed text-gray-300 sm:mb-6 sm:text-base">
+              Tap into the equity you&apos;ve built in your home. A cash-out refinance replaces your
+              mortgage with a larger loan, giving you the difference in cash.
+            </p>
+            <ul className="mb-6 space-y-3 sm:mb-8">
+              <li className="flex items-center text-sm font-medium text-gray-200">
+                <Coins className="mr-3 h-5 w-5 shrink-0 text-secondary" /> Fund home renovations
+              </li>
+              <li className="flex items-center text-sm font-medium text-gray-200">
+                <RefreshCw className="mr-3 h-5 w-5 shrink-0 text-secondary" /> Consolidate
+                high-interest debt
+              </li>
             </ul>
-            <Link href="/team"><Button variant="secondary" className="w-full">Explore Cash-Out</Button></Link>
+            <Link href="/team" className="block w-full">
+              <Button variant="secondary" className="w-full">
+                Explore Cash-Out
+              </Button>
+            </Link>
           </div>
         </div>
 
-        <div className="bg-muted p-12 rounded-3xl text-center max-w-4xl mx-auto">
-          <h2 className="text-2xl font-montserrat font-bold mb-4 text-foreground">Want to see how much you could save?</h2>
-          <p className="text-muted-foreground mb-8">Schedule a brief 15-minute call. We'll run a free, no-obligation cost-benefit analysis.</p>
-          <Link href="/team"><Button size="lg" className="px-12">Schedule a Free Analysis</Button></Link>
+        <div className="card-stable mx-auto max-w-4xl rounded-2xl bg-muted p-6 text-center sm:rounded-3xl sm:p-10 md:p-12">
+          <h2 className="mb-3 font-montserrat text-xl font-bold text-foreground sm:mb-4 sm:text-2xl">
+            Want to see how much you could save?
+          </h2>
+          <p className="mb-6 text-sm text-muted-foreground sm:mb-8 sm:text-base">
+            Schedule a brief 15-minute call. We&apos;ll run a free, no-obligation cost-benefit
+            analysis.
+          </p>
+          <Link href="/team" className="inline-flex w-full max-w-sm sm:w-auto sm:max-w-none">
+            <Button size="lg" className="w-full px-8 sm:w-auto sm:px-12">
+              Schedule a Free Analysis
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

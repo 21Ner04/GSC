@@ -6,13 +6,10 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import {
   ArrowRight,
-  Star,
   MapPin,
   Phone,
   Mail,
   BookOpen,
-  ChevronDown,
-  ChevronUp,
   ExternalLink,
   Instagram,
   Facebook,
@@ -23,11 +20,10 @@ import {
 import { Button } from "@/components/ui/button";
 import {
   getHomepage,
-  getReviews,
   getSite,
   getVideos,
 } from "@/lib/cms";
-import type { GoogleReview } from "@/lib/cms/types";
+import { GoogleReviewsSection } from "@/components/GoogleReviewsSection";
 
 type MarketUpdate = {
   title: string;
@@ -38,70 +34,7 @@ type MarketUpdate = {
 
 const site = getSite();
 const home = getHomepage();
-const reviews = getReviews();
 const videosData = getVideos();
-
-function ReviewCard({ review }: { review: GoogleReview }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const shouldShowToggle = review.text.length > 200;
-  const displayText =
-    shouldShowToggle && !isExpanded
-      ? review.text.slice(0, 200) + "..."
-      : review.text;
-
-  return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-6 transition-shadow hover:shadow-md">
-      <div className="mb-4 flex items-center gap-3">
-        <svg className="h-6 w-6" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            fill="#4285F4"
-            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-          />
-          <path
-            fill="#34A853"
-            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-          />
-          <path
-            fill="#FBBC05"
-            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-          />
-          <path
-            fill="#EA4335"
-            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-          />
-        </svg>
-        <span className="text-sm font-medium text-foreground">Google Review</span>
-      </div>
-      <div className="mb-3 flex items-center gap-2">
-        <p className="font-semibold text-foreground">{review.author}</p>
-        <div className="flex text-yellow-400" aria-label={`${review.rating} stars`}>
-          {Array.from({ length: review.rating }).map((_, j) => (
-            <Star key={j} className="h-4 w-4 fill-current" />
-          ))}
-        </div>
-      </div>
-      <p className="mb-3 text-xs text-muted-foreground">{review.date}</p>
-      <p className="mb-3 text-sm text-foreground/80">{displayText}</p>
-      {shouldShowToggle && (
-        <button
-          type="button"
-          onClick={() => setIsExpanded((prev) => !prev)}
-          className="flex items-center gap-1 text-xs font-medium text-primary hover:underline"
-        >
-          {isExpanded ? (
-            <>
-              Show less <ChevronUp className="h-3 w-3" />
-            </>
-          ) : (
-            <>
-              Read more <ChevronDown className="h-3 w-3" />
-            </>
-          )}
-        </button>
-      )}
-    </div>
-  );
-}
 
 function MarketUpdates() {
   const [updates, setUpdates] = useState<MarketUpdate[]>([]);
@@ -142,9 +75,9 @@ function MarketUpdates() {
 
   if (loading) {
     return (
-      <section className="bg-muted py-16">
+      <section className="bg-muted py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="mb-4 font-montserrat text-3xl font-bold text-foreground md:text-4xl">
+          <h2 className="mb-4 font-montserrat text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
             {home.marketUpdates.heading}
           </h2>
           <p className="text-muted-foreground">Loading market news…</p>
@@ -155,18 +88,21 @@ function MarketUpdates() {
 
   if (error || updates.length === 0) {
     return (
-      <section className="bg-muted py-16">
+      <section className="bg-muted py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="mb-4 font-montserrat text-3xl font-bold text-foreground md:text-4xl">
+          <h2 className="mb-4 font-montserrat text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
             {home.marketUpdates.heading}
           </h2>
-          <p className="mb-6 text-muted-foreground">{home.marketUpdates.subtitle}</p>
+          <p className="mb-6 text-sm text-muted-foreground sm:text-base">
+            {home.marketUpdates.subtitle}
+          </p>
           <a
             href="https://www.mortgagenewsdaily.com/"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex w-full max-w-sm sm:w-auto sm:max-w-none"
           >
-            <Button variant="outline">
+            <Button variant="outline" className="w-full sm:w-auto">
               View Mortgage News Daily <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>
@@ -176,14 +112,14 @@ function MarketUpdates() {
   }
 
   return (
-    <section className="bg-muted py-16">
+    <section className="bg-muted py-14 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-2xl">
-            <h2 className="mb-4 font-montserrat text-3xl font-bold text-foreground md:text-4xl">
+        <div className="mb-8 flex flex-col justify-between gap-5 sm:mb-12 sm:gap-6 md:flex-row md:items-end">
+          <div className="min-w-0 max-w-2xl">
+            <h2 className="mb-3 font-montserrat text-2xl font-bold text-foreground sm:mb-4 sm:text-3xl md:text-4xl">
               {home.marketUpdates.heading}
             </h2>
-            <p className="font-manrope text-muted-foreground">
+            <p className="font-manrope text-sm text-muted-foreground sm:text-base">
               {home.marketUpdates.subtitle}
             </p>
           </div>
@@ -191,28 +127,29 @@ function MarketUpdates() {
             href="https://www.mortgagenewsdaily.com/"
             target="_blank"
             rel="noopener noreferrer"
+            className="block w-full shrink-0 sm:w-auto"
           >
             <Button variant="outline" className="w-full md:w-auto">
               View All Updates <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
           {updates.slice(0, 3).map((item) => (
             <a
               key={item.link}
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition hover:shadow-md"
+              className="card-stable rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:shadow-md sm:p-6"
             >
               <p className="mb-2 text-xs text-muted-foreground">
                 {formatDate(item.pubDate)}
               </p>
-              <h3 className="mb-2 text-lg font-bold text-foreground line-clamp-2">
+              <h3 className="mb-2 line-clamp-2 text-base font-bold text-foreground sm:text-lg">
                 {item.title}
               </h3>
-              <p className="text-sm text-muted-foreground line-clamp-3">
+              <p className="line-clamp-3 text-sm text-muted-foreground">
                 {item.description}
               </p>
             </a>
@@ -245,11 +182,11 @@ function QuickCalculator() {
     "w-full min-h-[2.75rem] rounded-xl border border-gray-200 bg-white px-4 py-3 text-base text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20";
 
   return (
-    <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:p-8">
-      <h3 className="mb-2 font-montserrat text-2xl font-bold text-foreground">
+    <div className="card-stable rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-8">
+      <h3 className="mb-2 font-montserrat text-xl font-bold text-foreground sm:text-2xl">
         {home.calculatorBook.calcHeading}
       </h3>
-      <p className="mb-6 font-manrope text-muted-foreground">
+      <p className="mb-5 font-manrope text-sm text-muted-foreground sm:mb-6 sm:text-base">
         {home.calculatorBook.calcSubtitle}
       </p>
       <div className="mb-6 space-y-4">
@@ -260,6 +197,7 @@ function QuickCalculator() {
           <input
             id="home-price"
             type="number"
+            inputMode="decimal"
             value={homePrice}
             onChange={(e) => setHomePrice(Number(e.target.value))}
             className={inputClass}
@@ -272,13 +210,14 @@ function QuickCalculator() {
           <input
             id="down-payment"
             type="number"
+            inputMode="decimal"
             value={downPayment}
             onChange={(e) => setDownPayment(Number(e.target.value))}
             className={inputClass}
           />
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          <div className="min-w-0">
             <label htmlFor="interest-rate" className="mb-2 block text-sm font-medium text-muted-foreground">
               Interest Rate
             </label>
@@ -286,12 +225,13 @@ function QuickCalculator() {
               id="interest-rate"
               type="number"
               step="0.01"
+              inputMode="decimal"
               value={rate}
               onChange={(e) => setRate(Number(e.target.value))}
               className={inputClass}
             />
           </div>
-          <div>
+          <div className="min-w-0">
             <label htmlFor="loan-term" className="mb-2 block text-sm font-medium text-muted-foreground">
               Loan Term
             </label>
@@ -312,13 +252,13 @@ function QuickCalculator() {
       </div>
       <div className="mb-6 rounded-xl bg-muted/50 p-4">
         <p className="mb-1 text-sm text-muted-foreground">Estimated Monthly Payment (P&amp;I)</p>
-        <p className="text-3xl font-bold text-primary">
+        <p className="text-2xl font-bold text-primary sm:text-3xl">
           {monthlyPayment > 0
             ? `$${monthlyPayment.toLocaleString("en-US", { maximumFractionDigits: 0 })}`
             : "—"}
         </p>
       </div>
-      <Link href="/calculator">
+      <Link href="/calculator" className="block w-full">
         <Button variant="outline" className="w-full">
           Open Full Mortgage Calculator
         </Button>
@@ -331,7 +271,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* 1. Hero */}
-      <section className="relative flex min-h-[max(32rem,100dvh)] w-full items-end justify-center overflow-hidden pb-20 pt-[max(3rem,env(safe-area-inset-top))] sm:min-h-screen sm:pb-28">
+      <section className="relative flex min-h-[min(100dvh,52rem)] w-full items-end justify-center overflow-hidden pb-16 pt-16 sm:min-h-screen sm:pb-28 sm:pt-20">
         <div className="absolute inset-0 z-0">
           <Image
             src={home.hero.image}
@@ -344,7 +284,7 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/55 to-black/25" />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-[max(0.5rem,env(safe-area-inset-bottom))] sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -352,35 +292,35 @@ export default function Home() {
             className="mx-auto max-w-4xl text-center"
           >
             <h1
-              className="mb-6 font-montserrat text-4xl font-bold leading-[1.1] text-white sm:mb-8 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+              className="mb-4 font-montserrat text-[1.875rem] font-bold leading-[1.15] tracking-tight text-white sm:mb-8 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
               dangerouslySetInnerHTML={{ __html: home.hero.titleHtml }}
             />
-            <p className="mx-auto mb-8 max-w-2xl font-manrope text-base leading-relaxed text-gray-200 sm:mb-12 sm:text-lg md:text-xl">
+            <p className="mx-auto mb-7 max-w-2xl font-manrope text-[0.95rem] leading-relaxed text-gray-200 sm:mb-12 sm:text-lg md:text-xl">
               {home.hero.subtitle}
             </p>
-            <div className="mx-auto flex max-w-md flex-col gap-4 sm:max-w-none sm:flex-row sm:justify-center sm:gap-6">
-              <Link href={site.applyPath}>
+            <div className="mx-auto flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 md:gap-5">
+              <Link href={site.applyPath} className="block w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="h-16 w-full px-10 font-montserrat text-lg shadow-xl transition-all hover:shadow-2xl sm:w-auto"
+                  className="h-12 w-full px-6 font-montserrat text-base shadow-xl transition-all hover:shadow-2xl sm:h-14 sm:px-8 sm:text-lg md:h-16 md:px-10"
                 >
                   Apply Now
                 </Button>
               </Link>
-              <Link href="/calculator">
+              <Link href="/calculator" className="block w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="h-16 w-full border-white/40 px-10 font-montserrat text-lg text-white backdrop-blur-sm transition-all hover:bg-white hover:text-foreground sm:w-auto"
+                  className="h-12 w-full border-white/40 px-6 font-montserrat text-base text-white backdrop-blur-sm transition-all hover:bg-white hover:text-foreground sm:h-14 sm:px-8 sm:text-lg md:h-16 md:px-10"
                 >
                   Mortgage Calculator
                 </Button>
               </Link>
-              <Link href={site.teamPath}>
+              <Link href={site.teamPath} className="block w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="h-16 w-full border-white/40 px-10 font-montserrat text-lg text-white backdrop-blur-sm transition-all hover:bg-white hover:text-foreground sm:w-auto"
+                  className="h-12 w-full border-white/40 px-6 font-montserrat text-base text-white backdrop-blur-sm transition-all hover:bg-white hover:text-foreground sm:h-14 sm:px-8 sm:text-lg md:h-16 md:px-10"
                 >
                   Find a Loan Officer
                 </Button>
@@ -391,30 +331,36 @@ export default function Home() {
       </section>
 
       {/* 2. Loan Programs */}
-      <section className="bg-foreground py-16 text-white">
+      <section className="bg-foreground py-14 text-white sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <h2 className="mb-4 font-montserrat text-3xl font-bold md:text-4xl">
+          <div className="mb-8 flex flex-col justify-between gap-5 sm:mb-12 sm:gap-6 md:flex-row md:items-end">
+            <div className="min-w-0 max-w-2xl">
+              <h2 className="mb-3 font-montserrat text-2xl font-bold sm:mb-4 sm:text-3xl md:text-4xl">
                 {home.loanPrograms.heading}
               </h2>
-              <p className="font-manrope text-gray-400">{home.loanPrograms.subtitle}</p>
+              <p className="font-manrope text-sm text-gray-400 sm:text-base">
+                {home.loanPrograms.subtitle}
+              </p>
             </div>
-            <Link href={home.loanPrograms.viewAllHref}>
-              <Button variant="accent" className="text-white hover:bg-accent/90">
+            <Link href={home.loanPrograms.viewAllHref} className="block w-full shrink-0 sm:w-auto">
+              <Button variant="accent" className="w-full text-white hover:bg-accent/90 sm:w-auto">
                 View All Loan Programs
               </Button>
             </Link>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {home.loanPrograms.items.map((prog) => (
-              <Link key={prog.title} href={prog.href} className="group block">
+              <Link key={prog.title} href={prog.href} className="group block min-w-0">
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors group-hover:bg-white/10"
+                  className="card-stable h-full rounded-2xl border border-white/10 bg-white/5 p-5 transition-colors group-hover:bg-white/10 sm:p-6"
                 >
-                  <h3 className="mb-3 text-xl font-bold text-white">{prog.title}</h3>
-                  <p className="mb-6 text-sm text-gray-400">{prog.description}</p>
+                  <h3 className="mb-2 text-lg font-bold text-white sm:mb-3 sm:text-xl">
+                    {prog.title}
+                  </h3>
+                  <p className="mb-5 text-sm leading-relaxed text-gray-400 sm:mb-6">
+                    {prog.description}
+                  </p>
                   <span className="inline-flex items-center font-medium text-primary transition-colors group-hover:text-accent">
                     Learn More{" "}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -432,18 +378,18 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
-        className="bg-muted py-24"
+        className="bg-muted py-14 sm:py-20 md:py-24"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 font-montserrat text-3xl font-bold text-foreground md:text-4xl">
+          <div className="mb-10 text-center sm:mb-16">
+            <h2 className="mb-3 font-montserrat text-2xl font-bold text-foreground sm:mb-4 sm:text-3xl md:text-4xl">
               {home.successStories.heading}
             </h2>
-            <p className="mx-auto max-w-xl font-manrope text-muted-foreground">
+            <p className="mx-auto max-w-xl font-manrope text-sm text-muted-foreground sm:text-base">
               {home.successStories.subtitle}
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 sm:gap-8 md:grid-cols-2">
             {home.successStories.items.map((story, i) => (
               <motion.div
                 key={story.slug}
@@ -451,7 +397,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl"
+                className="card-stable flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl sm:p-8"
               >
                 <div className="mb-4">
                   <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
@@ -474,7 +420,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-6 border-t border-gray-100 pt-4">
-                  <Link href={`/success-stories#${story.slug}`}>
+                  <Link href={`/success-stories#${story.slug}`} className="block w-full">
                     <Button variant="outline" className="w-full">
                       Read the Story
                     </Button>
@@ -486,51 +432,30 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* 4. Google Reviews */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <h2 className="mb-4 font-montserrat text-3xl font-bold text-foreground md:text-4xl">
-                {home.reviews.heading}
-              </h2>
-              <p className="font-manrope text-muted-foreground">{home.reviews.subtitle}</p>
-            </div>
-            <a href={site.googleReviewsUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="w-full md:w-auto">
-                View All Reviews on Google
-              </Button>
-            </a>
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {reviews.map((review) => (
-              <ReviewCard key={review.author} review={review} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 4. Google Reviews — live Places API + local fallback */}
+      <GoogleReviewsSection />
 
       {/* 5. Mortgage Calculator + First-Time Homebuyer Book */}
-      <section className="border-y border-gray-100 bg-white py-24">
+      <section className="border-y border-gray-100 bg-white py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-2">
             <QuickCalculator />
-            <div className="flex flex-col rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 p-8">
+            <div className="card-stable flex flex-col rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 p-5 sm:rounded-3xl sm:p-8">
               <div className="flex-1">
-                <div className="mx-auto mb-6 flex aspect-[3/4] max-w-[200px] items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-accent/20">
-                  <BookOpen className="h-16 w-16 text-primary/60" />
+                <div className="mx-auto mb-5 flex aspect-[3/4] w-full max-w-[160px] items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 sm:mb-6 sm:max-w-[200px]">
+                  <BookOpen className="h-12 w-12 text-primary/60 sm:h-16 sm:w-16" />
                 </div>
-                <h3 className="mb-3 text-center font-montserrat text-2xl font-bold text-foreground">
+                <h3 className="mb-3 text-center font-montserrat text-xl font-bold text-foreground sm:text-2xl">
                   {home.calculatorBook.bookHeading}
                 </h3>
-                <p className="mb-6 text-center font-manrope text-muted-foreground">
+                <p className="mb-5 text-center font-manrope text-sm text-muted-foreground sm:mb-6 sm:text-base">
                   {home.calculatorBook.bookDescription}
                 </p>
                 <ul className="mb-6 space-y-3">
                   {home.calculatorBook.bookBullets.map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <div className="h-2 w-2 shrink-0 rounded-full bg-primary" />
-                      <p className="text-sm text-foreground">{item}</p>
+                    <li key={item} className="flex items-start gap-3">
+                      <div className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                      <p className="min-w-0 text-sm text-foreground">{item}</p>
                     </li>
                   ))}
                 </ul>
@@ -539,7 +464,7 @@ export default function Home() {
                 href={site.handbookPdf}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full"
+                className="block w-full"
               >
                 <Button variant="accent" className="w-full" size="lg">
                   {home.calculatorBook.bookCta}
@@ -551,21 +476,21 @@ export default function Home() {
       </section>
 
       {/* 6. Video Blog */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 font-montserrat text-3xl font-bold text-foreground md:text-4xl">
+          <div className="mb-10 text-center sm:mb-16">
+            <h2 className="mb-3 font-montserrat text-2xl font-bold text-foreground sm:mb-4 sm:text-3xl md:text-4xl">
               {home.videos.heading}
             </h2>
-            <p className="mx-auto max-w-xl font-manrope text-muted-foreground">
+            <p className="mx-auto max-w-xl font-manrope text-sm text-muted-foreground sm:text-base">
               {home.videos.subtitle}
             </p>
           </div>
-          <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mb-8 grid grid-cols-1 gap-5 sm:mb-12 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {videosData.items.slice(0, 3).map((video, i) => (
               <div
                 key={video.videoId}
-                className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-lg"
+                className="card-stable group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-lg"
               >
                 <div className="relative aspect-video overflow-hidden bg-black">
                   <iframe
@@ -573,12 +498,12 @@ export default function Home() {
                     title={video.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="h-full w-full"
+                    className="absolute inset-0 h-full w-full"
                     loading={i < 2 ? "eager" : "lazy"}
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="mb-2 line-clamp-2 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+                <div className="p-4 sm:p-6">
+                  <h3 className="mb-2 line-clamp-2 text-base font-bold text-foreground transition-colors group-hover:text-primary sm:text-lg">
                     {video.title}
                   </h3>
                   <p className="line-clamp-3 text-sm text-muted-foreground">
@@ -589,8 +514,8 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Link href="/video-blog">
-              <Button variant="outline" size="lg">
+            <Link href="/video-blog" className="inline-flex w-full max-w-xs sm:w-auto sm:max-w-none">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto">
                 View All Videos
               </Button>
             </Link>
@@ -602,21 +527,21 @@ export default function Home() {
       <MarketUpdates />
 
       {/* 7. Google Map + Company Contacts */}
-      <section className="bg-muted py-24">
+      <section className="bg-muted py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
-            <div className="space-y-8">
+          <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="min-w-0 space-y-6 sm:space-y-8">
               <div>
-                <h2 className="mb-6 font-montserrat text-3xl font-bold text-foreground md:text-4xl">
+                <h2 className="mb-3 font-montserrat text-2xl font-bold text-foreground sm:mb-6 sm:text-3xl md:text-4xl">
                   {home.contact.heading}
                 </h2>
-                <p className="font-manrope text-lg text-muted-foreground">
+                <p className="font-manrope text-base text-muted-foreground sm:text-lg">
                   {home.contact.subtitle}
                 </p>
               </div>
-              <div className="space-y-6 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
+              <div className="card-stable space-y-5 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:space-y-6 sm:p-8">
                 <div>
-                  <h4 className="font-montserrat text-xl font-bold text-foreground">
+                  <h4 className="font-montserrat text-lg font-bold text-foreground sm:text-xl">
                     {site.legalName}
                   </h4>
                   <p className="text-sm text-muted-foreground">NMLS #{site.nmls}</p>
@@ -624,15 +549,15 @@ export default function Home() {
                 <div className="space-y-4 border-t border-gray-100 pt-4">
                   <div className="flex items-start">
                     <MapPin className="mr-3 mt-1 h-5 w-5 shrink-0 text-primary" />
-                    <p className="font-medium text-foreground">
+                    <p className="min-w-0 font-medium text-foreground">
                       {site.address.line1}
                       <br />
                       {site.address.city}, {site.address.state} {site.address.zip}
                     </p>
                   </div>
-                  <div className="flex items-center">
-                    <Phone className="mr-3 h-5 w-5 shrink-0 text-primary" />
-                    <div className="font-medium text-foreground">
+                  <div className="flex items-start sm:items-center">
+                    <Phone className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-primary sm:mt-0" />
+                    <div className="min-w-0 font-medium text-foreground">
                       <a
                         href={`tel:${site.phones.localTel}`}
                         className="block transition-colors hover:text-primary"
@@ -647,11 +572,11 @@ export default function Home() {
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center">
-                    <Mail className="mr-3 h-5 w-5 shrink-0 text-primary" />
+                  <div className="flex items-start sm:items-center">
+                    <Mail className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-primary sm:mt-0" />
                     <a
                       href={`mailto:${site.email}`}
-                      className="font-medium text-foreground transition-colors hover:text-primary"
+                      className="break-anywhere min-w-0 font-medium text-foreground transition-colors hover:text-primary"
                     >
                       {site.email}
                     </a>
@@ -659,7 +584,7 @@ export default function Home() {
                 </div>
                 <div className="border-t border-gray-100 pt-4">
                   <p className="mb-4 text-sm font-medium text-muted-foreground">Follow Us</p>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3">
                     {(
                       [
                         [site.social.instagram, Instagram, "Instagram"],
@@ -674,7 +599,7 @@ export default function Home() {
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white"
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white"
                         aria-label={label}
                       >
                         <Icon className="h-4 w-4" />
@@ -684,8 +609,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div>
-              <div className="h-96 w-full overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+            <div className="min-w-0">
+              <div className="h-64 w-full overflow-hidden rounded-2xl border border-gray-100 shadow-sm sm:h-80 md:h-96">
                 <iframe
                   title="Green Street Capital office location"
                   src={`https://maps.google.com/maps?q=${site.googleMapsEmbedQuery}&output=embed`}
@@ -695,9 +620,10 @@ export default function Home() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
+                  className="h-full w-full"
                 />
               </div>
-              <p className="mt-3 text-center text-sm text-muted-foreground">
+              <p className="mt-3 break-anywhere text-center text-xs text-muted-foreground sm:text-sm">
                 {site.legalName} — {site.address.full}
               </p>
             </div>

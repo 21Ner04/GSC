@@ -1,60 +1,41 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { TeamSignature } from "@/components/team/TeamSignature";
+import { teamList } from "@/data/team";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = { title: "Meet Our Team | Green Street Capital" };
+export const metadata: Metadata = buildPageMetadata(
+  {
+    title: "Meet Our Team | Loan Officers | Green Street Capital",
+    description:
+      "Meet the Green Street Capital team of loan officers. Apply, send secure docs, or call directly. Serving NY, NJ, FL & PA. NMLS #2066586.",
+    keywords: [
+      "mortgage loan officer",
+      "Maxim Saleh",
+      "Paul Litvintsev",
+      "Eric Kushnir",
+      "Ruslan Kushnir",
+      "Liliya Gluzman",
+      "Gregory Chervonsky",
+      "Green Street Capital team",
+    ],
+  },
+  { path: "/team" }
+);
 
-const TEAM = [
-  {
-    name: "Ruslan Kushnir",
-    title: "Branch Manager / Sr. Loan Officer",
-    nmls: "71488",
-    directLine: "646-261-8023",
-    email: "RKushnir@GSCMortgage.com",
-    licensedStates: "NY, NJ, FL, PA",
-    bio: "Over 20 years of experience helping families achieve homeownership across the tri-state area.",
-    applyPortalUrl: "https://www.greenstreetcapitalgroup.com",
-  },
-  {
-    name: "Senior Loan Officer",
-    title: "Loan Officer",
-    nmls: "TBD",
-    directLine: "TBD",
-    email: "TBD@GSCMortgage.com",
-    licensedStates: "NY, NJ, FL, PA",
-    bio: "Experienced mortgage professional dedicated to finding the right loan solutions for clients.",
-  },
-  {
-    name: "Loan Officer",
-    title: "Loan Officer",
-    nmls: "TBD",
-    directLine: "TBD",
-    email: "TBD@GSCMortgage.com",
-    licensedStates: "NY, NJ, FL, PA",
-    bio: "Specializing in first-time homebuyers and refinancing options.",
-  },
-  {
-    name: "Loan Processor",
-    title: "Loan Processor",
-    nmls: "N/A",
-    directLine: "N/A",
-    email: "processing@GSCMortgage.com",
-    licensedStates: "N/A",
-    bio: "Ensuring smooth and efficient loan processing from application to closing.",
-  },
-];
-
-export default function Team() {
+export default function TeamPage() {
   return (
-    <div className="w-full pb-24">
-      <div className="border-b border-gray-200 bg-white py-16 text-center">
-        <div className="mx-auto max-w-4xl px-4">
-          <h1 className="mb-4 font-montserrat text-4xl font-bold text-foreground md:text-5xl">
-            Meet Our Team
-          </h1>
-          <p className="text-lg text-muted-foreground md:text-xl">
-            Choose a loan officer for scheduling, applications, and secure
-            documents. Company contact options are always on our{" "}
-            <Link href="/contact" className="text-primary underline-offset-2 hover:underline">
+    <div className="w-full overflow-x-hidden pb-20 sm:pb-24">
+      <div className="page-hero">
+        <div className="mx-auto max-w-4xl">
+          <h1 className="page-hero-title">Meet Our Team</h1>
+          <p className="page-hero-sub">
+            Choose a loan officer for applications and secure documents. Company contacts are on
+            our{" "}
+            <Link
+              href="/contact"
+              className="text-primary underline-offset-2 hover:underline"
+            >
               Contact
             </Link>{" "}
             page.
@@ -62,61 +43,15 @@ export default function Team() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {TEAM.map((member, i) => (
-            <div key={i} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-shadow flex flex-col">
-              <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-2xl font-bold text-primary">{member.name.split(' ').map(n => n[0]).join('')}</span>
-              </div>
-              <div className="flex flex-col flex-grow">
-                <h3 className="font-bold text-xl text-foreground">{member.name}</h3>
-                <p className="text-primary font-medium text-sm mt-1 mb-3">{member.title}</p>
-                {member.nmls && <p className="text-xs text-muted-foreground mb-3">NMLS #{member.nmls}</p>}
-                
-                <div className="space-y-2 mb-4">
-                  {member.directLine && member.directLine !== "N/A" && (
-                    <p className="text-xs text-muted-foreground">
-                      <span className="font-medium">Direct:</span> {member.directLine}
-                    </p>
-                  )}
-                  {member.email && member.email !== "TBD@GSCMortgage.com" && (
-                    <p className="text-xs text-muted-foreground">
-                      <span className="font-medium">Email:</span> {member.email}
-                    </p>
-                  )}
-                  {member.licensedStates && member.licensedStates !== "N/A" && (
-                    <p className="text-xs text-muted-foreground">
-                      <span className="font-medium">Licensed:</span> {member.licensedStates}
-                    </p>
-                  )}
-                </div>
-                
-                <p className="text-sm text-foreground/80 mb-6 flex-grow">{member.bio}</p>
-                <div className="flex flex-col gap-2 mt-auto">
-                  {member.applyPortalUrl ? (
-                    <>
-                      <Link href="/schedule">
-                        <Button className="w-full">Book Time with Me</Button>
-                      </Link>
-                      <a
-                        href={member.applyPortalUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full"
-                      >
-                        <Button variant="outline" className="w-full">
-                          Apply with Me
-                        </Button>
-                      </a>
-                    </>
-                  ) : (
-                    <Link href="/contact">
-                      <Button className="w-full">Contact the office</Button>
-                    </Link>
-                  )}
-                </div>
-              </div>
+      <div className="mx-auto max-w-[1600px] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        {/* 1 col mobile → 2 tablet → 3 desktop · 14 signature cards */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-6">
+          {teamList.map((member, i) => (
+            <div
+              key={member.id || `${member.nmls}-${member.email}-${i}`}
+              className="min-w-0 overflow-hidden rounded-2xl border border-gray-100 bg-white p-3 shadow-sm sm:p-5"
+            >
+              <TeamSignature member={member} logoSrc="/images/logo.png" />
             </div>
           ))}
         </div>

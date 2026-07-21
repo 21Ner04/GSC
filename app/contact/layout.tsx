@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactPageJsonLd } from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildPageMetadata(
@@ -20,5 +21,10 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <ContactPageJsonLd />
+      {children}
+    </>
+  );
 }

@@ -3,11 +3,17 @@ import { getSite } from "@/lib/cms";
 
 export default function robots(): MetadataRoute.Robots {
   const site = getSite();
+  const base = site.website.replace(/\/$/, "");
+
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    sitemap: `${site.website}/sitemap.xml`,
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/api/*"],
+      },
+    ],
+    sitemap: `${base}/sitemap.xml`,
+    host: base,
   };
 }

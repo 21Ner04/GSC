@@ -52,6 +52,12 @@ import {
   fetchSpecialtySlugsFromWordPress,
   fetchVideosFromWordPress,
 } from "./wordpress";
+import {
+  mergeHomepage,
+  mergeReviews,
+  mergeSite,
+  mergeVideos,
+} from "./merge";
 
 const locationsLocal: Record<string, LandingPageContent> = {
   brooklyn: locBrooklyn as LandingPageContent,
@@ -81,20 +87,6 @@ export function getContentSource(): "local" | "wordpress" {
   return process.env.CONTENT_SOURCE?.toLowerCase() === "wordpress"
     ? "wordpress"
     : "local";
-}
-
-async function wpOrLocal<T>(
-  fetchWp: () => Promise<T | null | undefined>,
-  local: T
-): Promise<T> {
-  if (getContentSource() !== "wordpress") return local;
-  try {
-    const data = await fetchWp();
-    if (data != null) return data as T;
-  } catch (e) {
-    console.error("[cms] WordPress fetch failed, using local JSON", e);
-  }
-  return local;
 }
 
 /** Sync local (safe for client components). */
@@ -144,25 +136,54 @@ export function getAllSpecialties(): LandingPageContent[] {
 
 /** Async — prefers WordPress when enabled. Use in Server Components. */
 export async function getSiteAsync(): Promise<SiteContent> {
-  return wpOrLocal(fetchSiteFromWordPress, siteJson as SiteContent);
+  const local = siteJson as SiteContent;
+  if (getContentSource() !== "wordpress") return local;
+  try {
+    const wp = await fetchSiteFromWordPress();
+    return mergeSite(local, wp ?? undefined);
+  } catch (e) {
+    console.error("[cms] WordPress site fetch failed, using local JSON", e);
+    return local;
+  }
 }
 
 export async function getHomepageAsync(): Promise<HomepageContent> {
-  return wpOrLocal(fetchHomepageFromWordPress, homepageJson as HomepageContent);
+  const local = homepageJson as HomepageContent;
+  if (getContentSource() !== "wordpress") return local;
+  try {
+    const wp = await fetchHomepageFromWordPress();
+    return mergeHomepage(local, wp ?? undefined);
+  } catch (e) {
+    console.error("[cms] WordPress homepage fetch failed, using local JSON", e);
+    return local;
+  }
 }
 
 export async function getReviewsAsync(): Promise<GoogleReview[]> {
-  return wpOrLocal(fetchReviewsFromWordPress, reviewsJson as GoogleReview[]);
+  const local = reviewsJson as GoogleReview[];
+  if (getContentSource() !== "wordpress") return local;
+  try {
+    const wp = await fetchReviewsFromWordPress();
+    return mergeReviews(local, wp);
+  } catch (e) {
+    console.error("[cms] WordPress reviews fetch failed, using local JSON", e);
+    return local;
+  }
 }
 
 export async function getVideosAsync(): Promise<{
   youtubeChannel: string;
   items: VideoItem[];
 }> {
-  return wpOrLocal(
-    fetchVideosFromWordPress,
-    videosJson as { youtubeChannel: string; items: VideoItem[] }
-  );
+  const local = videosJson as { youtubeChannel: string; items: VideoItem[] };
+  if (getContentSource() !== "wordpress") return local;
+  try {
+    const wp = await fetchVideosFromWordPress();
+    return mergeVideos(local, wp);
+  } catch (e) {
+    console.error("[cms] WordPress videos fetch failed, using local JSON", e);
+    return local;
+  }
 }
 
 export async function getLocationAsync(
