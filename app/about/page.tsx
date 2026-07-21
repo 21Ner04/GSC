@@ -2,7 +2,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-export const metadata = { title: "About Us | Green Street Capital" };
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = buildPageMetadata(
+  {
+    title: "About Us | Mortgage Broker Serving NY, NJ, FL & PA",
+    description:
+      "Learn about Green Street Capital, LLC (NMLS #2066586) — an independent mortgage broker helping families with purchase, refinance, and specialty loan programs.",
+    keywords: [
+      "Green Street Capital",
+      "mortgage broker about",
+      "NMLS 2066586",
+      "Brooklyn mortgage broker",
+    ],
+  },
+  { path: "/about" }
+);
 
 export default function About() {
   return (
@@ -78,11 +94,12 @@ export default function About() {
               </p>
             </div>
             <div className="flex-shrink-0">
-              <div className="relative w-64 h-40 rounded-lg overflow-hidden shadow-md">
+              <div className="relative h-40 w-64 overflow-hidden rounded-lg shadow-md">
+                {/* URL-encode space in filename; easy to replace/remove later */}
                 <img
-                  src="/caR PIC.png"
+                  src={"/caR%20PIC.png"}
                   alt="Company vehicle"
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               </div>
             </div>

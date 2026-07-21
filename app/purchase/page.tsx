@@ -2,7 +2,23 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Home as HomeIcon, Key, PiggyBank } from "lucide-react";
 
-export const metadata = { title: "Purchase a Home | Green Street Capital" };
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = buildPageMetadata(
+  {
+    title: "Purchase a Home | Mortgage Loans NY, NJ, FL, PA",
+    description:
+      "Home purchase mortgage options with Green Street Capital: conventional, FHA, VA, jumbo, and specialty programs. Get pre-approved with a licensed loan officer.",
+    keywords: [
+      "home purchase mortgage",
+      "buy a house loan",
+      "pre-approval mortgage",
+      "FHA purchase loan",
+    ],
+  },
+  { path: "/purchase" }
+);
 
 export default function Purchase() {
   return (

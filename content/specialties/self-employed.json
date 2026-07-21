@@ -1,0 +1,72 @@
+{
+  "slug": "self-employed",
+  "seo": {
+    "title": "Mortgages for Self-Employed Borrowers | Green Street Capital",
+    "description": "Home loans for business owners and self-employed professionals. Bank statement and Non-QM options. NMLS #2066586.",
+    "keywords": [
+      "self employed mortgage",
+      "business owner home loan",
+      "bank statement mortgage"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgages for Self-Employed Borrowers",
+    "subheading": "Flexible documentation for business owners whose tax returns do not tell the full cash-flow story."
+  },
+  "intro": {
+    "heading": "Self-Employed Financing",
+    "paragraphs": [
+      "Write-offs and business expenses can make tax returns look lower than real cash flow. We help self-employed borrowers explore conventional paths when they fit—and alternative documentation when they do not.",
+      "Our goal is a realistic monthly payment and a file that underwriters can approve with confidence."
+    ],
+    "bullets": [
+      "LLC, S-Corp, and sole proprietor owners",
+      "Consultants and freelancers with 1099 income",
+      "Business owners with strong deposits and reserves",
+      "Borrowers refinancing after business growth"
+    ]
+  },
+  "sidebar": {
+    "heading": "Documentation Paths",
+    "body": "Depending on the lender, options may include full doc, bank statement, or other Non-QM structures.",
+    "highlights": [
+      "Bank statement programs",
+      "Non-QM alternatives",
+      "Full-doc when beneficial"
+    ]
+  },
+  "programsHeading": "Common Program Types",
+  "programs": [
+    {
+      "title": "Bank Statement Loans",
+      "description": "Qualify using deposit history rather than only tax-return AGI."
+    },
+    {
+      "title": "Non-QM Loans",
+      "description": "Flexible underwriting for unique self-employed profiles."
+    },
+    {
+      "title": "Conventional Loans",
+      "description": "When two years of solid documentation supports a traditional path."
+    },
+    {
+      "title": "Investment Options",
+      "description": "Financing for rental properties when investor guidelines are met."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need two years of tax returns?",
+      "answer": "Some programs require them; others focus on bank statements. We match the program to your documentation."
+    },
+    {
+      "question": "Can I use business bank accounts?",
+      "answer": "Many bank statement programs allow business accounts with analysis of deposits and expenses."
+    }
+  ],
+  "cta": {
+    "heading": "Get a self-employed mortgage review",
+    "body": "Share your income structure with a loan officer and explore realistic options."
+  },
+  "kind": "specialty"
+}

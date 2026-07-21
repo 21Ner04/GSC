@@ -1,0 +1,48 @@
+{
+  "companyName": "Green Street Capital",
+  "legalName": "Green Street Capital, LLC",
+  "nmls": "2066586",
+  "brandTagline": "Your trusted partner for home purchases, refinancing, and mortgage solutions across NY, NJ, FL, and PA.",
+  "address": {
+    "line1": "2709 Coney Island Ave, 3rd Floor",
+    "line2": "",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "11235",
+    "full": "2709 Coney Island Ave, 3rd Floor, Brooklyn, NY 11235"
+  },
+  "phones": {
+    "local": "718-615-4545",
+    "localTel": "+17186154545",
+    "tollFree": "855-615-4545",
+    "tollFreeTel": "+18556154545",
+    "fax": "718-819-1127"
+  },
+  "email": "Info@GSCMortgage.com",
+  "website": "https://www.greenstreetcapitalgroup.com",
+  "googleReviewsUrl": "https://www.google.com/maps/place/Green+Street+Capital,+LLC./@40.5905813,-73.9605374,17z/data=!3m1!5s0x89c2445e30371431:0x96e9dda46d51111c!4m18!1m9!3m8!1s0x89c2459fef3b7d45:0x3fecb4145a53c4d5!2sGreen+Street+Capital,+LLC.!8m2!3d40.5905934!4d-73.9602968!9m1!1b1!16s%2Fg%2F11gl11ydc1!3m7!1s0x89c2459fef3b7d45:0x3fecb4145a53c4d5!8m2!3d40.5905934!4d-73.9602968!9m1!1b1!16s%2Fg%2F11gl11ydc1?entry=ttu",
+  "googleMapsEmbedQuery": "Green+Street+Capital+2709+Coney+Island+Ave+3rd+Floor+Brooklyn+NY+11235",
+  "social": {
+    "instagram": "https://www.instagram.com/gsc.mortgage",
+    "facebook": "https://www.facebook.com/greenstreetcapital",
+    "twitter": "https://twitter.com/greenstreetcap",
+    "linkedin": "https://www.linkedin.com/company/green-street-capital",
+    "youtube": "https://www.youtube.com/@GSC.MORTGAGE",
+    "tiktok": "https://www.tiktok.com/@gsc.mortgage"
+  },
+  "statesServed": ["NY", "NJ", "FL", "PA"],
+  "licensedIn": [
+    "NYS Dept of Financial Services",
+    "NJ Dept of Banking & Insurance",
+    "FL Office of Financial Regulation",
+    "PA Dept of Banking & Securities"
+  ],
+  "nmlsConsumerAccessUrl": "https://www.nmlsconsumeraccess.org/",
+  "handbookPdf": "/buyers-handbook.pdf",
+  "applyPath": "/apply",
+  "teamPath": "/team",
+  "footerDisclaimer": [
+    "Registered Mortgage Broker | NYS Department of Financial Services | NJ Department of Banking and Insurance | Florida Office of Financial Regulation | PA Department of Banking and Securities | Loans arranged with third party lenders | NMLS #2066586",
+    "Mortgage Broker will not make any mortgage loan commitments or fund any mortgage loans."
+  ]
+}

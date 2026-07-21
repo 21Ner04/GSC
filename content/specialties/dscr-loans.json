@@ -1,0 +1,72 @@
+{
+  "slug": "dscr-loans",
+  "seo": {
+    "title": "DSCR Loans for Investors | Rental Income Financing | Green Street Capital",
+    "description": "DSCR mortgage programs for real estate investors. Qualify using property cash flow. NY, NJ, FL, PA. NMLS #2066586.",
+    "keywords": [
+      "DSCR loans",
+      "investment property mortgage",
+      "rental property financing"
+    ]
+  },
+  "hero": {
+    "heading": "DSCR Loans for Investors",
+    "subheading": "Investment property financing that focuses on the property’s debt-service coverage—not only personal W-2 income."
+  },
+  "intro": {
+    "heading": "What Is a DSCR Loan?",
+    "paragraphs": [
+      "Debt Service Coverage Ratio (DSCR) loans evaluate whether rental income is sufficient relative to the mortgage payment. They are popular with investors who want to scale portfolios without traditional employment underwriting on every file.",
+      "Guidelines vary by lender for short-term rentals, multi-unit properties, and cash-out refinance."
+    ],
+    "bullets": [
+      "Buy-and-hold rental investors",
+      "Borrowers expanding multi-property portfolios",
+      "Cash-out refinance on investment properties",
+      "Investors with complex personal tax returns"
+    ]
+  },
+  "sidebar": {
+    "heading": "Investor Focus",
+    "body": "We review rent estimates, expenses, and program overlays so you understand leverage and cash-flow risk before you close.",
+    "highlights": [
+      "Cash-flow underwriting",
+      "Portfolio growth",
+      "Purchase & cash-out"
+    ]
+  },
+  "programsHeading": "Investor Loan Types",
+  "programs": [
+    {
+      "title": "DSCR Purchase",
+      "description": "Acquire rentals using property income ratios."
+    },
+    {
+      "title": "DSCR Refinance",
+      "description": "Rate/term or cash-out subject to DSCR and LTV."
+    },
+    {
+      "title": "Multi-Unit Investments",
+      "description": "Options for 2–4 unit and select larger properties via partners."
+    },
+    {
+      "title": "Short-Term Rentals",
+      "description": "Where lenders allow STR income methodologies."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need to show personal income?",
+      "answer": "Many DSCR programs emphasize property cash flow; residual requirements still vary by lender."
+    },
+    {
+      "question": "Can first-time investors use DSCR?",
+      "answer": "Some lenders allow it; experience and reserves requirements differ."
+    }
+  ],
+  "cta": {
+    "heading": "Structure your next investment loan",
+    "body": "Share the property address and rent projections with a loan officer."
+  },
+  "kind": "specialty"
+}

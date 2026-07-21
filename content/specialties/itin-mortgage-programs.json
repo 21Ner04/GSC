@@ -1,0 +1,68 @@
+{
+  "slug": "itin-mortgage-programs",
+  "seo": {
+    "title": "ITIN Mortgage Programs | Green Street Capital",
+    "description": "Mortgage options for ITIN holders seeking home financing. Specialty lender programs. NMLS #2066586.",
+    "keywords": [
+      "ITIN mortgage",
+      "ITIN home loan",
+      "mortgage without SSN"
+    ]
+  },
+  "hero": {
+    "heading": "ITIN Mortgage Programs",
+    "subheading": "Specialty financing paths for borrowers who use an Individual Taxpayer Identification Number."
+  },
+  "intro": {
+    "heading": "Home Financing with an ITIN",
+    "paragraphs": [
+      "Some lenders offer programs for ITIN borrowers who have established credit, income, and down payment capacity. Guidelines are specialized and documentation standards are high.",
+      "We help you understand what is typically required and which lender partners may be a fit—without promising outcomes that depend on underwriting."
+    ],
+    "bullets": [
+      "ITIN holders with documented income",
+      "Borrowers building or maintaining credit history",
+      "Purchase of primary residences where programs allow",
+      "Families seeking long-term housing stability"
+    ]
+  },
+  "sidebar": {
+    "heading": "Expect Thorough Documentation",
+    "body": "Income, credit tradelines, down payment sources, and residency documentation are reviewed carefully by specialty lenders.",
+    "highlights": [
+      "ITIN-friendly lenders",
+      "Document readiness",
+      "Primary residence focus"
+    ]
+  },
+  "programsHeading": "What We Explore",
+  "programs": [
+    {
+      "title": "ITIN Purchase Programs",
+      "description": "Specialty products for eligible ITIN borrowers."
+    },
+    {
+      "title": "Down Payment Planning",
+      "description": "Clear sourcing of funds is critical for approval."
+    },
+    {
+      "title": "Credit Strategy",
+      "description": "Understanding how credit is evaluated on ITIN files."
+    },
+    {
+      "title": "Full File Prep",
+      "description": "Organizing translations and supporting documents when needed."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I get a mortgage with an ITIN instead of an SSN?",
+      "answer": "Some specialty programs allow it. Eligibility depends on lender overlays, credit, income, and property type."
+    }
+  ],
+  "cta": {
+    "heading": "Discuss ITIN financing options",
+    "body": "Contact a loan officer for a confidential program review."
+  },
+  "kind": "specialty"
+}

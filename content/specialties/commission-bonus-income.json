@@ -1,0 +1,68 @@
+{
+  "slug": "commission-bonus-income",
+  "seo": {
+    "title": "Commission & Bonus Income Mortgages | Green Street Capital",
+    "description": "Mortgages for commission-based and bonus-heavy earners. Document variable income the right way. NMLS #2066586.",
+    "keywords": [
+      "commission income mortgage",
+      "bonus income home loan",
+      "variable income mortgage"
+    ]
+  },
+  "hero": {
+    "heading": "Commission and Bonus Income",
+    "subheading": "Help documenting variable earnings for sales professionals, managers, and bonus-compensated employees."
+  },
+  "intro": {
+    "heading": "Variable Income Underwriting",
+    "paragraphs": [
+      "Commission and bonus income is often averaged over two years and may require proof it is likely to continue. We help you assemble paystubs, W-2s, and employer verification so underwriters can use the income you actually earn.",
+      "If traditional averaging does not fit, we can also discuss alternative documentation options."
+    ],
+    "bullets": [
+      "Real estate and sales professionals",
+      "Employees with large annual bonuses",
+      "Mixed base-plus-commission pay",
+      "Borrowers with year-over-year income swings"
+    ]
+  },
+  "sidebar": {
+    "heading": "Documentation Tips",
+    "body": "Consistent history and clear employer breakdowns of base vs variable pay speed up approvals.",
+    "highlights": [
+      "2-year averages",
+      "VOE support",
+      "Alternative paths if needed"
+    ]
+  },
+  "programsHeading": "Paths We Consider",
+  "programs": [
+    {
+      "title": "Full-Doc Conventional",
+      "description": "When commission/bonus averages support the payment."
+    },
+    {
+      "title": "FHA / VA",
+      "description": "Government options when eligibility and income documentation align."
+    },
+    {
+      "title": "Bank Statement / Non-QM",
+      "description": "When variable income is better shown via deposits or other methods."
+    },
+    {
+      "title": "Refinance",
+      "description": "Use documented income to improve an existing loan."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Will my bonus count?",
+      "answer": "Often if it has a two-year history and is likely to continue—underwriters decide based on documentation."
+    }
+  ],
+  "cta": {
+    "heading": "Document variable income correctly",
+    "body": "Work with a loan officer who regularly underwrites commission profiles."
+  },
+  "kind": "specialty"
+}

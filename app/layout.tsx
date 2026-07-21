@@ -3,59 +3,86 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { IntroAnimation } from "@/components/IntroAnimation";
+import { FloatingApplyButton } from "@/components/FloatingApplyButton";
 import UserWayWidget from "@/components/UserWayWidget";
-import { Suspense } from "react";
+import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
+import { getHomepage, getSite } from "@/lib/cms";
+
+const site = getSite();
+const home = getHomepage();
+const base = site.website.replace(/\/$/, "");
 
 export const metadata: Metadata = {
-  title: "Green Street Capital | Mortgage Broker Brooklyn NY & NJ | Purchase & Refinance",
-  description: "Green Street Capital, LLC — trusted mortgage broker serving NY, NJ, FL, PA. Purchase, refinance, FHA, VA, Jumbo loans. Fast approvals, competitive rates. NMLS #2066586.",
-  keywords: ["mortgage broker", "home loans", "refinance", "FHA loans", "VA loans", "Brooklyn", "New York", "New Jersey", "Florida", "Pennsylvania", "Green Street Capital"],
+  metadataBase: new URL(site.website),
+  title: {
+    default: home.seo.title,
+    template: `%s | ${site.companyName}`,
+  },
+  description: home.seo.description,
+  keywords: home.seo.keywords,
+  authors: [{ name: site.legalName }],
+  creator: site.legalName,
+  publisher: site.legalName,
+  category: "finance",
   openGraph: {
-    title: "Green Street Capital | Trusted Mortgage Broker",
-    description: "Expert mortgage solutions for home purchase and refinancing. Serving NY, NJ, FL, PA with competitive rates and fast approvals.",
+    title: home.seo.title,
+    description: home.seo.description,
     type: "website",
-    url: "https://www.greenstreetcapitalgroup.com",
+    url: site.website,
+    siteName: site.companyName,
+    locale: "en_US",
+    images: [
+      {
+        url: `${base}/images/logo.png`,
+        width: 512,
+        height: 512,
+        alt: site.companyName,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: home.seo.title,
+    description: home.seo.description,
+    images: [`${base}/images/logo.png`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
+  verification: {
+    // Add when available:
+    // google: "your-google-search-console-token",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
+        <link rel="alternate" type="application/rss+xml" title="Market updates proxy" href="/api/market-updates" />
+      </head>
       <body suppressHydrationWarning>
         <IntroAnimation />
-        <div className="min-h-screen flex flex-col">
+        <div className="flex min-h-screen flex-col">
           <Navbar />
-          <main className="flex-1 w-full">{children}</main>
+          <main className="w-full flex-1">{children}</main>
           <Footer />
         </div>
+        <FloatingApplyButton />
         <UserWayWidget />
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              #userway-widget,
-              .userway-widget-wrapper,
-              [class*="userway"],
-              div[id*="userway"],
-              button[class*="userway"] {
-                position: fixed !important;
-                bottom: 7px !important;
-                right: 20px !important;
-                top: auto !important;
-                left: auto !important;
-                z-index: 999 !important;
-                transform: none !important;
-              }
-              .userway-widget-trigger {
-                position: fixed !important;
-                bottom: 7px !important;
-                right: 20px !important;
-                top: auto !important;
-                left: auto !important;
-                z-index: 999 !important;
-              }
-            `,
-          }}
-        />
       </body>
     </html>
   );

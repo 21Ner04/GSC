@@ -1,0 +1,76 @@
+{
+  "slug": "truck-drivers",
+  "seo": {
+    "title": "Mortgages for Truck Drivers | Non-Traditional Income | Green Street Capital",
+    "description": "Mortgage solutions for truck drivers and owner-operators. Flexible documentation for non-traditional income. NY, NJ, FL, PA. NMLS #2066586.",
+    "keywords": [
+      "mortgage truck drivers",
+      "owner operator mortgage",
+      "CDL home loan"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgages for Truck Drivers",
+    "subheading": "Specialized mortgage solutions for professional truck drivers with non-traditional income."
+  },
+  "intro": {
+    "heading": "Understanding Truck Driver Income",
+    "paragraphs": [
+      "Traditional lenders often struggle with truck driver income structures. We understand the trucking industry and work with lenders who appreciate your unique financial situation.",
+      "Whether you are an owner-operator or company driver, we review how you are paid and which documentation best supports a strong application."
+    ],
+    "bullets": [
+      "Owner-operators with variable income based on miles and rates",
+      "Company drivers with per diem and bonus structures",
+      "Team drivers with split income arrangements",
+      "Drivers with significant business expenses that reduce taxable income"
+    ]
+  },
+  "sidebar": {
+    "heading": "Why Traditional Lenders Struggle",
+    "body": "W-2 and tax-return-only underwriting may understate earning power when expenses, per diem, or seasonal miles are involved.",
+    "highlights": [
+      "Variable income patterns",
+      "Business expense deductions",
+      "Per diem and reimbursements"
+    ]
+  },
+  "programsHeading": "Programs That May Fit Drivers",
+  "programs": [
+    {
+      "title": "Bank Statement Loans",
+      "description": "Use business or personal bank deposits to help document cash flow."
+    },
+    {
+      "title": "Non-QM Options",
+      "description": "Alternatives when standard QM documentation is not the best fit."
+    },
+    {
+      "title": "Conventional / FHA",
+      "description": "Traditional paths when income can be fully documented."
+    },
+    {
+      "title": "Purchase & Refinance",
+      "description": "Buy a home or refinance an existing mortgage when eligible."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can truck drivers get a mortgage with variable income?",
+      "answer": "Often yes. Lenders may average income over time or use alternative documentation depending on the program."
+    },
+    {
+      "question": "Do you work with owner-operators?",
+      "answer": "Yes. We regularly review owner-operator scenarios and available program options."
+    },
+    {
+      "question": "What should I prepare?",
+      "answer": "Recent bank statements, tax returns if available, CDL/employment details, and a list of debts and assets help us move faster."
+    }
+  ],
+  "cta": {
+    "heading": "Ready to explore financing?",
+    "body": "Talk with a loan officer who understands non-traditional trucking income."
+  },
+  "kind": "specialty"
+}

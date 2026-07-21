@@ -2,7 +2,23 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { TrendingDown, Coins, CalendarDays, RefreshCw } from "lucide-react";
 
-export const metadata = { title: "Refinance | Green Street Capital" };
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = buildPageMetadata(
+  {
+    title: "Refinance Your Mortgage | Rate & Cash-Out Options",
+    description:
+      "Refinance with Green Street Capital: lower your rate, shorten your term, or access equity with cash-out options. Serving NY, NJ, FL, PA. NMLS #2066586.",
+    keywords: [
+      "refinance mortgage",
+      "rate and term refinance",
+      "cash out refinance",
+      "lower mortgage rate",
+    ],
+  },
+  { path: "/refinance" }
+);
 
 export default function Refinance() {
   return (

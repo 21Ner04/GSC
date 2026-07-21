@@ -1,0 +1,93 @@
+{
+  "slug": "manhattan",
+  "kind": "location",
+  "seo": {
+    "title": "Mortgage Broker in Manhattan NYC | Condos, Co-ops & Jumbo Loans",
+    "description": "Manhattan mortgage broker for condos, co-ops, and high-value purchases. Jumbo, conventional, and specialty financing. Green Street Capital NMLS #2066586.",
+    "keywords": [
+      "mortgage broker Manhattan",
+      "Manhattan condo financing",
+      "Manhattan co-op mortgage",
+      "jumbo loans NYC"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgage Broker in Manhattan",
+    "subheading": "Financing for Manhattan condos, co-ops, and high-value residences—with clear guidance through board and lender requirements."
+  },
+  "intro": {
+    "heading": "Manhattan Buyers We Support",
+    "paragraphs": [
+      "Manhattan purchases often involve higher price points, co-op boards, condo associations, and jumbo financing. Green Street Capital helps professionals, families, and investors structure loans that fit both the building’s guidelines and the lender’s overlays.",
+      "We coordinate documentation early so you can move quickly when the right unit becomes available."
+    ],
+    "bullets": [
+      "Condo purchasers in established and new developments",
+      "Co-op buyers preparing for board review",
+      "Jumbo borrowers above conforming loan limits",
+      "Refinances for Manhattan owners seeking better terms",
+      "Pied-à-terre and second-home scenarios where available"
+    ]
+  },
+  "sidebar": {
+    "heading": "Manhattan Focus",
+    "body": "Experience with competitive Manhattan transactions and lender products designed for high-cost markets.",
+    "highlights": [
+      "Jumbo & high-balance options",
+      "Co-op / condo experience",
+      "Responsive pre-approvals"
+    ]
+  },
+  "programsHeading": "Manhattan Loan Options",
+  "programs": [
+    {
+      "title": "Jumbo Financing",
+      "description": "For purchases and refinances above standard conforming limits."
+    },
+    {
+      "title": "Conventional High-Balance",
+      "description": "Where high-balance conforming products fit the property and borrower profile."
+    },
+    {
+      "title": "Co-op Loans",
+      "description": "Programs and preparation support for cooperative purchases."
+    },
+    {
+      "title": "Condo Loans",
+      "description": "Financing aligned with condo project and association requirements."
+    },
+    {
+      "title": "Refinance",
+      "description": "Rate-and-term or cash-out options when equity and goals support them."
+    },
+    {
+      "title": "Specialty Income Programs",
+      "description": "Bank statement and Non-QM paths for self-employed Manhattan professionals."
+    }
+  ],
+  "market": {
+    "heading": "Manhattan Market Context",
+    "paragraphs": [
+      "Inventory and building-level rules can change the feasible loan set for a unit. We review property type early to avoid late-stage surprises.",
+      "Full monthly cost includes maintenance or common charges—not only principal and interest."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Do you finance Manhattan co-ops?",
+      "answer": "Yes. We help buyers understand typical lender and board expectations for co-op financing."
+    },
+    {
+      "question": "Can I get a jumbo loan through Green Street Capital?",
+      "answer": "We work with lenders that offer jumbo and high-balance products for qualified borrowers."
+    },
+    {
+      "question": "How fast can I get pre-approved?",
+      "answer": "Timelines depend on how quickly complete documentation is provided. Contact a loan officer to start."
+    }
+  ],
+  "cta": {
+    "heading": "Plan your Manhattan purchase",
+    "body": "Connect with a loan officer to discuss condo, co-op, or jumbo financing options."
+  }
+}

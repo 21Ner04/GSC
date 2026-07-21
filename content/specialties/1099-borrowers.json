@@ -1,0 +1,68 @@
+{
+  "slug": "1099-borrowers",
+  "seo": {
+    "title": "1099 Borrower Mortgages | Contract & Freelance Income | Green Street Capital",
+    "description": "Mortgage options for 1099 contractors and freelancers. Flexible documentation and Non-QM paths. NMLS #2066586.",
+    "keywords": [
+      "1099 mortgage",
+      "contractor home loan",
+      "freelance mortgage"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgages for 1099 Borrowers",
+    "subheading": "Financing strategies for contractors, freelancers, and independent professionals paid on 1099s."
+  },
+  "intro": {
+    "heading": "1099 Income Challenges",
+    "paragraphs": [
+      "Contract work can be lucrative but harder to document than W-2 employment. We help 1099 borrowers assemble a clear story—history of contracts, deposits, and (when helpful) tax returns or bank statements.",
+      "The right program depends on how long you have been independent and how stable deposits look over time."
+    ],
+    "bullets": [
+      "Independent contractors and freelancers",
+      "Gig and project-based professionals",
+      "Consultants with multiple clients",
+      "Borrowers transitioning from W-2 to 1099"
+    ]
+  },
+  "sidebar": {
+    "heading": "What Lenders Look For",
+    "body": "Continuity of income, reserves, credit, and clean deposit patterns matter as much as the 1099 forms themselves.",
+    "highlights": [
+      "Income continuity",
+      "Reserves",
+      "Credit profile"
+    ]
+  },
+  "programsHeading": "Program Directions",
+  "programs": [
+    {
+      "title": "Full Documentation",
+      "description": "When tax returns and 1099 history support conventional or government loans."
+    },
+    {
+      "title": "Bank Statement",
+      "description": "When deposits better reflect cash flow than AGI."
+    },
+    {
+      "title": "Non-QM",
+      "description": "Additional flexibility for unique contractor profiles."
+    },
+    {
+      "title": "Refinance",
+      "description": "Options to refinance an existing home when eligible."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How many years of 1099 history do I need?",
+      "answer": "Many programs prefer two years; some alternatives exist. We will map what your history supports."
+    }
+  ],
+  "cta": {
+    "heading": "Apply as a 1099 borrower",
+    "body": "Start with a loan officer and bring recent 1099s, bank statements, and a debt list."
+  },
+  "kind": "specialty"
+}

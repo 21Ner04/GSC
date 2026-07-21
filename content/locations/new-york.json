@@ -1,0 +1,98 @@
+{
+  "slug": "new-york",
+  "kind": "location",
+  "seo": {
+    "title": "Mortgage Broker in New York State | Green Street Capital NMLS #2066586",
+    "description": "Licensed New York mortgage broker helping buyers and homeowners across NYC, Long Island, Westchester, and upstate. Purchase, refinance, FHA, VA, Non-QM. NMLS #2066586.",
+    "keywords": [
+      "mortgage broker New York",
+      "NY mortgage broker",
+      "home loans New York State",
+      "refinance New York",
+      "Green Street Capital"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgage Broker in New York",
+    "subheading": "Licensed guidance for homebuyers and homeowners across New York State—from the five boroughs to Long Island, Westchester, and beyond."
+  },
+  "intro": {
+    "heading": "Who We Help Across New York",
+    "paragraphs": [
+      "Green Street Capital is a licensed mortgage broker serving New York borrowers who need clear answers in a competitive market. Whether you are buying your first home in Brooklyn, refinancing in Westchester, or financing an investment property on Long Island, we match you with loan options that fit your income and goals.",
+      "New York financing often involves co-ops, condos, jumbo loan limits, and layered documentation. Our team works with a network of lenders so you are not limited to a single bank’s product menu."
+    ],
+    "bullets": [
+      "First-time and move-up buyers across NYC and the metro area",
+      "Homeowners looking to refinance rate, term, or cash-out",
+      "Self-employed and 1099 borrowers who need flexible documentation",
+      "Investors seeking rental-property and DSCR-style options",
+      "Veterans and FHA borrowers seeking lower down-payment paths"
+    ]
+  },
+  "sidebar": {
+    "heading": "New York Licensing",
+    "body": "We are registered with the NYS Department of Financial Services and arrange loans through third-party lenders. Company NMLS #2066586.",
+    "highlights": [
+      "NYS DFS registered mortgage broker",
+      "Serving NYC, Long Island, Westchester & more",
+      "Purchase, refinance, and specialty programs"
+    ]
+  },
+  "programsHeading": "Popular New York Loan Programs",
+  "programs": [
+    {
+      "title": "Conventional & Jumbo",
+      "description": "Financing for primary homes and higher-priced markets where conforming limits are exceeded."
+    },
+    {
+      "title": "FHA & VA",
+      "description": "Lower down-payment and zero-down options for eligible first-time buyers and veterans."
+    },
+    {
+      "title": "Co-op & Condo Expertise",
+      "description": "Help navigating board packages, reserve requirements, and lender guidelines unique to NY housing."
+    },
+    {
+      "title": "Non-QM & Bank Statement",
+      "description": "Alternatives when tax returns understate cash flow for business owners and freelancers."
+    },
+    {
+      "title": "Refinance Options",
+      "description": "Rate-and-term or cash-out strategies when your equity and goals support a refinance."
+    },
+    {
+      "title": "Investment Property",
+      "description": "DSCR and investor programs that evaluate rental income and property cash flow."
+    }
+  ],
+  "market": {
+    "heading": "New York Market Notes",
+    "paragraphs": [
+      "Inventory, co-op boards, and closing timelines can move quickly. Getting pre-approved with complete documentation helps you compete with confidence.",
+      "Property taxes, HOA or maintenance fees, and insurance all affect affordability—our calculators and loan officers help you model the full monthly picture, not just principal and interest."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Is Green Street Capital licensed in New York?",
+      "answer": "Yes. We are a registered mortgage broker with the NYS Department of Financial Services. Loans are arranged with third-party lenders. NMLS #2066586."
+    },
+    {
+      "question": "Do you work outside New York City?",
+      "answer": "Yes. We help clients across New York State, including the five boroughs, Long Island, Westchester, and other communities where our licenses and lender programs apply."
+    },
+    {
+      "question": "Can you finance co-ops and condos?",
+      "answer": "We regularly work with borrowers purchasing co-ops and condos and help prepare documentation lenders and boards typically expect."
+    },
+    {
+      "question": "How do I start an application?",
+      "answer": "Choose a loan officer on our Team page, or use Apply Now to select who you want to work with. You will then continue to that officer’s application path."
+    }
+  ],
+  "cta": {
+    "heading": "Ready to finance a New York home?",
+    "body": "Talk with a Green Street Capital loan officer about purchase, refinance, or specialty programs licensed for New York."
+  }
+}

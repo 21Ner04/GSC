@@ -1,0 +1,93 @@
+{
+  "slug": "brooklyn",
+  "kind": "location",
+  "seo": {
+    "title": "Mortgage Broker in Brooklyn NY | Green Street Capital",
+    "description": "Brooklyn-based mortgage broker for purchase, refinance, first-time buyers, Non-QM, and investment loans. Local office on Coney Island Ave. NMLS #2066586.",
+    "keywords": [
+      "mortgage broker Brooklyn",
+      "Brooklyn home loans",
+      "refinance Brooklyn NY",
+      "first-time homebuyer Brooklyn"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgage Broker in Brooklyn",
+    "subheading": "Local expertise from our Coney Island Avenue office—helping Brooklyn buyers and homeowners finance with clarity."
+  },
+  "intro": {
+    "heading": "Brooklyn Home Financing",
+    "paragraphs": [
+      "Brooklyn’s neighborhoods—from Bay Ridge and Sheepshead Bay to Williamsburg, Park Slope, and beyond—each come with different price points, co-op/condo rules, and rental demand. Green Street Capital is headquartered in Brooklyn and works with borrowers who want a broker that understands the local market.",
+      "Whether you are a first-time buyer, self-employed professional, or investor, we review your full financial picture and present practical program options."
+    ],
+    "bullets": [
+      "First-time buyers in competitive Brooklyn neighborhoods",
+      "Families purchasing multi-family homes with rental income",
+      "Condo and co-op purchasers needing board-ready files",
+      "Homeowners refinancing after rate or equity changes",
+      "Investors expanding Brooklyn rental portfolios"
+    ]
+  },
+  "sidebar": {
+    "heading": "Visit Us in Brooklyn",
+    "body": "2709 Coney Island Ave, 3rd Floor, Brooklyn, NY 11235. Call 718-615-4545 or toll-free 855-615-4545.",
+    "highlights": [
+      "Local Brooklyn headquarters",
+      "NY-licensed mortgage broker",
+      "Purchase, refinance & specialty loans"
+    ]
+  },
+  "programsHeading": "Programs Popular in Brooklyn",
+  "programs": [
+    {
+      "title": "Purchase Loans",
+      "description": "Conventional, FHA, VA, and jumbo options for one- to four-family homes and condos."
+    },
+    {
+      "title": "First-Time Buyer Paths",
+      "description": "Guidance on down payment, reserves, and program choice for new homeowners."
+    },
+    {
+      "title": "Bank Statement & Non-QM",
+      "description": "Solutions when standard W-2 underwriting does not reflect your cash flow."
+    },
+    {
+      "title": "Multi-Family & Investment",
+      "description": "Financing strategies for 2–4 unit properties and investor cash-flow loans."
+    },
+    {
+      "title": "Refinance",
+      "description": "Rate-and-term or cash-out refinance when your goals support it."
+    },
+    {
+      "title": "Co-op & Condo",
+      "description": "Support for financing structures common across Brooklyn housing stock."
+    }
+  ],
+  "market": {
+    "heading": "Buying in Brooklyn",
+    "paragraphs": [
+      "Strong demand and varied building types mean underwriting details matter. We help you prepare documentation early so contract-to-close stays on track.",
+      "Taxes, insurance, and HOA or maintenance fees vary widely by neighborhood—model the full payment before you stretch your budget."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Where is Green Street Capital located in Brooklyn?",
+      "answer": "2709 Coney Island Ave, 3rd Floor, Brooklyn, NY 11235."
+    },
+    {
+      "question": "Do you only serve southern Brooklyn?",
+      "answer": "No. We work with clients across Brooklyn neighborhoods and the wider New York metro area where licensed."
+    },
+    {
+      "question": "Can self-employed Brooklyn borrowers apply?",
+      "answer": "Yes. We frequently help self-employed and 1099 borrowers explore bank statement and Non-QM options."
+    }
+  ],
+  "cta": {
+    "heading": "Talk to a Brooklyn mortgage team",
+    "body": "Schedule time with a loan officer or start your application today."
+  }
+}

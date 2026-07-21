@@ -1,33 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  MapPin,
-  Phone,
-  Mail,
   Instagram,
   Facebook,
   Twitter,
   Linkedin,
   Youtube,
 } from "lucide-react";
+import { getFooterNav, getSite } from "@/lib/cms";
 
 export function Footer() {
+  const site = getSite();
+  const nav = getFooterNav();
+
   return (
-    <footer className="bg-foreground text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <footer className="bg-foreground pb-8 pt-16 text-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-5">
               <div className="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full sm:h-32 sm:w-32 md:h-36 md:w-36">
                 <Image
                   src="/images/logo.png"
-                  alt="Green Street Capital"
+                  alt={site.companyName}
                   width={144}
                   height={144}
                   className="h-full w-full object-contain"
                 />
               </div>
-
               <div className="flex flex-col justify-center">
                 <span className="font-montserrat text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
                   Green Street
@@ -38,191 +38,127 @@ export function Footer() {
               </div>
             </Link>
 
-            <p className="text-gray-400 text-base leading-relaxed">
-              Your trusted partner for home purchases, refinancing, and mortgage
-              solutions across NY, NJ, FL, and PA.
-            </p>
+            <p className="text-base leading-relaxed text-gray-400">{site.brandTagline}</p>
 
             <div className="flex flex-wrap gap-3">
-              <a
-                href="https://www.instagram.com/gsc.mortgage"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-accent"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-
-              <a
-                href="https://www.facebook.com/greenstreetcapital"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-accent"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-
-              <a
-                href="https://twitter.com/greenstreetcap"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-accent"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/green-street-capital"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-accent"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-
-              <a
-                href="https://www.youtube.com/@GSC.MORTGAGE"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-accent"
-                aria-label="YouTube"
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
+              {(
+                [
+                  [site.social.instagram, Instagram, "Instagram"],
+                  [site.social.facebook, Facebook, "Facebook"],
+                  [site.social.twitter, Twitter, "Twitter"],
+                  [site.social.linkedin, Linkedin, "LinkedIn"],
+                  [site.social.youtube, Youtube, "YouTube"],
+                ] as const
+              ).map(([href, Icon, label]) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-accent"
+                  aria-label={label}
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              ))}
             </div>
           </div>
 
           <div>
-            <h3 className="font-montserrat text-lg font-bold mb-6 text-white border-b border-white/10 pb-2 inline-block">
+            <h3 className="mb-6 inline-block border-b border-white/10 pb-2 font-montserrat text-lg font-bold text-white">
               Loan Programs
             </h3>
-
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/loan-programs"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  Conventional Loans
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan-programs"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  FHA Loans
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan-programs"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  VA Loans
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan-programs"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  Jumbo Loans
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan-programs"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  Refinance Options
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/loan-programs"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  Non-QM & Bank Statement
-                </Link>
-              </li>
+              {nav.loanPrograms.map((item) => (
+                <li key={item.href + item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-400 transition-colors hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="font-montserrat text-lg font-bold mb-6 text-white border-b border-white/10 pb-2 inline-block">
+            <h3 className="mb-6 inline-block border-b border-white/10 pb-2 font-montserrat text-lg font-bold text-white">
               Locations & Specialties
             </h3>
-
             <ul className="space-y-3">
+              {nav.locations.slice(0, 4).map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-400 transition-colors hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              {nav.specialties.slice(0, 3).map((item) => (
+                <li key={item.href + item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-400 transition-colors hover:text-primary"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link
-                  href="/locations/new-york"
-                  className="text-gray-400 hover:text-primary transition-colors"
+                  href="/locations"
+                  className="text-primary transition-colors hover:underline"
                 >
-                  New York
+                  All locations
                 </Link>
-              </li>
-              <li>
+                {" · "}
                 <Link
-                  href="/locations/new-jersey"
-                  className="text-gray-400 hover:text-primary transition-colors"
+                  href="/specialties"
+                  className="text-primary transition-colors hover:underline"
                 >
-                  New Jersey
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/locations/florida"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  Florida
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/locations/pennsylvania"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  Pennsylvania
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/specialties/first-time-buyers"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  First-Time Homebuyers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/specialties/investment"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  Investment Properties
+                  All specialties
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-montserrat text-lg font-bold mb-6 text-white border-b border-white/10 pb-2 inline-block">
+            <h3 className="mb-6 inline-block border-b border-white/10 pb-2 font-montserrat text-lg font-bold text-white">
               Company Info
             </h3>
-
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <strong className="text-white block">Green Street Capital, LLC</strong>
+                <strong className="block text-white">{site.legalName}</strong>
               </li>
-              <li>NMLS #2066586</li>
+              <li>NMLS #{site.nmls}</li>
+              <li className="pt-1">{site.address.full}</li>
+              <li>
+                <a
+                  href={`tel:${site.phones.localTel}`}
+                  className="hover:text-primary"
+                >
+                  Local: {site.phones.local}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${site.phones.tollFreeTel}`}
+                  className="hover:text-primary"
+                >
+                  Toll Free: {site.phones.tollFree}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${site.email}`} className="hover:text-primary">
+                  {site.email}
+                </a>
+              </li>
               <li className="pt-2">
                 <a
-                  href="https://www.nmlsconsumeraccess.org/"
+                  href={site.nmlsConsumerAccessUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline"
@@ -231,42 +167,29 @@ export function Footer() {
                 </a>
               </li>
               <li className="pt-2">
-                <strong className="text-white block mb-1">
-                  States Served:
-                </strong>
-                NY, NJ, FL, PA
-              </li>
-              <li className="pt-2">
-                <strong className="text-white block mb-1">
-                  Licensed In:
-                </strong>
+                <strong className="mb-1 block text-white">States Served:</strong>
+                {site.statesServed.join(", ")}
               </li>
               <li className="text-xs">
-                NYS Dept of Financial Services<br />
-                NJ Dept of Banking & Insurance<br />
-                FL Office of Financial Regulation<br />
-                PA Dept of Banking & Securities
+                {site.licensedIn.map((line) => (
+                  <span key={line}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-xs text-gray-500 text-center leading-relaxed">
-          <p className="mb-2">
-            Registered Mortgage Broker | NYS Department of Financial Services |
-            NJ Department of Banking and Insurance | Florida Office of Financial
-            Regulation | PA Department of Banking and Securities | Loans
-            arranged with third party lenders | NMLS #2066586
-          </p>
-
-          <p className="mb-4">
-            Mortgage Broker will not make any mortgage loan commitments or fund
-            any mortgage loans.
-          </p>
-
+        <div className="border-t border-white/10 pt-8 text-center text-xs leading-relaxed text-gray-500">
+          {site.footerDisclaimer.map((line) => (
+            <p key={line.slice(0, 40)} className="mb-2">
+              {line}
+            </p>
+          ))}
           <p>
-            &copy; {new Date().getFullYear()} Green Street Capital, LLC. All
-            Rights Reserved.
+            &copy; {new Date().getFullYear()} {site.legalName}. All Rights Reserved.
           </p>
         </div>
       </div>

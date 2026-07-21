@@ -1,0 +1,68 @@
+{
+  "slug": "foreign-national-loans",
+  "seo": {
+    "title": "Foreign National Loans | Green Street Capital",
+    "description": "Mortgage options for foreign national buyers purchasing U.S. property. Specialty lender programs. NMLS #2066586.",
+    "keywords": [
+      "foreign national mortgage",
+      "foreign national home loan",
+      "non-US citizen mortgage"
+    ]
+  },
+  "hero": {
+    "heading": "Foreign National Loans",
+    "subheading": "Specialty financing discussions for foreign national buyers of U.S. residential property."
+  },
+  "intro": {
+    "heading": "Buying in the U.S. as a Foreign National",
+    "paragraphs": [
+      "Foreign national financing typically requires larger down payments, strong reserves, and specialized lender overlays. Credit may be evaluated differently when U.S. credit history is limited.",
+      "We coordinate with lenders experienced in these files and set expectations early about documentation, timelines, and cash to close."
+    ],
+    "bullets": [
+      "Non-U.S. citizens purchasing investment or second homes (program-dependent)",
+      "Buyers with limited U.S. credit history",
+      "Transactions requiring international income documentation",
+      "Investors acquiring U.S. rentals"
+    ]
+  },
+  "sidebar": {
+    "heading": "Plan for Higher Cash Requirements",
+    "body": "Down payment and reserve expectations are often higher than for domestic primary-residence loans.",
+    "highlights": [
+      "Specialty lenders",
+      "Reserve requirements",
+      "International documentation"
+    ]
+  },
+  "programsHeading": "Typical Focus Areas",
+  "programs": [
+    {
+      "title": "Foreign National Purchase",
+      "description": "Programs designed for non-resident buyers where available."
+    },
+    {
+      "title": "Investment Property",
+      "description": "Financing rentals subject to investor and foreign-national overlays."
+    },
+    {
+      "title": "Entity Purchases",
+      "description": "Select lenders allow certain entity structures—case by case."
+    },
+    {
+      "title": "Full Documentation Support",
+      "description": "Help organizing income, banking, and identification documents."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need a U.S. credit score?",
+      "answer": "Not always. Some programs use alternative credit or foreign credit references. Requirements vary widely."
+    }
+  ],
+  "cta": {
+    "heading": "Explore foreign national options",
+    "body": "Speak with our team before you go under contract so financing is realistic."
+  },
+  "kind": "specialty"
+}

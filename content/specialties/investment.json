@@ -1,0 +1,68 @@
+{
+  "slug": "investment",
+  "seo": {
+    "title": "Investment Property Mortgages | Green Street Capital",
+    "description": "Financing for investment and rental properties including DSCR and conventional investor loans. NMLS #2066586.",
+    "keywords": [
+      "investment property mortgage",
+      "rental property loan",
+      "investor mortgage broker"
+    ]
+  },
+  "hero": {
+    "heading": "Investment Property Financing",
+    "subheading": "Loan strategies for real estate investors—cash-flow focused programs and conventional investor options."
+  },
+  "intro": {
+    "heading": "Financing Rentals & Portfolio Growth",
+    "paragraphs": [
+      "Investment properties are underwritten differently from primary homes. We help investors compare conventional investor loans, DSCR products, and other specialty options based on the asset and your experience.",
+      "Clear numbers on rents, reserves, and exit strategy make approvals smoother."
+    ],
+    "bullets": [
+      "Single-family rentals and small multi-family",
+      "Cash-out refinance for renovations or acquisitions",
+      "Investors with self-employed personal income",
+      "Borrowers seeking portfolio-friendly structures"
+    ]
+  },
+  "sidebar": {
+    "heading": "Investor Toolkit",
+    "body": "From pre-approval letters to DSCR modeling, we keep the process practical and documentation-driven.",
+    "highlights": [
+      "DSCR options",
+      "Conventional investor loans",
+      "Cash-out strategies"
+    ]
+  },
+  "programsHeading": "Investment Programs",
+  "programs": [
+    {
+      "title": "DSCR Loans",
+      "description": "Qualify primarily on rental cash flow."
+    },
+    {
+      "title": "Conventional Investment",
+      "description": "Traditional investor financing with personal income documentation."
+    },
+    {
+      "title": "Bank Statement + Investment",
+      "description": "When personal income is complex but cash flow is strong."
+    },
+    {
+      "title": "Refinance",
+      "description": "Improve rate/term or access equity on rentals."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this the same as a primary residence loan?",
+      "answer": "No. Investment property loans usually require more down payment, different pricing, and property-level analysis."
+    }
+  ],
+  "cta": {
+    "heading": "Grow your rental portfolio",
+    "body": "Apply with a loan officer experienced in investor financing."
+  },
+  "kind": "specialty"
+}

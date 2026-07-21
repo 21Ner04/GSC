@@ -1,0 +1,93 @@
+{
+  "slug": "florida",
+  "kind": "location",
+  "seo": {
+    "title": "Mortgage Broker in Florida | Purchase, Refinance & Investment Loans",
+    "description": "Florida mortgage broker for primary homes, second homes, and rentals. Conventional, FHA, VA, Non-QM, DSCR. Green Street Capital NMLS #2066586.",
+    "keywords": [
+      "mortgage broker Florida",
+      "Florida home loans",
+      "DSCR loans Florida",
+      "refinance Florida"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgage Broker in Florida",
+    "subheading": "Financing for Florida primary residences, second homes, and investment properties—with specialty options for self-employed and investors."
+  },
+  "intro": {
+    "heading": "Florida Borrowers We Serve",
+    "paragraphs": [
+      "Florida attracts primary homebuyers, snowbirds, and investors. Insurance costs, HOA communities, and rental demand all influence the right loan structure. Green Street Capital is licensed in Florida and helps clients evaluate programs that fit both the property and the income profile.",
+      "Whether you are relocating, purchasing a vacation home, or expanding a rental portfolio, we focus on clear monthly costs and realistic underwriting paths."
+    ],
+    "bullets": [
+      "Primary home purchasers relocating or already living in Florida",
+      "Second-home buyers in coastal and resort communities",
+      "Investors using DSCR or rental-income-based financing",
+      "Self-employed borrowers needing bank statement options",
+      "Homeowners refinancing existing Florida properties"
+    ]
+  },
+  "sidebar": {
+    "heading": "Florida Licensing",
+    "body": "Licensed with the Florida Office of Financial Regulation. Loans arranged with third-party lenders. NMLS #2066586.",
+    "highlights": [
+      "FL-licensed mortgage broker",
+      "Primary, second home & investment",
+      "Investor & Non-QM options"
+    ]
+  },
+  "programsHeading": "Florida Loan Programs",
+  "programs": [
+    {
+      "title": "Conventional Purchase",
+      "description": "Financing for primary residences across Florida markets."
+    },
+    {
+      "title": "FHA & VA",
+      "description": "Lower down-payment and veteran-focused options where eligible."
+    },
+    {
+      "title": "Second Homes",
+      "description": "Programs for qualified second-home purchases (subject to lender guidelines)."
+    },
+    {
+      "title": "DSCR Investment Loans",
+      "description": "Cash-flow-focused financing for rental properties."
+    },
+    {
+      "title": "Bank Statement / Non-QM",
+      "description": "Flexible documentation for business owners and 1099 earners."
+    },
+    {
+      "title": "Refinance",
+      "description": "Rate, term, or cash-out refinance strategies."
+    }
+  ],
+  "market": {
+    "heading": "Florida Market Notes",
+    "paragraphs": [
+      "Homeowners insurance and HOA fees can be significant. Always model full housing costs before locking a purchase budget.",
+      "Investor demand remains strong in many metros—documentation quality still determines speed and pricing."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Are you licensed in Florida?",
+      "answer": "Yes. We are licensed with the Florida Office of Financial Regulation."
+    },
+    {
+      "question": "Do you offer DSCR loans in Florida?",
+      "answer": "We work with lender partners that offer DSCR and other investor programs for qualified properties and borrowers."
+    },
+    {
+      "question": "Can out-of-state buyers purchase in Florida with you?",
+      "answer": "Yes, when the transaction and borrower profile fit available programs. Contact a loan officer to review your situation."
+    }
+  ],
+  "cta": {
+    "heading": "Finance your Florida property",
+    "body": "Apply with a Green Street Capital loan officer experienced with Florida transactions."
+  }
+}

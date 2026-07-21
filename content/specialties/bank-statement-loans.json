@@ -1,0 +1,72 @@
+{
+  "slug": "bank-statement-loans",
+  "seo": {
+    "title": "Bank Statement Loans | Alternative Income Documentation | Green Street Capital",
+    "description": "Bank statement mortgage programs for self-employed and complex-income borrowers in NY, NJ, FL, PA. NMLS #2066586.",
+    "keywords": [
+      "bank statement loan",
+      "bank statement mortgage",
+      "alternative documentation mortgage"
+    ]
+  },
+  "hero": {
+    "heading": "Bank Statement Loans",
+    "subheading": "Mortgage programs that can use personal or business bank deposits to help document income."
+  },
+  "intro": {
+    "heading": "How Bank Statement Loans Work",
+    "paragraphs": [
+      "Bank statement loans are designed for borrowers who have healthy cash flow that is not fully reflected on tax returns. Lenders review deposits over a defined period to estimate qualifying income.",
+      "These programs can open doors for entrepreneurs, freelancers, and professionals with complex income—subject to credit, reserves, and property guidelines."
+    ],
+    "bullets": [
+      "12- or 24-month personal bank statement options (program-dependent)",
+      "Business bank statement analysis for owners",
+      "Purchase and refinance scenarios",
+      "Useful when write-offs reduce taxable income"
+    ]
+  },
+  "sidebar": {
+    "heading": "Good Fit If…",
+    "body": "You have consistent deposits, manageable debt, and want financing without relying solely on tax-return income.",
+    "highlights": [
+      "Strong deposit history",
+      "Self-employed or 1099",
+      "Adequate reserves"
+    ]
+  },
+  "programsHeading": "Related Options",
+  "programs": [
+    {
+      "title": "Personal Bank Statement",
+      "description": "Qualify primarily from personal account deposits."
+    },
+    {
+      "title": "Business Bank Statement",
+      "description": "Use business accounts with expense factors applied by the lender."
+    },
+    {
+      "title": "P&L Assisted",
+      "description": "Some lenders combine statements with profit-and-loss documentation."
+    },
+    {
+      "title": "Asset-Based Paths",
+      "description": "In select cases, asset depletion or other Non-QM tools may apply."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Are rates the same as conventional loans?",
+      "answer": "Pricing varies by program, credit, LTV, and reserves. We compare options so you understand tradeoffs."
+    },
+    {
+      "question": "Can first-time buyers use bank statement loans?",
+      "answer": "Sometimes, if the program and property type allow. Eligibility is case-by-case."
+    }
+  ],
+  "cta": {
+    "heading": "See if a bank statement loan fits",
+    "body": "Connect with our team for a confidential review of your deposit history and goals."
+  },
+  "kind": "specialty"
+}

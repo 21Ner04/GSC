@@ -22,6 +22,7 @@ type ScheduleRow = {
   interest: number;
   taxes: number;
   insurance: number;
+  hoa: number;
   pmi: number;
   extraPrincipal: number;
   balance: number;
@@ -45,6 +46,7 @@ const DEFAULT_VALUES = {
   loanTerm: "30",
   propertyTaxes: "6000",
   homeInsurance: "1800",
+  hoaMonthly: "0",
   pmiRate: "0.5",
   additionalMonthlyPayment: "0",
   oneTimeExtraPayment: "0",
@@ -230,6 +232,7 @@ function MortgageCalculator() {
   const [loanTerm, setLoanTerm] = useState<string>(DEFAULT_VALUES.loanTerm);
   const [propertyTaxes, setPropertyTaxes] = useState<string>(DEFAULT_VALUES.propertyTaxes);
   const [homeInsurance, setHomeInsurance] = useState<string>(DEFAULT_VALUES.homeInsurance);
+  const [hoaMonthly, setHoaMonthly] = useState<string>(DEFAULT_VALUES.hoaMonthly);
   const [pmiRate, setPmiRate] = useState<string>(DEFAULT_VALUES.pmiRate);
   const [additionalMonthlyPayment, setAdditionalMonthlyPayment] = useState<string>(
     DEFAULT_VALUES.additionalMonthlyPayment
@@ -249,6 +252,7 @@ function MortgageCalculator() {
     const loanTermYears = Math.max(1, toNumber(loanTerm));
     const propertyTaxesAnnual = Math.max(0, toNumber(propertyTaxes));
     const homeInsuranceAnnual = Math.max(0, toNumber(homeInsurance));
+    const hoaMonthlyNum = Math.max(0, toNumber(hoaMonthly));
     const pmiRateAnnual = Math.max(0, toNumber(pmiRate));
     const additionalMonthlyPaymentNum = Math.max(0, toNumber(additionalMonthlyPayment));
     const oneTimeExtraPaymentNum = Math.max(0, toNumber(oneTimeExtraPayment));
@@ -269,6 +273,7 @@ function MortgageCalculator() {
       loanTermYears,
       propertyTaxesAnnual,
       homeInsuranceAnnual,
+      hoaMonthlyNum,
       pmiRateAnnual,
       additionalMonthlyPaymentNum,
       oneTimeExtraPaymentNum,
@@ -285,6 +290,7 @@ function MortgageCalculator() {
     loanTerm,
     propertyTaxes,
     homeInsurance,
+    hoaMonthly,
     pmiRate,
     additionalMonthlyPayment,
     oneTimeExtraPayment,
@@ -295,6 +301,7 @@ function MortgageCalculator() {
     const monthlyRate = values.interestRateNum / 100 / 12;
     const monthlyTaxes = values.propertyTaxesAnnual / 12;
     const monthlyInsurance = values.homeInsuranceAnnual / 12;
+    const monthlyHoa = values.hoaMonthlyNum;
     const pmiRequired =
       values.downPaymentPercent < 20 &&
       values.pmiRateAnnual > 0 &&
@@ -356,7 +363,8 @@ function MortgageCalculator() {
         }
 
         const totalPrincipal = scheduledPrincipal + extraPrincipal;
-        const totalPayment = interest + totalPrincipal + monthlyTaxes + monthlyInsurance + currentPmi;
+        const totalPayment =
+          interest + totalPrincipal + monthlyTaxes + monthlyInsurance + monthlyHoa + currentPmi;
 
         balance = Math.max(0, balance - totalPrincipal);
         totalInterest += interest;
@@ -370,6 +378,7 @@ function MortgageCalculator() {
           interest,
           taxes: monthlyTaxes,
           insurance: monthlyInsurance,
+          hoa: monthlyHoa,
           pmi: currentPmi,
           extraPrincipal,
           balance,
@@ -395,6 +404,7 @@ function MortgageCalculator() {
       withExtras: buildSchedule(true),
       monthlyTaxes,
       monthlyInsurance,
+      monthlyHoa,
       pmiRequired,
       monthlyPmiAmount,
     };
@@ -409,6 +419,7 @@ function MortgageCalculator() {
     calculations.base.monthlyPI +
     calculations.monthlyTaxes +
     calculations.monthlyInsurance +
+    calculations.monthlyHoa +
     calculations.base.firstMonthPmi;
 
   const monthlyPaymentWithExtra = baseMonthlyPayment + values.additionalMonthlyPaymentNum;
@@ -427,6 +438,7 @@ function MortgageCalculator() {
     setLoanTerm(DEFAULT_VALUES.loanTerm);
     setPropertyTaxes(DEFAULT_VALUES.propertyTaxes);
     setHomeInsurance(DEFAULT_VALUES.homeInsurance);
+    setHoaMonthly(DEFAULT_VALUES.hoaMonthly);
     setPmiRate(DEFAULT_VALUES.pmiRate);
     setAdditionalMonthlyPayment(DEFAULT_VALUES.additionalMonthlyPayment);
     setOneTimeExtraPayment(DEFAULT_VALUES.oneTimeExtraPayment);
@@ -447,7 +459,7 @@ function MortgageCalculator() {
                 Mortgage Calculator
               </h3>
               <p className="mt-1.5 max-w-2xl text-xs leading-5 text-muted-foreground sm:text-sm sm:leading-6">
-                Estimate monthly payment, taxes, insurance, PMI, amortization,
+                Estimate monthly payment, taxes, insurance, HOA, PMI, amortization,
                 and payoff savings with extra payments.
               </p>
             </div>
@@ -548,7 +560,7 @@ function MortgageCalculator() {
                   id="taxes-heading"
                   className="text-base font-montserrat font-bold text-foreground sm:text-lg"
                 >
-                  Taxes, Insurance & PMI
+                  Taxes, Insurance, HOA & PMI
                 </h4>
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -567,6 +579,14 @@ function MortgageCalculator() {
                   onChange={setHomeInsurance}
                   min="0"
                   placeholder="1800"
+                />
+                <InputField
+                  label="HOA / Month"
+                  icon={<DollarSign className="h-4 w-4" aria-hidden="true" />}
+                  value={hoaMonthly}
+                  onChange={setHoaMonthly}
+                  min="0"
+                  placeholder="0"
                 />
                 <InputField
                   label="PMI Rate / Year"
@@ -646,8 +666,12 @@ function MortgageCalculator() {
               </div>
               <StatCard label="Principal & Interest" value={formatCurrency(calculations.base.monthlyPI)} />
               <StatCard
-                label="Taxes + Insurance"
-                value={formatCurrency(calculations.monthlyTaxes + calculations.monthlyInsurance)}
+                label="Taxes + Ins + HOA"
+                value={formatCurrency(
+                  calculations.monthlyTaxes +
+                    calculations.monthlyInsurance +
+                    calculations.monthlyHoa
+                )}
               />
               <div className="col-span-2 xl:col-span-1">
                 <StatCard label="PMI (Monthly)" value={formatCurrency(calculations.base.firstMonthPmi)} />
@@ -678,6 +702,7 @@ function MortgageCalculator() {
                   { label: "Principal & interest", value: formatCurrency(calculations.base.monthlyPI) },
                   { label: "Property taxes", value: formatCurrency(calculations.monthlyTaxes) },
                   { label: "Home insurance", value: formatCurrency(calculations.monthlyInsurance) },
+                  { label: "HOA", value: formatCurrency(calculations.monthlyHoa) },
                   { label: "PMI", value: formatCurrency(calculations.base.firstMonthPmi) },
                 ].map((row) => (
                   <div key={row.label} className="flex items-center justify-between">
@@ -863,6 +888,7 @@ function MortgageCalculator() {
                       { label: "Interest", align: "right" },
                       { label: "Taxes", align: "right" },
                       { label: "Insurance", align: "right" },
+                      { label: "HOA", align: "right" },
                       { label: "PMI", align: "right" },
                       { label: "Extra", align: "right" },
                       { label: "Balance", align: "right" },
@@ -902,6 +928,9 @@ function MortgageCalculator() {
                       </td>
                       <td className="px-2 py-2 tabular-nums text-right text-foreground sm:px-4 sm:py-3">
                         {formatCurrencyPrecise(row.insurance)}
+                      </td>
+                      <td className="px-2 py-2 tabular-nums text-right text-foreground sm:px-4 sm:py-3">
+                        {formatCurrencyPrecise(row.hoa)}
                       </td>
                       <td className="px-2 py-2 tabular-nums text-right text-foreground sm:px-4 sm:py-3">
                         {formatCurrencyPrecise(row.pmi)}

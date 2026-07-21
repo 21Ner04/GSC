@@ -1,0 +1,124 @@
+{
+  "seo": {
+    "title": "Green Street Capital | Mortgage Broker Brooklyn NY, NJ, FL & PA",
+    "description": "Trusted mortgage broker serving NY, NJ, FL, and PA. Purchase, refinance, FHA, VA, Non-QM, bank statement, and DSCR loans. NMLS #2066586.",
+    "keywords": [
+      "mortgage broker Brooklyn",
+      "mortgage broker New York",
+      "home loans NJ",
+      "refinance Florida",
+      "Non-QM loans",
+      "Green Street Capital"
+    ]
+  },
+  "hero": {
+    "titleHtml": "Your Path to <span class=\"text-primary\">Homeownership</span>",
+    "subtitle": "Trusted mortgage solutions. Fast approvals. Competitive rates.",
+    "image": "/MAIN PAGE PIC.jpg",
+    "imageAlt": "Green Street Capital team"
+  },
+  "loanPrograms": {
+    "heading": "Loan Programs",
+    "subtitle": "Right solution for your situation.",
+    "viewAllHref": "/loan-programs",
+    "items": [
+      {
+        "title": "Purchase Loans",
+        "description": "Financing options for buying your dream home.",
+        "href": "/purchase"
+      },
+      {
+        "title": "Refinance",
+        "description": "Lower your rate or cash out your home equity.",
+        "href": "/refinance"
+      },
+      {
+        "title": "First-Time Homebuyers",
+        "description": "Special programs and guidance for new buyers.",
+        "href": "/specialties/first-time-homebuyers"
+      },
+      {
+        "title": "Conventional, FHA & VA",
+        "description": "Government-backed and traditional loan options.",
+        "href": "/loan-programs"
+      },
+      {
+        "title": "Non-QM & Bank Statement",
+        "description": "Flexible solutions for unique income situations.",
+        "href": "/specialties/non-qm-loans"
+      },
+      {
+        "title": "Investment & DSCR",
+        "description": "Financing for real estate investors and landlords.",
+        "href": "/specialties/dscr-loans"
+      }
+    ]
+  },
+  "successStories": {
+    "heading": "Success Stories",
+    "subtitle": "Real Clients. Real Solutions.",
+    "items": [
+      {
+        "slug": "truck-driver",
+        "title": "Truck Driver Finds the Right Path to Homeownership",
+        "clientType": "Truck Driver",
+        "problem": "A truck driver with non-traditional income needed a mortgage solution that reflected his real financial picture.",
+        "solution": "Our team reviewed his income structure and available programs to identify a practical path toward financing.",
+        "result": "Successfully secured financing tailored to his income situation."
+      },
+      {
+        "slug": "self-employed",
+        "title": "Self-Employed Borrower Gets More Flexibility",
+        "clientType": "Self-Employed Business Owner",
+        "problem": "A business owner had healthy cash flow but did not qualify through standard income documentation.",
+        "solution": "We explored alternative documentation and bank statement options designed for self-employed borrowers.",
+        "result": "Found a flexible financing option that matched his business income."
+      },
+      {
+        "slug": "first-time-buyer",
+        "title": "First-Time Buyer Moves Forward With Confidence",
+        "clientType": "First-Time Homebuyer",
+        "problem": "A first-time homebuyer needed help understanding the process, available programs, and down payment options.",
+        "solution": "Our team provided clear guidance and helped create a realistic path toward purchasing a home.",
+        "result": "Gained confidence and successfully navigated the home buying process."
+      },
+      {
+        "slug": "investor",
+        "title": "Investor Expands a Rental Portfolio",
+        "clientType": "Real Estate Investor",
+        "problem": "A real estate investor wanted financing based on a property's rental income.",
+        "solution": "We reviewed the property's cash flow and investor-focused options to help structure a suitable financing strategy.",
+        "result": "Structured financing that aligned with investment goals."
+      }
+    ]
+  },
+  "reviews": {
+    "heading": "Google Reviews",
+    "subtitle": "See what our clients say about us."
+  },
+  "calculatorBook": {
+    "calcHeading": "Mortgage Calculator",
+    "calcSubtitle": "Get a quick estimate of your monthly payment.",
+    "bookHeading": "First-Time Homebuyer Guide",
+    "bookDescription": "Everything you need to know about buying your first home—from mortgage basics to closing day.",
+    "bookBullets": [
+      "Understanding mortgage basics",
+      "Choosing the right loan program",
+      "Preparing for pre-approval",
+      "Navigating the closing process"
+    ],
+    "bookCta": "Get the Guide"
+  },
+  "videos": {
+    "heading": "Video Blog",
+    "subtitle": "Expert guidance, market updates, and resources for your home buying journey."
+  },
+  "marketUpdates": {
+    "heading": "Market Updates",
+    "subtitle": "Latest mortgage news from Mortgage News Daily."
+  },
+  "contact": {
+    "heading": "Contact Us",
+    "subtitle": "Ready to take the next step? Our team is here to help."
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "pennsylvania",
+  "kind": "location",
+  "seo": {
+    "title": "Mortgage Broker in Pennsylvania | Green Street Capital",
+    "description": "Pennsylvania mortgage broker for purchase and refinance. Conventional, FHA, VA, Non-QM, and investment options. NMLS #2066586.",
+    "keywords": [
+      "mortgage broker Pennsylvania",
+      "PA home loans",
+      "refinance Pennsylvania",
+      "first-time homebuyer PA"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgage Broker in Pennsylvania",
+    "subheading": "Licensed mortgage help for Pennsylvania homebuyers and homeowners—purchase, refinance, and specialty programs."
+  },
+  "intro": {
+    "heading": "Pennsylvania Clients We Support",
+    "paragraphs": [
+      "Whether you are buying in the Philadelphia suburbs, refinancing in eastern Pennsylvania, or evaluating investment property, Green Street Capital provides broker guidance licensed for Pennsylvania.",
+      "We help you compare programs, estimate full monthly costs, and prepare a clean file for underwriting."
+    ],
+    "bullets": [
+      "First-time and move-up homebuyers",
+      "Refinancing homeowners",
+      "Self-employed and commission-based borrowers",
+      "Veterans exploring VA benefits",
+      "Investors seeking rental property financing"
+    ]
+  },
+  "sidebar": {
+    "heading": "PA Licensing",
+    "body": "Licensed with the Pennsylvania Department of Banking and Securities. Loans arranged with third-party lenders. NMLS #2066586.",
+    "highlights": [
+      "PA-licensed mortgage broker",
+      "Purchase & refinance",
+      "Government & specialty loans"
+    ]
+  },
+  "programsHeading": "Pennsylvania Loan Programs",
+  "programs": [
+    {
+      "title": "Conventional Loans",
+      "description": "Core financing for primary residences."
+    },
+    {
+      "title": "FHA Loans",
+      "description": "Lower down-payment paths for eligible buyers."
+    },
+    {
+      "title": "VA Loans",
+      "description": "Options for eligible veterans and service members."
+    },
+    {
+      "title": "Refinance",
+      "description": "Rate-and-term or cash-out when appropriate."
+    },
+    {
+      "title": "Non-QM & Bank Statement",
+      "description": "Flexible documentation for complex income profiles."
+    },
+    {
+      "title": "Investment Property",
+      "description": "Investor-focused products including DSCR-style options when available."
+    }
+  ],
+  "market": {
+    "heading": "Pennsylvania Market Notes",
+    "paragraphs": [
+      "Local taxes and insurance vary by county and municipality—build them into your payment estimate early.",
+      "A complete pre-approval helps you negotiate with confidence in competitive pockets of the market."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Are you licensed in Pennsylvania?",
+      "answer": "Yes. We are licensed with the PA Department of Banking and Securities."
+    },
+    {
+      "question": "Can I refinance my Pennsylvania home with Green Street Capital?",
+      "answer": "Yes, subject to eligibility, equity, and lender guidelines. Contact a loan officer for a review."
+    },
+    {
+      "question": "Do you help first-time buyers in PA?",
+      "answer": "Yes. We explain program differences and help you prepare for pre-approval and closing."
+    }
+  ],
+  "cta": {
+    "heading": "Start your Pennsylvania mortgage",
+    "body": "Connect with our team to discuss purchase or refinance options in Pennsylvania."
+  }
+}

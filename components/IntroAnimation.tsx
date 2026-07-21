@@ -5,45 +5,55 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 export function IntroAnimation() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
-  // Проверяем prefers-reduced-motion
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(mediaQuery.matches);
 
-    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    const handler = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
     mediaQuery.addEventListener("change", handler);
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
   const handleExit = useCallback(() => {
-    if (isExiting) return;
-    setIsExiting(true);
+    setIsExiting((prev) => {
+      if (prev) return prev; // уже закрывается
 
-    const exitDuration = prefersReducedMotion ? 0 : 600;
-    setTimeout(() => setShow(false), exitDuration);
-  }, [isExiting, prefersReducedMotion]);
+      const exitDuration = prefersReducedMotion ? 0 : 850;
 
-  // Показываем интро только один раз за сессию
+      setTimeout(() => {
+        setShow(false);
+      }, exitDuration);
+
+      return true;
+    });
+  }, [prefersReducedMotion]);
+
   useEffect(() => {
     const hasSeenIntro = sessionStorage.getItem("hasSeenGSCIntro");
 
-    if (!hasSeenIntro) {
-      setShow(true);
-      sessionStorage.setItem("hasSeenGSCIntro", "true");
-
-      // Время показа анимации (3.5 секунды)
-      const showDuration = prefersReducedMotion ? 800 : 5100;
-
-      const timer = setTimeout(() => handleExit(), showDuration);
-      return () => clearTimeout(timer);
+    if (hasSeenIntro) {
+      setShow(false);
+      return;
     }
+
+    sessionStorage.setItem("hasSeenGSCIntro", "true");
+
+    // ===== ВРЕМЯ ПОКАЗА АНИМАЦИИ =====
+    const showDuration = prefersReducedMotion ? 800 : 5100; // 5 секунд
+
+    const timer = setTimeout(() => {
+      handleExit();
+    }, showDuration);
+
+    return () => clearTimeout(timer);
   }, [handleExit, prefersReducedMotion]);
 
-  // Блокируем скролл
   useEffect(() => {
     if (show) {
       document.body.style.overflow = "hidden";
@@ -55,7 +65,6 @@ export function IntroAnimation() {
     };
   }, [show]);
 
-  // Закрытие по Escape
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") handleExit();
@@ -77,8 +86,8 @@ export function IntroAnimation() {
         animate={{ opacity: isExiting ? 0 : 1 }}
         exit={{ opacity: 0 }}
         transition={{
-          duration: prefersReducedMotion ? 0 : 0.6,
-          ease: "easeInOut",
+          duration: prefersReducedMotion ? 0 : 0.85,
+          ease: [0.4, 0, 0.2, 1],
         }}
         className="fixed inset-0 z-[9999] flex items-center justify-center bg-black"
         onClick={handleExit}
@@ -105,17 +114,29 @@ export function IntroAnimation() {
           Skip
         </button>
 
-        {/* Основной контент */}
+        {/* Контент с красивой анимацией закрытия */}
         <motion.div
           initial={
             prefersReducedMotion
               ? {}
-              : { scale: 0.85, opacity: 0, y: 20 }
+              : { scale: 0.85, opacity: 0, y: 30 }
           }
-          animate={{ scale: 1, opacity: 1, y: 0 }}
+          animate={
+            isExiting
+              ? {
+                  scale: 0.7,
+                  opacity: 0,
+                  y: -50,
+                }
+              : {
+                  scale: 1,
+                  opacity: 1,
+                  y: 0,
+                }
+          }
           transition={{
             duration: prefersReducedMotion ? 0 : 0.8,
-            ease: [0.16, 1, 0.3, 1],
+            ease: [0.4, 0, 0.2, 1],
           }}
           className="flex flex-col items-center px-6"
           onClick={(e) => e.stopPropagation()}
@@ -134,7 +155,6 @@ function GifWithFallback() {
     <div className="relative w-44 h-44 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 flex items-center justify-center">
       {!imgError ? (
         <video
-          // Важно: пробел в имени файла кодируем как %20
           src="/logo%20gif.gif.mp4"
           className="w-full h-full object-contain"
           autoPlay

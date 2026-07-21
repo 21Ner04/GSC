@@ -1,0 +1,72 @@
+{
+  "slug": "first-time-homebuyers",
+  "seo": {
+    "title": "First-Time Homebuyer Programs | Green Street Capital",
+    "description": "Guidance for first-time homebuyers: down payment, FHA, conventional, and step-by-step process help. Free buyer guide. NMLS #2066586.",
+    "keywords": [
+      "first time homebuyer",
+      "first-time buyer mortgage",
+      "FHA first time buyer"
+    ]
+  },
+  "hero": {
+    "heading": "First-Time Homebuyer Programs",
+    "subheading": "Clear guidance on programs, down payment, and the path from pre-approval to closing."
+  },
+  "intro": {
+    "heading": "Buying Your First Home",
+    "paragraphs": [
+      "The first purchase can feel overwhelming—credit, down payment, inspections, and closing costs all arrive at once. We break the process into steps and help you compare programs that fit your budget.",
+      "Download our First-Time Homebuyer Guide and speak with a loan officer before you shop so your offer is backed by a real pre-approval."
+    ],
+    "bullets": [
+      "Understanding pre-approval vs pre-qualification",
+      "Comparing FHA, conventional, and other options",
+      "Planning down payment and reserves",
+      "Avoiding common first-timer surprises at closing"
+    ]
+  },
+  "sidebar": {
+    "heading": "Free Buyer Guide",
+    "body": "Get our First-Time Homebuyer handbook (PDF) and schedule time with a loan officer for personalized next steps.",
+    "highlights": [
+      "Step-by-step process",
+      "Program comparison",
+      "Downloadable guide"
+    ]
+  },
+  "programsHeading": "Starter Program Types",
+  "programs": [
+    {
+      "title": "FHA Loans",
+      "description": "Lower down-payment options for eligible buyers."
+    },
+    {
+      "title": "Conventional 3% Down",
+      "description": "Where credit and guidelines allow low-down conventional products."
+    },
+    {
+      "title": "VA Loans",
+      "description": "For eligible veterans—often with $0 down."
+    },
+    {
+      "title": "Education & Guidance",
+      "description": "Hands-on help so you know what to expect at each milestone."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How much do I need for down payment?",
+      "answer": "It depends on the program—some allow low down payments; reserves and closing costs still matter."
+    },
+    {
+      "question": "Should I get pre-approved first?",
+      "answer": "Yes. Pre-approval strengthens offers and clarifies your budget."
+    }
+  ],
+  "cta": {
+    "heading": "Start your first purchase the right way",
+    "body": "Download the guide and choose a loan officer to begin pre-approval."
+  },
+  "kind": "specialty"
+}

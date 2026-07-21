@@ -1,0 +1,93 @@
+{
+  "slug": "new-jersey",
+  "kind": "location",
+  "seo": {
+    "title": "Mortgage Broker in New Jersey | Green Street Capital",
+    "description": "New Jersey mortgage broker for purchase, refinance, FHA, VA, Non-QM, and investment loans. Licensed NJ guidance. NMLS #2066586.",
+    "keywords": [
+      "mortgage broker New Jersey",
+      "NJ home loans",
+      "refinance New Jersey",
+      "first-time homebuyer NJ"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgage Broker in New Jersey",
+    "subheading": "Licensed mortgage solutions for New Jersey homebuyers, refinancers, and investors—clear process, competitive options."
+  },
+  "intro": {
+    "heading": "Helping New Jersey Borrowers",
+    "paragraphs": [
+      "From North Jersey commuter towns to shore communities and growing suburbs, New Jersey buyers need financing that matches local property types and income situations. Green Street Capital is licensed in New Jersey and helps clients compare conventional, government-backed, and specialty programs.",
+      "We focus on transparent monthly payment estimates and documentation that keeps underwriting moving."
+    ],
+    "bullets": [
+      "First-time buyers purchasing single-family homes and condos",
+      "Move-up families needing larger homes or better school districts",
+      "Self-employed borrowers exploring bank statement options",
+      "Homeowners refinancing for rate or cash-out goals",
+      "Investors financing rentals with DSCR-style programs"
+    ]
+  },
+  "sidebar": {
+    "heading": "NJ Licensing",
+    "body": "Licensed with the New Jersey Department of Banking and Insurance. Loans arranged with third-party lenders. NMLS #2066586.",
+    "highlights": [
+      "NJ-licensed mortgage broker",
+      "Purchase & refinance",
+      "Specialty & investor programs"
+    ]
+  },
+  "programsHeading": "New Jersey Loan Programs",
+  "programs": [
+    {
+      "title": "Conventional Loans",
+      "description": "Flexible financing for primary residences with competitive structures."
+    },
+    {
+      "title": "FHA Loans",
+      "description": "Lower down-payment options for eligible buyers."
+    },
+    {
+      "title": "VA Loans",
+      "description": "Benefits for eligible veterans and service members."
+    },
+    {
+      "title": "Refinance",
+      "description": "Rate-and-term or cash-out when your equity supports your goals."
+    },
+    {
+      "title": "Non-QM & Bank Statement",
+      "description": "Alternatives for borrowers with complex income documentation."
+    },
+    {
+      "title": "Investment & DSCR",
+      "description": "Rental-focused financing that evaluates property cash flow."
+    }
+  ],
+  "market": {
+    "heading": "New Jersey Market Notes",
+    "paragraphs": [
+      "Property taxes and insurance can meaningfully change affordability. We help you underwrite the full payment, not just the note rate.",
+      "Commuter patterns and town-by-town pricing mean local comps and timelines vary—pre-approval still wins when inventory is tight."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Are you licensed in New Jersey?",
+      "answer": "Yes. We are licensed with the NJ Department of Banking and Insurance."
+    },
+    {
+      "question": "Can New Jersey borrowers use Non-QM programs?",
+      "answer": "When available through our lender partners, we can explore Non-QM and bank statement options for qualified borrowers."
+    },
+    {
+      "question": "How do I contact you from NJ?",
+      "answer": "Call 855-615-4545 or 718-615-4545, email Info@GSCMortgage.com, or apply via our Team page."
+    }
+  ],
+  "cta": {
+    "heading": "Start your New Jersey mortgage",
+    "body": "Choose a loan officer and begin your application with a team that serves New Jersey."
+  }
+}

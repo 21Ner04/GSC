@@ -1,0 +1,94 @@
+{
+  "slug": "new-york-city",
+  "kind": "location",
+  "seo": {
+    "title": "Mortgage Broker in New York City | All 5 Boroughs | Green Street Capital",
+    "description": "NYC mortgage broker for Manhattan, Brooklyn, Queens, Bronx, and Staten Island. Purchase, refinance, co-op, condo, jumbo, FHA, VA, Non-QM. NMLS #2066586.",
+    "keywords": [
+      "mortgage broker NYC",
+      "mortgage broker New York City",
+      "Brooklyn home loans",
+      "Manhattan mortgage",
+      "co-op financing NYC"
+    ]
+  },
+  "hero": {
+    "heading": "Mortgage Broker in New York City",
+    "subheading": "Expert mortgage guidance across all five boroughs—competitive programs for buyers, refinancers, and investors."
+  },
+  "intro": {
+    "heading": "Who We Help in NYC",
+    "paragraphs": [
+      "New York City real estate is competitive and document-heavy. Green Street Capital helps residents and investors across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island find financing that fits both the property type and the borrower’s income profile.",
+      "From luxury condos and co-ops to multi-family investments, we coordinate with lenders who understand NYC underwriting, board requirements, and jumbo needs."
+    ],
+    "bullets": [
+      "Manhattan buyers navigating condos and co-ops in prime and emerging neighborhoods",
+      "Brooklyn families seeking single-family homes, brownstones, and condos",
+      "Queens residents looking for primary homes and multi-family investments",
+      "Bronx first-time buyers building a path to ownership",
+      "Staten Island homeowners refinancing or upgrading"
+    ]
+  },
+  "sidebar": {
+    "heading": "NYC Mortgage Expertise",
+    "body": "Local Brooklyn headquarters with deep experience financing properties citywide.",
+    "highlights": [
+      "All five boroughs served",
+      "Co-op and condo specialists",
+      "Jumbo loan expertise"
+    ]
+  },
+  "programsHeading": "NYC Mortgage Programs",
+  "programs": [
+    {
+      "title": "Conventional Loans",
+      "description": "Traditional financing for NYC’s diverse property types, from condos to single-family homes."
+    },
+    {
+      "title": "Jumbo Loans",
+      "description": "For higher-value properties where conforming loan limits are not enough."
+    },
+    {
+      "title": "Co-op Financing",
+      "description": "Specialized support for cooperative housing and board package readiness."
+    },
+    {
+      "title": "FHA Loans",
+      "description": "Lower down-payment options for eligible first-time and move-up buyers."
+    },
+    {
+      "title": "VA Loans",
+      "description": "Zero-down options for eligible veterans and service members."
+    },
+    {
+      "title": "Investment Property Loans",
+      "description": "DSCR and investor programs for NYC’s strong rental markets."
+    }
+  ],
+  "market": {
+    "heading": "Buying in New York City",
+    "paragraphs": [
+      "Bidding wars, inspection timelines, and board interviews reward borrowers who are pre-approved and organized.",
+      "We help you understand full monthly costs—principal, interest, taxes, insurance, HOA or maintenance—so your budget stays realistic."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Do you finance properties in every borough?",
+      "answer": "Yes. We work with clients purchasing or refinancing across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island."
+    },
+    {
+      "question": "Can you help with co-op board packages?",
+      "answer": "We guide borrowers on typical lender and board documentation so you can move through the process with fewer surprises."
+    },
+    {
+      "question": "Where is your office?",
+      "answer": "Our office is at 2709 Coney Island Ave, 3rd Floor, Brooklyn, NY 11235. We also support clients by phone, email, and virtual meetings."
+    }
+  ],
+  "cta": {
+    "heading": "Start your NYC mortgage with confidence",
+    "body": "Apply with a loan officer or contact our team for a consultation tailored to New York City."
+  }
+}

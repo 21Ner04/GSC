@@ -1,0 +1,68 @@
+{
+  "slug": "non-qm-loans",
+  "seo": {
+    "title": "Non-QM Loans | Flexible Mortgage Options | Green Street Capital",
+    "description": "Non-QM mortgage programs for borrowers outside standard Qualified Mortgage boxes. Bank statement, investor, and specialty options. NMLS #2066586.",
+    "keywords": [
+      "Non-QM loans",
+      "Non QM mortgage",
+      "alternative mortgage programs"
+    ]
+  },
+  "hero": {
+    "heading": "Non-QM Loans",
+    "subheading": "Flexible mortgage solutions when standard QM underwriting is not the best match for your income or property goals."
+  },
+  "intro": {
+    "heading": "When Non-QM Makes Sense",
+    "paragraphs": [
+      "Non-QM loans are not “subprime by default”—they are alternative underwriting frameworks for self-employed borrowers, investors, and other profiles that need flexibility beyond standard Ability-to-Repay QM boxes.",
+      "Pricing, reserves, and credit requirements still apply. We explain tradeoffs clearly so you can choose consciously."
+    ],
+    "bullets": [
+      "Self-employed borrowers with strong cash flow",
+      "Investors using DSCR-style qualification",
+      "Recent credit events with compensating factors",
+      "Unique property or income situations"
+    ]
+  },
+  "sidebar": {
+    "heading": "Broker Advantage",
+    "body": "As a broker, we compare multiple Non-QM lender menus instead of forcing one bank’s limited box.",
+    "highlights": [
+      "Multiple lender options",
+      "Transparent tradeoffs",
+      "Purchase & refinance"
+    ]
+  },
+  "programsHeading": "Non-QM Categories",
+  "programs": [
+    {
+      "title": "Bank Statement",
+      "description": "Income from deposits rather than tax-return AGI alone."
+    },
+    {
+      "title": "DSCR Investor",
+      "description": "Property cash-flow underwriting for rentals."
+    },
+    {
+      "title": "Asset-Based",
+      "description": "Select programs that emphasize assets and reserves."
+    },
+    {
+      "title": "Expanded Credit",
+      "description": "Options for borrowers rebuilding after past credit events (case by case)."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Are Non-QM loans riskier?",
+      "answer": "They use different underwriting. Rates and fees may differ from conventional QM loans. We review the full picture with you."
+    }
+  ],
+  "cta": {
+    "heading": "Compare Non-QM options",
+    "body": "Schedule a consult to see whether Non-QM, conventional, or government loans fit best."
+  },
+  "kind": "specialty"
+}

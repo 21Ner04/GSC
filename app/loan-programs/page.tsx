@@ -2,7 +2,24 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 
-export const metadata = { title: "Loan Programs | Green Street Capital" };
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = buildPageMetadata(
+  {
+    title: "Loan Programs | Conventional, FHA, VA, Jumbo & More",
+    description:
+      "Explore mortgage loan programs: conventional, FHA, VA, USDA, jumbo, and investment property financing with Green Street Capital NMLS #2066586.",
+    keywords: [
+      "mortgage loan programs",
+      "FHA loans",
+      "VA loans",
+      "conventional mortgage",
+      "jumbo loans",
+    ],
+  },
+  { path: "/loan-programs" }
+);
 
 const PROGRAMS = [
   { id: "conventional", name: "Conventional Loans", desc: "The most common type of mortgage. Not guaranteed by the government, usually requiring a higher credit score and down payments starting as low as 3%." },

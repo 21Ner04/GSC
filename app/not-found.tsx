@@ -3,13 +3,23 @@ import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[70vh] flex items-center justify-center flex-col p-4 text-center">
-      <h1 className="font-montserrat text-6xl font-bold text-primary mb-4">404</h1>
-      <h2 className="text-2xl font-bold text-foreground mb-6">Page Not Found</h2>
-      <p className="text-muted-foreground max-w-md mb-8">
-        The page you are looking for might have been removed or is temporarily unavailable.
+    <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-24 text-center">
+      <h1 className="mb-4 font-montserrat text-4xl font-bold text-foreground">
+        Page not found
+      </h1>
+      <p className="mb-8 max-w-md text-muted-foreground">
+        The page you are looking for does not exist or was moved.
       </p>
-      <Link href="/"><Button size="lg">Return to Homepage</Button></Link>
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <Link href="/">
+          <Button size="lg">Back to Home</Button>
+        </Link>
+        <Link href="/contact">
+          <Button size="lg" variant="outline">
+            Contact Us
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }
