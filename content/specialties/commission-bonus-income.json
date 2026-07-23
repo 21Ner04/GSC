@@ -1,12 +1,16 @@
 {
   "slug": "commission-bonus-income",
   "seo": {
-    "title": "Commission & Bonus Income Mortgages | Green Street Capital",
+    "title": "Commission and Bonus Income | NY NJ FL PA | Green Street Capital",
     "description": "Mortgages for commission-based and bonus-heavy earners. Document variable income the right way. NMLS #2066586.",
     "keywords": [
       "commission income mortgage",
       "bonus income home loan",
-      "variable income mortgage"
+      "variable income mortgage",
+      "Commission and Bonus Income New York",
+      "Commission and Bonus Income Brooklyn",
+      "Commission and Bonus Income near me",
+      "commission bonus income mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "Variable Income Underwriting",
     "paragraphs": [
+      "Searching for commission and bonus income near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for commission and bonus income and related programs — so you are not limited to one bank’s rules.",
       "Commission and bonus income is often averaged over two years and may require proof it is likely to continue. We help you assemble paystubs, W-2s, and employer verification so underwriters can use the income you actually earn.",
       "If traditional averaging does not fit, we can also discuss alternative documentation options."
     ],
@@ -58,11 +63,36 @@
     {
       "question": "Will my bonus count?",
       "answer": "Often if it has a two-year history and is likely to continue—underwriters decide based on documentation."
+    },
+    {
+      "question": "Are commission and bonus income available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore commission and bonus income in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get commission and bonus income in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about commission and bonus income for your state."
+    },
+    {
+      "question": "How do I apply for commission and bonus income?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for commission and bonus income?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Document variable income correctly",
     "body": "Work with a loan officer who regularly underwrites commission profiles."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

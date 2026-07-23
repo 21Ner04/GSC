@@ -3,23 +3,27 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = buildPageMetadata(
-  {
-    title: "Loan Programs | Conventional, FHA, VA, Jumbo & More",
-    description:
-      "Explore mortgage loan programs: conventional, FHA, VA, USDA, jumbo, and investment property financing with Green Street Capital NMLS #2066586.",
-    keywords: [
-      "mortgage loan programs",
-      "FHA loans",
-      "VA loans",
-      "conventional mortgage",
-      "jumbo loans",
-    ],
-  },
-  { path: "/loan-programs" }
-);
+const loanProgramsSeo = {
+  title: "Loan Programs | Conventional, FHA, VA, Jumbo & More",
+  description:
+    "Explore mortgage loan programs: conventional, FHA, VA, USDA, jumbo, Non-QM, and investment financing with Green Street Capital. NMLS #2066586.",
+  keywords: [
+    "mortgage loan programs",
+    "FHA loans",
+    "VA loans",
+    "conventional mortgage",
+    "jumbo loans",
+    "Non-QM loan programs",
+  ],
+};
+
+export const metadata: Metadata = buildPageMetadata(loanProgramsSeo, {
+  path: "/loan-programs",
+});
 
 const PROGRAMS = [
   {
@@ -57,6 +61,20 @@ const PROGRAMS = [
 export default function LoanPrograms() {
   return (
     <div className="w-full overflow-x-hidden pb-20 sm:pb-24">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Loan Programs", path: "/loan-programs" },
+        ]}
+      />
+      <WebPageJsonLd
+        name={loanProgramsSeo.title}
+        description={loanProgramsSeo.description}
+        path="/loan-programs"
+      />
+      <Breadcrumbs
+        items={[{ name: "Home", href: "/" }, { name: "Loan Programs" }]}
+      />
       <div className="page-hero relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         <div className="relative z-10 mx-auto max-w-7xl">
           <h1 className="page-hero-title">Loan Programs</h1>
@@ -76,9 +94,9 @@ export default function LoanPrograms() {
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-muted transition-colors group-hover:bg-primary/10 sm:mb-6 sm:h-12 sm:w-12">
                 <ChevronRight className="h-5 w-5 text-foreground transition-colors group-hover:text-primary sm:h-6 sm:w-6" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-foreground sm:mb-4 sm:text-2xl">
+              <h2 className="mb-3 text-xl font-bold text-foreground sm:mb-4 sm:text-2xl">
                 {prog.name}
-              </h3>
+              </h2>
               <p className="flex-grow text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {prog.desc}
               </p>

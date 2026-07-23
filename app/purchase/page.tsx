@@ -3,26 +3,44 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, Home as HomeIcon, Key, PiggyBank } from "lucide-react";
 
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = buildPageMetadata(
-  {
-    title: "Purchase a Home | Mortgage Loans NY, NJ, FL, PA",
-    description:
-      "Home purchase mortgage options with Green Street Capital: conventional, FHA, VA, jumbo, and specialty programs. Get pre-approved with a licensed loan officer.",
-    keywords: [
-      "home purchase mortgage",
-      "buy a house loan",
-      "pre-approval mortgage",
-      "FHA purchase loan",
-    ],
-  },
-  { path: "/purchase" }
-);
+const purchaseSeo = {
+  title: "Purchase a Home | Mortgage Loans NY, NJ, FL, PA",
+  description:
+    "Home purchase mortgages with Green Street Capital: conventional, FHA, VA, jumbo & specialty programs. Pre-approval with a licensed loan officer. NMLS #2066586.",
+  keywords: [
+    "home purchase mortgage",
+    "buy a house loan",
+    "pre-approval mortgage",
+    "FHA purchase loan",
+    "mortgage broker Brooklyn purchase",
+  ],
+};
+
+export const metadata: Metadata = buildPageMetadata(purchaseSeo, {
+  path: "/purchase",
+});
 
 export default function Purchase() {
   return (
     <div className="w-full overflow-x-hidden">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Purchase a Home", path: "/purchase" },
+        ]}
+      />
+      <WebPageJsonLd
+        name={purchaseSeo.title}
+        description={purchaseSeo.description}
+        path="/purchase"
+      />
+      <Breadcrumbs
+        items={[{ name: "Home", href: "/" }, { name: "Purchase a Home" }]}
+      />
       <div className="page-hero">
         <div className="mx-auto max-w-7xl">
           <h1 className="page-hero-title">Purchase a Home</h1>

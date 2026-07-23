@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -19,6 +19,15 @@ const ogImage = home.hero?.image
   ? `${base}${home.hero.image.startsWith("/") ? home.hero.image : `/${home.hero.image}`}`
   : `${base}/images/logo.png`;
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.website),
   title: {
@@ -26,17 +35,26 @@ export const metadata: Metadata = {
     template: `%s | ${site.companyName}`,
   },
   description: home.seo.description,
-  keywords: home.seo.keywords,
-  authors: [{ name: site.legalName }],
+  keywords: [
+    ...(home.seo.keywords || []),
+    site.companyName,
+    "mortgage broker Brooklyn",
+    "NMLS " + site.nmls,
+  ],
+  authors: [{ name: site.legalName, url: base }],
   creator: site.legalName,
   publisher: site.legalName,
   category: "finance",
+  classification: "Mortgage Brokerage",
   applicationName: site.companyName,
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
   icons: {
-    icon: [{ url: "/images/logo.png", type: "image/png" }],
-    apple: [{ url: "/images/logo.png" }],
+    icon: [{ url: "/images/logo.png", type: "image/png", sizes: "512x512" }],
+    apple: [{ url: "/images/logo.png", sizes: "180x180" }],
     shortcut: ["/images/logo.png"],
   },
+  manifest: "/manifest.webmanifest",
   openGraph: {
     title: home.seo.title,
     description: home.seo.description,
@@ -63,7 +81,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: home.seo.title,
     description: home.seo.description,
-    images: [ogImage],
+    images: [{ url: ogImage, alt: home.hero?.imageAlt || site.companyName }],
   },
   robots: {
     index: true,
@@ -76,41 +94,56 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  alternates: {
-    canonical: "/",
-  },
   formatDetection: {
     telephone: true,
     email: true,
     address: true,
   },
   verification: {
-    // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION or use env in production
     ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
       ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
       : {}),
+  },
+  other: {
+    "geo.region": "US-NY",
+    "geo.placename": "Brooklyn",
+    "geo.position": "40.5905934;-73.9602968",
+    ICBM: "40.5905934, -73.9602968",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en-US">
       <head>
         <OrganizationJsonLd />
         <WebSiteJsonLd />
         <AggregateRatingJsonLd />
+        <link rel="preconnect" href="https://maps.google.com" />
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="Market updates proxy"
+          title={`${site.companyName} market updates`}
           href="/api/market-updates"
         />
       </head>
       <body suppressHydrationWarning>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-foreground focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <IntroAnimation />
         <div className="flex min-h-screen flex-col">
           <Navbar />
-          <main className="w-full min-w-0 flex-1 overflow-x-hidden pb-16 sm:pb-0">
+          <main
+            id="main-content"
+            className="w-full min-w-0 flex-1 overflow-x-hidden pb-16 sm:pb-0"
+            tabIndex={-1}
+          >
             {children}
           </main>
           <Footer />

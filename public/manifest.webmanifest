@@ -1,0 +1,19 @@
+{
+  "name": "Green Street Capital",
+  "short_name": "GSC Mortgage",
+  "description": "Trusted mortgage broker serving NY, NJ, FL, and PA. Purchase, refinance, FHA, VA, Non-QM, bank statement, and DSCR loans. NMLS #2066586.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "lang": "en-US",
+  "categories": ["finance", "business"],
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,12 +1,16 @@
 {
   "slug": "non-qm-loans",
   "seo": {
-    "title": "Non-QM Loans | Flexible Mortgage Options | Green Street Capital",
+    "title": "Non-QM Loans | NY NJ FL PA | Green Street Capital",
     "description": "Non-QM mortgage programs for borrowers outside standard Qualified Mortgage boxes. Bank statement, investor, and specialty options. NMLS #2066586.",
     "keywords": [
       "Non-QM loans",
       "Non QM mortgage",
-      "alternative mortgage programs"
+      "alternative mortgage programs",
+      "Non-QM Loans New York",
+      "Non-QM Loans Brooklyn",
+      "Non-QM Loans near me",
+      "non qm loans mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "When Non-QM Makes Sense",
     "paragraphs": [
+      "Searching for non-qm loans near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for non-qm loans and related programs — so you are not limited to one bank’s rules.",
       "Non-QM loans are not “subprime by default”—they are alternative underwriting frameworks for self-employed borrowers, investors, and other profiles that need flexibility beyond standard Ability-to-Repay QM boxes.",
       "Pricing, reserves, and credit requirements still apply. We explain tradeoffs clearly so you can choose consciously."
     ],
@@ -58,11 +63,36 @@
     {
       "question": "Are Non-QM loans riskier?",
       "answer": "They use different underwriting. Rates and fees may differ from conventional QM loans. We review the full picture with you."
+    },
+    {
+      "question": "Are non-qm loans available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore non-qm loans in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get non-qm loans in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about non-qm loans for your state."
+    },
+    {
+      "question": "How do I apply for non-qm loans?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for non-qm loans?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Compare Non-QM options",
     "body": "Schedule a consult to see whether Non-QM, conventional, or government loans fit best."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

@@ -7,14 +7,15 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildPageMetadata(
   {
-    title: "Apply Now | Choose a Loan Officer | Green Street Capital",
+    title: "Apply Now | Choose a Loan Officer",
     description:
-      "Start your mortgage application by selecting a Green Street Capital loan officer. Continue to their personal application link. NMLS #2066586.",
+      "Start your mortgage application with Green Street Capital. Select a licensed loan officer on our team page and continue to their secure application. NMLS #2066586.",
     keywords: [
       "apply for mortgage",
       "mortgage application",
       "loan officer application",
       "Green Street Capital apply",
+      "online mortgage application NY",
     ],
   },
   { path: "/apply" }

@@ -2,23 +2,27 @@
   "slug": "new-york-city",
   "kind": "location",
   "seo": {
-    "title": "Mortgage Broker in New York City | All 5 Boroughs | Green Street Capital",
-    "description": "NYC mortgage broker for Manhattan, Brooklyn, Queens, Bronx, and Staten Island. Purchase, refinance, co-op, condo, jumbo, FHA, VA, Non-QM. NMLS #2066586.",
+    "title": "Mortgage Broker NYC | All 5 Boroughs Home Loans | GSC",
+    "description": "NYC mortgage broker for Manhattan, Brooklyn, Queens, Bronx & Staten Island. Purchase, refinance, co-op, condo, FHA, VA, Non-QM. NMLS #2066586.",
     "keywords": [
       "mortgage broker NYC",
       "mortgage broker New York City",
-      "Brooklyn home loans",
-      "Manhattan mortgage",
-      "co-op financing NYC"
+      "best mortgage broker NYC",
+      "home loans NYC",
+      "refinance NYC",
+      "co-op financing NYC",
+      "mortgage broker near me NYC",
+      "FHA loans New York City"
     ]
   },
   "hero": {
-    "heading": "Mortgage Broker in New York City",
-    "subheading": "Expert mortgage guidance across all five boroughs—competitive programs for buyers, refinancers, and investors."
+    "heading": "Mortgage Broker in New York City (All 5 Boroughs)",
+    "subheading": "Home purchase and refinance loans across NYC — co-ops, condos, multi-family, FHA, VA, jumbo, and specialty programs."
   },
   "intro": {
     "heading": "Who We Help in NYC",
     "paragraphs": [
+      "If you searched for a mortgage broker in new york city (all 5 boroughs), home loans nearby, or a mortgage broker near me in this area, Green Street Capital can help. We are a licensed mortgage broker (NMLS #2066586) offering purchase, refinance, and specialty programs through multiple lenders.",
       "New York City real estate is competitive and document-heavy. Green Street Capital helps residents and investors across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island find financing that fits both the property type and the borrower’s income profile.",
       "From luxury condos and co-ops to multi-family investments, we coordinate with lenders who understand NYC underwriting, board requirements, and jumbo needs."
     ],
@@ -85,10 +89,38 @@
     {
       "question": "Where is your office?",
       "answer": "Our office is at 2709 Coney Island Ave, 3rd Floor, Brooklyn, NY 11235. We also support clients by phone, email, and virtual meetings."
+    },
+    {
+      "question": "What is the best mortgage broker in NYC?",
+      "answer": "The best fit depends on your income and property. Green Street Capital is a licensed NYC-area mortgage broker offering purchase, refinance, co-op/condo, and specialty loans with access to multiple lenders. NMLS #2066586."
+    },
+    {
+      "question": "Do you serve all five boroughs?",
+      "answer": "Yes — Manhattan, Brooklyn, Queens, the Bronx, and Staten Island."
+    },
+    {
+      "question": "Can I get pre-approved for a NYC co-op?",
+      "answer": "Yes. We help structure financing and documentation typically required for co-op purchases and board packages."
+    },
+    {
+      "question": "Do you offer Non-QM loans in NYC?",
+      "answer": "Yes. Bank statement and other Non-QM options may fit self-employed and alternative-income borrowers."
     }
   ],
   "cta": {
     "heading": "Start your NYC mortgage with confidence",
     "body": "Apply with a loan officer or contact our team for a consultation tailored to New York City."
-  }
+  },
+  "serviceAreas": [
+    "Manhattan",
+    "Brooklyn",
+    "Queens",
+    "Bronx",
+    "Staten Island",
+    "Harlem",
+    "Williamsburg",
+    "Astoria",
+    "Riverdale",
+    "Financial District"
+  ]
 }

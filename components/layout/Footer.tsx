@@ -139,6 +139,23 @@ export function Footer() {
                 <strong className="block text-white">{site.legalName}</strong>
               </li>
               <li>NMLS #{site.nmls}</li>
+              <li className="flex flex-wrap gap-x-3 gap-y-1 pt-1">
+                <Link href="/about" className="hover:text-primary">
+                  About
+                </Link>
+                <Link href="/team" className="hover:text-primary">
+                  Team
+                </Link>
+                <Link href="/schedule" className="hover:text-primary">
+                  Schedule
+                </Link>
+                <Link href="/calculator" className="hover:text-primary">
+                  Calculator
+                </Link>
+                <Link href="/contact" className="hover:text-primary">
+                  Contact
+                </Link>
+              </li>
               <li className="break-anywhere pt-1">{site.address.full}</li>
               <li>
                 <a

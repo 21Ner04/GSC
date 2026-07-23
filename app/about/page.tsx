@@ -2,26 +2,40 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = buildPageMetadata(
-  {
-    title: "About Us | Mortgage Broker Serving NY, NJ, FL & PA",
-    description:
-      "Learn about Green Street Capital, LLC (NMLS #2066586) — an independent mortgage broker helping families with purchase, refinance, and specialty loan programs.",
-    keywords: [
-      "Green Street Capital",
-      "mortgage broker about",
-      "NMLS 2066586",
-      "Brooklyn mortgage broker",
-    ],
-  },
-  { path: "/about" }
-);
+const aboutSeo = {
+  title: "About Us | Mortgage Broker Serving NY, NJ, FL & PA",
+  description:
+    "Learn about Green Street Capital, LLC (NMLS #2066586) — Brooklyn mortgage broker for purchase, refinance, and specialty loan programs in NY, NJ, FL & PA.",
+  keywords: [
+    "Green Street Capital",
+    "mortgage broker about",
+    "NMLS 2066586",
+    "Brooklyn mortgage broker",
+  ],
+};
+
+export const metadata: Metadata = buildPageMetadata(aboutSeo, { path: "/about" });
 
 export default function About() {
   return (
     <div className="w-full overflow-x-hidden">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "About Us", path: "/about" },
+        ]}
+      />
+      <WebPageJsonLd
+        type="AboutPage"
+        name={aboutSeo.title}
+        description={aboutSeo.description}
+        path="/about"
+      />
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About Us" }]} />
       <div className="page-hero bg-gradient-to-br from-gray-50 to-white">
         <div className="mx-auto max-w-4xl">
           <h1 className="page-hero-title">About Green Street Capital</h1>

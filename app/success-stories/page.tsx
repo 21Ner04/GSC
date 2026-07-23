@@ -2,22 +2,28 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getHomepage, getSite } from "@/lib/cms";
-
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import {
+  BreadcrumbJsonLd,
+  CollectionItemListJsonLd,
+  WebPageJsonLd,
+} from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = buildPageMetadata(
-  {
-    title: "Success Stories | Real Clients, Real Solutions | Green Street Capital",
-    description:
-      "Client success stories from Green Street Capital: truck drivers, self-employed borrowers, first-time buyers, and investors. Individual results vary. NMLS #2066586.",
-    keywords: [
-      "mortgage success stories",
-      "client testimonials mortgage",
-      "home loan case studies",
-    ],
-  },
-  { path: "/success-stories" }
-);
+const storiesSeo = {
+  title: "Success Stories | Real Clients, Real Solutions",
+  description:
+    "Client success stories from Green Street Capital: truck drivers, self-employed borrowers, first-time buyers, and investors. Results vary. NMLS #2066586.",
+  keywords: [
+    "mortgage success stories",
+    "client testimonials mortgage",
+    "home loan case studies",
+  ],
+};
+
+export const metadata: Metadata = buildPageMetadata(storiesSeo, {
+  path: "/success-stories",
+});
 
 export default function SuccessStoriesPage() {
   const home = getHomepage();
@@ -26,6 +32,30 @@ export default function SuccessStoriesPage() {
 
   return (
     <div className="w-full pb-24">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Success Stories", path: "/success-stories" },
+        ]}
+      />
+      <WebPageJsonLd
+        name={storiesSeo.title}
+        description={storiesSeo.description}
+        path="/success-stories"
+      />
+      <CollectionItemListJsonLd
+        name={storiesSeo.title}
+        description={storiesSeo.description}
+        path="/success-stories"
+        items={stories.map((s) => ({
+          name: s.title,
+          urlPath: "/success-stories",
+          description: `${s.clientType}: ${s.result}`,
+        }))}
+      />
+      <Breadcrumbs
+        items={[{ name: "Home", href: "/" }, { name: "Success Stories" }]}
+      />
       <div className="border-b border-gray-200 bg-white py-16 text-center">
         <div className="mx-auto max-w-3xl px-4">
           <h1 className="mb-4 font-montserrat text-4xl font-bold text-foreground md:text-5xl">

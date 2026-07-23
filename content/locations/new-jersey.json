@@ -2,22 +2,26 @@
   "slug": "new-jersey",
   "kind": "location",
   "seo": {
-    "title": "Mortgage Broker in New Jersey | Green Street Capital",
-    "description": "New Jersey mortgage broker for purchase, refinance, FHA, VA, Non-QM, and investment loans. Licensed NJ guidance. NMLS #2066586.",
+    "title": "Mortgage Broker New Jersey | NJ Home Loans & Refinance",
+    "description": "New Jersey mortgage broker for purchase, refinance, FHA, VA, Non-QM & investment. Bergen, Essex, Hudson & more. NMLS #2066586.",
     "keywords": [
       "mortgage broker New Jersey",
-      "NJ home loans",
+      "mortgage broker NJ",
+      "home loans New Jersey",
       "refinance New Jersey",
-      "first-time homebuyer NJ"
+      "first-time homebuyer NJ",
+      "Bergen County mortgage",
+      "Jersey City home loans"
     ]
   },
   "hero": {
     "heading": "Mortgage Broker in New Jersey",
-    "subheading": "Licensed mortgage solutions for New Jersey homebuyers, refinancers, and investors—clear process, competitive options."
+    "subheading": "NJ purchase and refinance mortgages — conventional, FHA, VA, bank statement, and investment programs with a licensed broker."
   },
   "intro": {
     "heading": "Helping New Jersey Borrowers",
     "paragraphs": [
+      "If you searched for a mortgage broker in new jersey, home loans nearby, or a mortgage broker near me in this area, Green Street Capital can help. We are a licensed mortgage broker (NMLS #2066586) offering purchase, refinance, and specialty programs through multiple lenders.",
       "From North Jersey commuter towns to shore communities and growing suburbs, New Jersey buyers need financing that matches local property types and income situations. Green Street Capital is licensed in New Jersey and helps clients compare conventional, government-backed, and specialty programs.",
       "We focus on transparent monthly payment estimates and documentation that keeps underwriting moving."
     ],
@@ -84,10 +88,43 @@
     {
       "question": "How do I contact you from NJ?",
       "answer": "Call 855-615-4545 or 718-615-4545, email Info@GSCMortgage.com, or apply via our Team page."
+    },
+    {
+      "question": "Are you a licensed mortgage broker in New Jersey?",
+      "answer": "Yes. Green Street Capital works with New Jersey borrowers as a licensed mortgage broker (NMLS #2066586). Loans are arranged with third-party lenders."
+    },
+    {
+      "question": "Can I get an FHA loan in New Jersey?",
+      "answer": "Many NJ buyers and properties qualify for FHA. We check eligibility for your purchase."
+    },
+    {
+      "question": "Do you refinance New Jersey mortgages?",
+      "answer": "Yes — rate-and-term and cash-out when equity and income support a refinance."
+    },
+    {
+      "question": "Which NJ counties do you serve?",
+      "answer": "We commonly help borrowers in Bergen, Hudson, Essex, Passaic, Union, Middlesex, Morris, and other counties where programs apply."
     }
   ],
   "cta": {
     "heading": "Start your New Jersey mortgage",
     "body": "Choose a loan officer and begin your application with a team that serves New Jersey."
-  }
+  },
+  "serviceAreas": [
+    "Bergen County",
+    "Hudson County",
+    "Essex County",
+    "Passaic County",
+    "Union County",
+    "Middlesex County",
+    "Morris County",
+    "Jersey City",
+    "Hoboken",
+    "Newark",
+    "Paramus",
+    "Fort Lee",
+    "Hackensack",
+    "Edison",
+    "Princeton area"
+  ]
 }

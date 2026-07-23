@@ -1,12 +1,16 @@
 {
   "slug": "dscr-loans",
   "seo": {
-    "title": "DSCR Loans for Investors | Rental Income Financing | Green Street Capital",
+    "title": "DSCR Loans for Investors | NY NJ FL PA | Green Street Capital",
     "description": "DSCR mortgage programs for real estate investors. Qualify using property cash flow. NY, NJ, FL, PA. NMLS #2066586.",
     "keywords": [
       "DSCR loans",
       "investment property mortgage",
-      "rental property financing"
+      "rental property financing",
+      "DSCR Loans for Investors New York",
+      "DSCR Loans for Investors Brooklyn",
+      "DSCR Loans for Investors near me",
+      "dscr loans mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "What Is a DSCR Loan?",
     "paragraphs": [
+      "Searching for dscr loans for investors near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for dscr loans for investors and related programs — so you are not limited to one bank’s rules.",
       "Debt Service Coverage Ratio (DSCR) loans evaluate whether rental income is sufficient relative to the mortgage payment. They are popular with investors who want to scale portfolios without traditional employment underwriting on every file.",
       "Guidelines vary by lender for short-term rentals, multi-unit properties, and cash-out refinance."
     ],
@@ -62,11 +67,36 @@
     {
       "question": "Can first-time investors use DSCR?",
       "answer": "Some lenders allow it; experience and reserves requirements differ."
+    },
+    {
+      "question": "Are dscr loans for investors available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore dscr loans for investors in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get dscr loans for investors in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about dscr loans for investors for your state."
+    },
+    {
+      "question": "How do I apply for dscr loans for investors?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for dscr loans for investors?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Structure your next investment loan",
     "body": "Share the property address and rent projections with a loan officer."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

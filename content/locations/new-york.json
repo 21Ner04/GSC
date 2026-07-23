@@ -2,14 +2,15 @@
   "slug": "new-york",
   "kind": "location",
   "seo": {
-    "title": "Mortgage Broker in New York State | Green Street Capital NMLS #2066586",
-    "description": "Licensed New York mortgage broker helping buyers and homeowners across NYC, Long Island, Westchester, and upstate. Purchase, refinance, FHA, VA, Non-QM. NMLS #2066586.",
+    "title": "Mortgage Broker New York State | NY Home Loans | GSC",
+    "description": "Licensed New York mortgage broker for NYC, Long Island, Westchester & beyond. Purchase, refinance, FHA, VA, Non-QM. NMLS #2066586.",
     "keywords": [
       "mortgage broker New York",
       "NY mortgage broker",
       "home loans New York State",
       "refinance New York",
-      "Green Street Capital"
+      "mortgage broker near me NY",
+      "New York home loans"
     ]
   },
   "hero": {
@@ -19,6 +20,7 @@
   "intro": {
     "heading": "Who We Help Across New York",
     "paragraphs": [
+      "If you searched for a mortgage broker in new york, home loans nearby, or a mortgage broker near me in this area, Green Street Capital can help. We are a licensed mortgage broker (NMLS #2066586) offering purchase, refinance, and specialty programs through multiple lenders.",
       "Green Street Capital is a licensed mortgage broker serving New York borrowers who need clear answers in a competitive market. Whether you are buying your first home in Brooklyn, refinancing in Westchester, or financing an investment property on Long Island, we match you with loan options that fit your income and goals.",
       "New York financing often involves co-ops, condos, jumbo loan limits, and layered documentation. Our team works with a network of lenders so you are not limited to a single bank’s product menu."
     ],
@@ -89,10 +91,31 @@
     {
       "question": "How do I start an application?",
       "answer": "Choose a loan officer on our Team page, or use Apply Now to select who you want to work with. You will then continue to that officer’s application path."
+    },
+    {
+      "question": "Is Green Street Capital a New York mortgage broker?",
+      "answer": "Yes. We are registered with the NYS Department of Financial Services. Company NMLS #2066586."
+    },
+    {
+      "question": "Do you work outside NYC?",
+      "answer": "Yes — Long Island, Westchester, and other New York communities where our licenses and lender programs apply."
+    },
+    {
+      "question": "Can I refinance my NY mortgage with you?",
+      "answer": "Yes. We review rate-and-term and cash-out refinance options statewide where licensed."
     }
   ],
   "cta": {
     "heading": "Ready to finance a New York home?",
     "body": "Talk with a Green Street Capital loan officer about purchase, refinance, or specialty programs licensed for New York."
-  }
+  },
+  "serviceAreas": [
+    "New York City",
+    "Long Island",
+    "Westchester",
+    "Hudson Valley",
+    "Upstate NY (case by case)",
+    "Nassau",
+    "Suffolk"
+  ]
 }

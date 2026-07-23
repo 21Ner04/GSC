@@ -6,6 +6,7 @@ import {
   BreadcrumbJsonLd,
   FaqJsonLd,
   LandingServiceJsonLd,
+  WebPageJsonLd,
 } from "@/components/seo/JsonLd";
 import {
   getLocationAsync,
@@ -23,8 +24,20 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const page = await getLocationAsync(slug);
-  if (!page) return { title: "Location not found" };
-  return buildPageMetadata(page.seo, { path: `/locations/${slug}` });
+  if (!page) {
+    return buildPageMetadata(
+      {
+        title: "Location not found | Green Street Capital",
+        description: "This location page is unavailable.",
+      },
+      { path: `/locations/${slug}`, noIndex: true }
+    );
+  }
+  return buildPageMetadata(page.seo, {
+    path: `/locations/${slug}`,
+    image: "/MAIN PAGE PIC.jpg",
+    imageAlt: page.hero.heading,
+  });
 }
 
 export default async function LocationPage({ params }: Props) {
@@ -46,6 +59,11 @@ export default async function LocationPage({ params }: Props) {
           { name: "Locations", path: "/locations" },
           { name: page.hero.heading, path: `/locations/${slug}` },
         ]}
+      />
+      <WebPageJsonLd
+        name={page.seo.title}
+        description={page.seo.description}
+        path={`/locations/${slug}`}
       />
       <FaqJsonLd faqs={page.faqs} />
       <LandingServiceJsonLd page={page} />

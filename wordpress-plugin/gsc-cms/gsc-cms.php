@@ -2,7 +2,7 @@
 /**
  * Plugin Name: GSC CMS (Green Street Capital)
  * Description: Headless CMS API for the Green Street Capital Next.js site. Edit locations, specialties, homepage, and site settings in WordPress; auto-revalidate Next.js on save.
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: Green Street Capital
  * Text Domain: gsc-cms
  * Requires at least: 6.0
@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('GSC_CMS_VERSION', '1.1.0');
+define('GSC_CMS_VERSION', '1.2.0');
 
 /* -------------------------------------------------------------------------- */
 /* Custom post types                                                          */
@@ -209,6 +209,8 @@ function gsc_settings_fields() {
         'phone_fax' => '718-819-1127',
         'email' => 'Info@GSCMortgage.com',
         'website' => 'https://www.greenstreetcapitalgroup.com',
+        // Booking (optional Calendly alternate on /schedule)
+        'calendlyUrl' => '',
         // Maps / reviews
         'googleReviewsUrl' => '',
         'googleMapsEmbedQuery' => 'Green+Street+Capital+2709+Coney+Island+Ave+3rd+Floor+Brooklyn+NY+11235',
@@ -273,7 +275,7 @@ function gsc_render_settings_page() {
     echo '<table class="form-table" role="presentation">';
 
     $sections = [
-        'Company' => ['companyName', 'legalName', 'nmls', 'brandTagline', 'email', 'website'],
+        'Company' => ['companyName', 'legalName', 'nmls', 'brandTagline', 'email', 'website', 'calendlyUrl'],
         'Address' => ['address_line1', 'address_city', 'address_state', 'address_zip'],
         'Phones' => ['phone_local', 'phone_local_tel', 'phone_toll_free', 'phone_toll_free_tel', 'phone_fax'],
         'Maps & reviews' => ['googleReviewsUrl', 'googleMapsEmbedQuery'],
@@ -301,6 +303,9 @@ function gsc_render_settings_page() {
             }
             if ($key === 'next_revalidate_url') {
                 echo '<p class="description">Example: <code>https://www.greenstreetcapitalgroup.com/api/revalidate</code></p>';
+            }
+            if ($key === 'calendlyUrl') {
+                echo '<p class="description">Optional. If set, /schedule shows an alternate “Open external calendar” link (e.g. your Calendly URL). Built-in booking still works via email + .ics.</p>';
             }
             if ($key === 'homepage_json' || $key === 'videos_json') {
                 echo '<p class="description">Leave empty to keep using Next.js <code>content/*.json</code> files.</p>';
@@ -500,6 +505,7 @@ function gsc_site_payload() {
         'handbookPdf' => '/buyers-handbook.pdf',
         'applyPath' => '/apply',
         'teamPath' => '/team',
+        'calendlyUrl' => get_option('gsc_calendlyUrl', ''),
         'footerDisclaimer' => [
             'Registered Mortgage Broker | Loans arranged with third party lenders | NMLS #' . $nmls,
             'Mortgage Broker will not make any mortgage loan commitments or fund any mortgage loans.',

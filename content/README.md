@@ -61,10 +61,30 @@ Content-Type: application/json
 - Change SEO titles / descriptions for each city & program  
 - Edit intro text, bullets, FAQs, CTAs  
 - Add new location/specialty posts (set `gsc_slug` to the URL segment)  
-- Update company phone/email/social in Site Settings  
+- Update company phone/email/social / optional Calendly URL in Site Settings  
 - Trigger Next.js cache refresh after edits  
 
 Block “page builder” (Elementor-style freeform layouts) is **not** included — content is structured fields that map to the Next.js design system. That keeps SEO and design consistent.
+
+### What WP does **not** control
+
+| Feature | Where it lives |
+|---------|----------------|
+| Contact form delivery | Next.js `RESEND_*` env + `/api/contact` |
+| Schedule booking + .ics | Next.js `/api/schedule` |
+| Team photos & signatures | `data/team.ts` + `public/team/` (or fill photos later) |
+| Mortgage calculator UI | React component (copy is partly in `homepage.json`) |
+| Live Google Reviews | `GOOGLE_PLACES_API_KEY` |
+
+### WordPress checklist (your ops work)
+
+1. Provision WP on subdomain (managed WP, Cloudways, WP Engine, etc.)  
+2. Upload & activate `wordpress-plugin/gsc-cms`  
+3. Paste company fields under **Settings → GSC Site Settings**  
+4. Set revalidate URL + secret (same secret as Next.js `WORDPRESS_REVALIDATE_SECRET`)  
+5. Optionally seed Locations/Specialties from existing `content/locations|specialties/*.json`  
+6. Point Next.js env to WP and redeploy  
+7. Hit `/wp-json/gsc/v1/health` → `"ok": true`
 
 ## SEO notes
 

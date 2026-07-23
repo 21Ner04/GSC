@@ -1,12 +1,16 @@
 {
   "slug": "itin-mortgage-programs",
   "seo": {
-    "title": "ITIN Mortgage Programs | Green Street Capital",
+    "title": "ITIN Mortgage Programs | NY NJ FL PA | Green Street Capital",
     "description": "Mortgage options for ITIN holders seeking home financing. Specialty lender programs. NMLS #2066586.",
     "keywords": [
       "ITIN mortgage",
       "ITIN home loan",
-      "mortgage without SSN"
+      "mortgage without SSN",
+      "ITIN Mortgage Programs New York",
+      "ITIN Mortgage Programs Brooklyn",
+      "ITIN Mortgage Programs near me",
+      "itin mortgage programs mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "Home Financing with an ITIN",
     "paragraphs": [
+      "Searching for itin mortgage programs near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for itin mortgage programs and related programs — so you are not limited to one bank’s rules.",
       "Some lenders offer programs for ITIN borrowers who have established credit, income, and down payment capacity. Guidelines are specialized and documentation standards are high.",
       "We help you understand what is typically required and which lender partners may be a fit—without promising outcomes that depend on underwriting."
     ],
@@ -58,11 +63,36 @@
     {
       "question": "Can I get a mortgage with an ITIN instead of an SSN?",
       "answer": "Some specialty programs allow it. Eligibility depends on lender overlays, credit, income, and property type."
+    },
+    {
+      "question": "Are itin mortgage programs available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore itin mortgage programs in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get itin mortgage programs in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about itin mortgage programs for your state."
+    },
+    {
+      "question": "How do I apply for itin mortgage programs?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for itin mortgage programs?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Discuss ITIN financing options",
     "body": "Contact a loan officer for a confidential program review."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

@@ -3,26 +3,42 @@ import { Button } from "@/components/ui/button";
 import { TrendingDown, Coins, CalendarDays, RefreshCw } from "lucide-react";
 
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = buildPageMetadata(
-  {
-    title: "Refinance Your Mortgage | Rate & Cash-Out Options",
-    description:
-      "Refinance with Green Street Capital: lower your rate, shorten your term, or access equity with cash-out options. Serving NY, NJ, FL, PA. NMLS #2066586.",
-    keywords: [
-      "refinance mortgage",
-      "rate and term refinance",
-      "cash out refinance",
-      "lower mortgage rate",
-    ],
-  },
-  { path: "/refinance" }
-);
+const refinanceSeo = {
+  title: "Refinance Your Mortgage | Rate & Cash-Out Options",
+  description:
+    "Refinance with Green Street Capital: lower your rate, shorten your term, or cash-out equity. Licensed mortgage broker NY, NJ, FL, PA. NMLS #2066586.",
+  keywords: [
+    "refinance mortgage",
+    "rate and term refinance",
+    "cash out refinance",
+    "lower mortgage rate",
+    "refinance Brooklyn NY",
+  ],
+};
+
+export const metadata: Metadata = buildPageMetadata(refinanceSeo, {
+  path: "/refinance",
+});
 
 export default function Refinance() {
   return (
     <div className="w-full overflow-x-hidden">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Refinance", path: "/refinance" },
+        ]}
+      />
+      <WebPageJsonLd
+        name={refinanceSeo.title}
+        description={refinanceSeo.description}
+        path="/refinance"
+      />
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Refinance" }]} />
       <div className="page-hero">
         <div className="mx-auto max-w-7xl">
           <h1 className="page-hero-title">Refinance Your Home</h1>

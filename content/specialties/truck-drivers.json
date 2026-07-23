@@ -1,12 +1,16 @@
 {
   "slug": "truck-drivers",
   "seo": {
-    "title": "Mortgages for Truck Drivers | Non-Traditional Income | Green Street Capital",
+    "title": "Mortgages for Truck Drivers | NY NJ FL PA | Green Street Capital",
     "description": "Mortgage solutions for truck drivers and owner-operators. Flexible documentation for non-traditional income. NY, NJ, FL, PA. NMLS #2066586.",
     "keywords": [
       "mortgage truck drivers",
       "owner operator mortgage",
-      "CDL home loan"
+      "CDL home loan",
+      "Mortgages for Truck Drivers New York",
+      "Mortgages for Truck Drivers Brooklyn",
+      "Mortgages for Truck Drivers near me",
+      "truck drivers mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "Understanding Truck Driver Income",
     "paragraphs": [
+      "Searching for mortgages for truck drivers near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for mortgages for truck drivers and related programs — so you are not limited to one bank’s rules.",
       "Traditional lenders often struggle with truck driver income structures. We understand the trucking industry and work with lenders who appreciate your unique financial situation.",
       "Whether you are an owner-operator or company driver, we review how you are paid and which documentation best supports a strong application."
     ],
@@ -66,11 +71,36 @@
     {
       "question": "What should I prepare?",
       "answer": "Recent bank statements, tax returns if available, CDL/employment details, and a list of debts and assets help us move faster."
+    },
+    {
+      "question": "Are mortgages for truck drivers available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore mortgages for truck drivers in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get mortgages for truck drivers in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about mortgages for truck drivers for your state."
+    },
+    {
+      "question": "How do I apply for mortgages for truck drivers?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for mortgages for truck drivers?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Ready to explore financing?",
     "body": "Talk with a loan officer who understands non-traditional trucking income."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

@@ -165,19 +165,7 @@ export function TeamSignature({
             </span>
           )}
         </div>
-        {/* Animated logo (white bg) under photo */}
-        <div className="mt-3 flex w-full justify-center overflow-hidden rounded-lg bg-white">
-          <video
-            src="/images/logo-anim-white.mp4"
-            className="h-16 w-auto max-w-full bg-white object-contain sm:h-20 sm:max-w-[190px] lg:h-24 lg:max-w-[210px]"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-label="Green Street Capital"
-          />
-        </div>
+
       </div>
 
       {/* ===== VERTICAL BLACK LINE ===== */}

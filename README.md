@@ -17,17 +17,44 @@ All marketing copy lives under **`content/`**:
 
 | Path | What it controls |
 |------|------------------|
-| `content/site.json` | Phones, address, email, social, NMLS, handbook PDF |
+| `content/site.json` | Phones, address, email, social, NMLS, handbook PDF, optional Calendly URL |
 | `content/homepage.json` | Hero, loan cards, success stories, section titles |
-| `content/reviews.json` | Google review cards |
+| `content/reviews.json` | Google review cards (fallback when Places API off) |
 | `content/videos.json` | Featured / video-blog YouTube list |
 | `content/locations/*.json` | SEO location pages |
 | `content/specialties/*.json` | SEO specialty pages |
+| `content/team.json` | Team card fields (optional alternate to `data/team.ts`) |
 
 Helpers: `lib/cms/index.ts`  
-WordPress later: see `content/README.md` and `lib/cms/wordpress.ts`
+WordPress: `content/README.md`, `lib/cms/wordpress.ts`, plugin `wordpress-plugin/gsc-cms`
 
 After editing JSON, restart or refresh the dev server.
+
+## Contact form + calendar booking
+
+| Route | What it does |
+|-------|----------------|
+| `/contact` | Contact form → `POST /api/contact` → email to office + confirmation to visitor |
+| `/schedule` | 15‑min booking → `POST /api/schedule` → email staff + client with **`.ics` calendar invite** |
+
+### Env (required for live email)
+
+```env
+RESEND_API_KEY=re_xxxxxxxx
+RESEND_FROM_EMAIL=Green Street Capital <noreply@greenstreetcapitalgroup.com>
+CONTACT_TO_EMAIL=Info@GSCMortgage.com
+```
+
+1. Create a free account at [resend.com](https://resend.com)
+2. Create an API key
+3. **Production:** add & verify domain `greenstreetcapitalgroup.com` (DNS records in Resend)
+4. Until the domain is verified, Resend only delivers to the account owner email
+5. Redeploy with the env vars set (Vercel / host dashboard)
+
+Optional alternate calendar link: set `calendlyUrl` in `content/site.json` (or WP settings).  
+If set, `/schedule` also shows “Open external calendar”.
+
+Without `RESEND_API_KEY`, forms return a clear error and users can still call/email the office.
 
 ## Site structure (homepage)
 
@@ -47,26 +74,27 @@ After editing JSON, restart or refresh the dev server.
 
 - `/` — Home  
 - `/apply` — Choose loan officer (then Team)  
-- `/calculator` — Full mortgage calculator (P&I, taxes, insurance, HOA, PMI, schedule, extras)  
+- `/calculator` — Full mortgage calculator  
+- `/contact` — Contact + working message form  
+- `/schedule` — Book 15‑min call (email + calendar invite)  
 - `/video-blog` — Videos  
-- `/success-stories` — Story placeholders  
+- `/success-stories` — Story cards  
 - `/locations` + `/locations/[city]` — SEO locations  
 - `/specialties` + `/specialties/[slug]` — SEO programs  
-- `/team` — Team (full personal LO pages still TBD)  
+- `/team` — Team signatures  
 - `/about` — About + car culture block  
 - `/sitemap.xml`, `/robots.txt`
 
 ## SEO
 
 - Unique metadata + Open Graph / Twitter on **all** marketing pages  
-- Absolute titles (no double brand suffix), canonical URLs, icons  
+- Absolute titles, canonical URLs, icons  
 - `sitemap.xml` (static + locations + specialties), `robots.txt` (blocks `/api/`)  
 - JSON-LD: Organization, WebSite, AggregateRating/Reviews, FAQ, BreadcrumbList, Service, VideoObject, ContactPage  
 - Breadcrumb UI on location/specialty pages  
-- City & program pages under `/locations/*` and `/specialties/*`
 
 **Production domain:** `https://www.greenstreetcapitalgroup.com`  
-(set in `content/site.json` → `website` — used for canonical, OG, sitemap, JSON-LD)
+(set in `content/site.json` → `website`)
 
 Submit `https://www.greenstreetcapitalgroup.com/sitemap.xml` in Google Search Console.  
 Optional: `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=…`
@@ -75,52 +103,64 @@ Optional: `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=…`
 
 Homepage reviews load from **Google Places API** (`/api/google-reviews`).
 
-1. Create a key in [Google Cloud Console](https://console.cloud.google.com/) with **Places API** enabled  
-2. Add to env:
-
 ```env
 GOOGLE_PLACES_API_KEY=...
-# optional but recommended:
-GOOGLE_PLACE_ID=ChIJ...
+GOOGLE_PLACE_ID=ChIJ...   # recommended
 ```
 
-3. Without a key, the site uses `content/reviews.json` automatically  
-
-Google returns up to **5** reviews per request (API limit). “View All Reviews on Google” opens the full Maps listing.
+Without a key, the site uses `content/reviews.json`. Google returns up to **5** reviews per request.
 
 ## WordPress (headless CMS)
 
 Non-developers can edit text in WordPress; the public site stays on Next.js.
 
-1. Install plugin from `wordpress-plugin/gsc-cms` (v1.1+)  
-2. **Settings → GSC Site Settings**: company info + revalidate URL/secret  
-3. Create Locations / Specialties posts  
-4. Set env (see `.env.example`):
+1. Host WordPress on a subdomain (e.g. `cms.greenstreetcapitalgroup.com`) — **you must provide hosting**
+2. Install plugin from `wordpress-plugin/gsc-cms` (zip the folder or copy into `wp-content/plugins/`)
+3. Activate **GSC CMS**
+4. **Settings → GSC Site Settings**: company info + revalidate URL/secret + optional Calendly URL  
+5. Create **Locations** / **Specialties** posts (slug, SEO, FAQs as JSON, etc.)
+6. On the Next.js host:
 
 ```env
 CONTENT_SOURCE=wordpress
 WORDPRESS_API_URL=https://cms.greenstreetcapitalgroup.com/wp-json
-WORDPRESS_REVALIDATE_SECRET=...
+WORDPRESS_REVALIDATE_SECRET=long-random-string
 WORDPRESS_REVALIDATE_SECONDS=60
 ```
 
-5. Health: `https://cms.greenstreetcapitalgroup.com/wp-json/gsc/v1/health`  
-6. Full guide: `content/README.md`
+7. Health: `https://cms.greenstreetcapitalgroup.com/wp-json/gsc/v1/health`  
+8. Full guide: `content/README.md`
 
 Local JSON is the fallback if WP is offline; site fields **merge** with local defaults.  
 On save, the plugin can POST `/api/revalidate` so Next.js cache updates without redeploy.
 
-## Still pending (by design)
+### What the client can edit in WP (no code)
 
-- **UserWay** accessibility widget — add real Account ID later  
-- **Team** personal pages from Custom eSignature  
-- Hero background **video** (optional)  
-- Live Google Reviews API (static cards + GBP link for now)
+- SEO titles / descriptions for cities & programs  
+- Intro text, bullets, FAQs, CTAs  
+- New location/specialty posts (`gsc_slug` = URL segment)  
+- Company phone / email / social / optional Calendly  
+- Trigger Next.js cache refresh after edits  
+
+Not included: freeform page builders (Elementor-style). Content is structured fields mapped to the Next.js design system.
+
+## Still for you / client before go-live
+
+| Item | Who | Notes |
+|------|-----|--------|
+| Team headshots | Client | Drop into `public/team/*.jpg` (filenames in `data/team.ts`) |
+| UserWay widget | Client | Real Account ID → `NEXT_PUBLIC_USERWAY_ACCOUNT_ID` |
+| Resend API key + domain DNS | You / client IT | Required for contact + schedule emails |
+| WordPress hosting | You / client | Install plugin; set `CONTENT_SOURCE=wordpress` |
+| Google Places key | Optional | Live reviews on homepage |
+| Per-officer Calendly / apply portals | Optional | Update team links when available |
+| Google Search Console | Optional | Verify + submit sitemap |
 
 ## Tech
 
-- Next.js (App Router) · TypeScript · Tailwind · Framer Motion · Lucide
+- Next.js (App Router) · TypeScript · Tailwind · Framer Motion · Lucide  
+- Email: Resend HTTP API (`lib/email/`) · Calendar: RFC 5545 `.ics`
 
 ## Env
 
-See `.env.example` for content source, WordPress, and optional brand vars.
+See `.env.example` for content source, WordPress, Resend, Google Places, and brand vars.

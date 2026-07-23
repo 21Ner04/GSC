@@ -54,6 +54,8 @@ export type SiteContent = {
   handbookPdf: string;
   applyPath: string;
   teamPath: string;
+  /** Optional Calendly (or similar) booking URL shown as alternate on /schedule */
+  calendlyUrl?: string;
   footerDisclaimer: string[];
 };
 
@@ -135,6 +137,12 @@ export type HomepageContent = {
   };
 };
 
+export type RelatedLink = {
+  label: string;
+  href: string;
+  description?: string;
+};
+
 export type LandingPageContent = {
   slug: string;
   seo: SeoMeta;
@@ -158,6 +166,10 @@ export type LandingPageContent = {
     heading: string;
     paragraphs: string[];
   };
+  /** Neighborhoods / cities / towns mentioned for local SEO */
+  serviceAreas?: string[];
+  /** Internal links for topical authority */
+  relatedLinks?: RelatedLink[];
   faqs: FaqItem[];
   cta: {
     heading: string;

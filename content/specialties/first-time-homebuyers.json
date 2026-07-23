@@ -1,12 +1,16 @@
 {
   "slug": "first-time-homebuyers",
   "seo": {
-    "title": "First-Time Homebuyer Programs | Green Street Capital",
+    "title": "First-Time Homebuyer Programs | Mortgage Programs | GSC",
     "description": "Guidance for first-time homebuyers: down payment, FHA, conventional, and step-by-step process help. Free buyer guide. NMLS #2066586.",
     "keywords": [
       "first time homebuyer",
       "first-time buyer mortgage",
-      "FHA first time buyer"
+      "FHA first time buyer",
+      "First-Time Homebuyer Programs New York",
+      "First-Time Homebuyer Programs Brooklyn",
+      "First-Time Homebuyer Programs near me",
+      "first time homebuyers mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "Buying Your First Home",
     "paragraphs": [
+      "Searching for first-time homebuyer programs near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for first-time homebuyer programs and related programs — so you are not limited to one bank’s rules.",
       "The first purchase can feel overwhelming—credit, down payment, inspections, and closing costs all arrive at once. We break the process into steps and help you compare programs that fit your budget.",
       "Download our First-Time Homebuyer Guide and speak with a loan officer before you shop so your offer is backed by a real pre-approval."
     ],
@@ -62,11 +67,36 @@
     {
       "question": "Should I get pre-approved first?",
       "answer": "Yes. Pre-approval strengthens offers and clarifies your budget."
+    },
+    {
+      "question": "Are first-time homebuyer programs available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore first-time homebuyer programs in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get first-time homebuyer programs in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about first-time homebuyer programs for your state."
+    },
+    {
+      "question": "How do I apply for first-time homebuyer programs?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for first-time homebuyer programs?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Start your first purchase the right way",
     "body": "Download the guide and choose a loan officer to begin pre-approval."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

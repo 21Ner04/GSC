@@ -2,13 +2,17 @@
   "slug": "florida",
   "kind": "location",
   "seo": {
-    "title": "Mortgage Broker in Florida | Purchase, Refinance & Investment Loans",
-    "description": "Florida mortgage broker for primary homes, second homes, and rentals. Conventional, FHA, VA, Non-QM, DSCR. Green Street Capital NMLS #2066586.",
+    "title": "Mortgage Broker Florida | Purchase, Refinance & DSCR Loans",
+    "description": "Florida mortgage broker for primary homes, second homes & rentals. Conventional, FHA, VA, Non-QM, DSCR. Green Street Capital NMLS #2066586.",
     "keywords": [
       "mortgage broker Florida",
       "Florida home loans",
       "DSCR loans Florida",
-      "refinance Florida"
+      "refinance Florida",
+      "investment property Florida mortgage",
+      "Miami mortgage broker",
+      "Orlando home loans",
+      "Tampa mortgage"
     ]
   },
   "hero": {
@@ -18,6 +22,7 @@
   "intro": {
     "heading": "Florida Borrowers We Serve",
     "paragraphs": [
+      "If you searched for a mortgage broker in florida, home loans nearby, or a mortgage broker near me in this area, Green Street Capital can help. We are a licensed mortgage broker (NMLS #2066586) offering purchase, refinance, and specialty programs through multiple lenders.",
       "Florida attracts primary homebuyers, snowbirds, and investors. Insurance costs, HOA communities, and rental demand all influence the right loan structure. Green Street Capital is licensed in Florida and helps clients evaluate programs that fit both the property and the income profile.",
       "Whether you are relocating, purchasing a vacation home, or expanding a rental portfolio, we focus on clear monthly costs and realistic underwriting paths."
     ],
@@ -84,10 +89,34 @@
     {
       "question": "Can out-of-state buyers purchase in Florida with you?",
       "answer": "Yes, when the transaction and borrower profile fit available programs. Contact a loan officer to review your situation."
+    },
+    {
+      "question": "Can snowbirds get a second-home mortgage in Florida?",
+      "answer": "Often yes. Second-home and primary-residence programs differ — we match the occupancy type to the right product."
+    },
+    {
+      "question": "Are you a Florida mortgage broker?",
+      "answer": "Green Street Capital is licensed to help Florida borrowers (NMLS #2066586) with purchase, refinance, and investment financing."
+    },
+    {
+      "question": "Do you refinance Florida homes?",
+      "answer": "Yes. We evaluate refinance options for primary, second home, and investment properties where guidelines allow."
     }
   ],
   "cta": {
     "heading": "Finance your Florida property",
     "body": "Apply with a Green Street Capital loan officer experienced with Florida transactions."
-  }
+  },
+  "serviceAreas": [
+    "Miami-Dade",
+    "Broward",
+    "Palm Beach",
+    "Orlando / Central FL",
+    "Tampa Bay",
+    "Jacksonville",
+    "Fort Lauderdale",
+    "West Palm Beach",
+    "Naples area",
+    "Sarasota area"
+  ]
 }

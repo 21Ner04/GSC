@@ -22,11 +22,15 @@ import videosJson from "@/content/videos.json";
 
 import locBrooklyn from "@/content/locations/brooklyn.json";
 import locFlorida from "@/content/locations/florida.json";
+import locLongIsland from "@/content/locations/long-island.json";
 import locManhattan from "@/content/locations/manhattan.json";
 import locNewJersey from "@/content/locations/new-jersey.json";
 import locNewYork from "@/content/locations/new-york.json";
 import locNewYorkCity from "@/content/locations/new-york-city.json";
 import locPennsylvania from "@/content/locations/pennsylvania.json";
+import locQueens from "@/content/locations/queens.json";
+import locStatenIsland from "@/content/locations/staten-island.json";
+import locWestchester from "@/content/locations/westchester.json";
 
 import sp1099 from "@/content/specialties/1099-borrowers.json";
 import spBank from "@/content/specialties/bank-statement-loans.json";
@@ -62,11 +66,15 @@ import {
 const locationsLocal: Record<string, LandingPageContent> = {
   brooklyn: locBrooklyn as LandingPageContent,
   florida: locFlorida as LandingPageContent,
+  "long-island": locLongIsland as LandingPageContent,
   manhattan: locManhattan as LandingPageContent,
   "new-jersey": locNewJersey as LandingPageContent,
   "new-york": locNewYork as LandingPageContent,
   "new-york-city": locNewYorkCity as LandingPageContent,
   pennsylvania: locPennsylvania as LandingPageContent,
+  queens: locQueens as LandingPageContent,
+  "staten-island": locStatenIsland as LandingPageContent,
+  westchester: locWestchester as LandingPageContent,
 };
 
 const specialtiesLocal: Record<string, LandingPageContent> = {
@@ -247,12 +255,17 @@ export function getFooterNav() {
       { label: "Loan Programs", href: "/loan-programs" },
       { label: "Non-QM & Bank Statement", href: "/specialties/non-qm-loans" },
       { label: "Investment & DSCR", href: "/specialties/dscr-loans" },
+      { label: "Mortgage Calculator", href: "/calculator" },
     ],
     locations: [
-      { label: "New York", href: "/locations/new-york" },
-      { label: "New York City", href: "/locations/new-york-city" },
       { label: "Brooklyn", href: "/locations/brooklyn" },
+      { label: "New York City", href: "/locations/new-york-city" },
       { label: "Manhattan", href: "/locations/manhattan" },
+      { label: "Queens", href: "/locations/queens" },
+      { label: "Long Island", href: "/locations/long-island" },
+      { label: "Westchester", href: "/locations/westchester" },
+      { label: "Staten Island", href: "/locations/staten-island" },
+      { label: "New York State", href: "/locations/new-york" },
       { label: "New Jersey", href: "/locations/new-jersey" },
       { label: "Florida", href: "/locations/florida" },
       { label: "Pennsylvania", href: "/locations/pennsylvania" },

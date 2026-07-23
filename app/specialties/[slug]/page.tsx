@@ -6,6 +6,7 @@ import {
   BreadcrumbJsonLd,
   FaqJsonLd,
   LandingServiceJsonLd,
+  WebPageJsonLd,
 } from "@/components/seo/JsonLd";
 import {
   getSpecialtyAsync,
@@ -23,8 +24,20 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const page = await getSpecialtyAsync(slug);
-  if (!page) return { title: "Program not found" };
-  return buildPageMetadata(page.seo, { path: `/specialties/${slug}` });
+  if (!page) {
+    return buildPageMetadata(
+      {
+        title: "Program not found | Green Street Capital",
+        description: "This specialty program page is unavailable.",
+      },
+      { path: `/specialties/${slug}`, noIndex: true }
+    );
+  }
+  return buildPageMetadata(page.seo, {
+    path: `/specialties/${slug}`,
+    image: "/MAIN PAGE PIC.jpg",
+    imageAlt: page.hero.heading,
+  });
 }
 
 export default async function SpecialtyPage({ params }: Props) {
@@ -46,6 +59,11 @@ export default async function SpecialtyPage({ params }: Props) {
           { name: "Specialties", path: "/specialties" },
           { name: page.hero.heading, path: `/specialties/${slug}` },
         ]}
+      />
+      <WebPageJsonLd
+        name={page.seo.title}
+        description={page.seo.description}
+        path={`/specialties/${slug}`}
       />
       <FaqJsonLd faqs={page.faqs} />
       <LandingServiceJsonLd page={page} />

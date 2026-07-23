@@ -1,12 +1,16 @@
 {
   "slug": "1099-borrowers",
   "seo": {
-    "title": "1099 Borrower Mortgages | Contract & Freelance Income | Green Street Capital",
+    "title": "Mortgages for 1099 Borrowers | NY NJ FL PA | Green Street Capital",
     "description": "Mortgage options for 1099 contractors and freelancers. Flexible documentation and Non-QM paths. NMLS #2066586.",
     "keywords": [
       "1099 mortgage",
       "contractor home loan",
-      "freelance mortgage"
+      "freelance mortgage",
+      "Mortgages for 1099 Borrowers New York",
+      "Mortgages for 1099 Borrowers Brooklyn",
+      "Mortgages for 1099 Borrowers near me",
+      "1099 borrowers mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "1099 Income Challenges",
     "paragraphs": [
+      "Searching for mortgages for 1099 borrowers near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for mortgages for 1099 borrowers and related programs — so you are not limited to one bank’s rules.",
       "Contract work can be lucrative but harder to document than W-2 employment. We help 1099 borrowers assemble a clear story—history of contracts, deposits, and (when helpful) tax returns or bank statements.",
       "The right program depends on how long you have been independent and how stable deposits look over time."
     ],
@@ -58,11 +63,36 @@
     {
       "question": "How many years of 1099 history do I need?",
       "answer": "Many programs prefer two years; some alternatives exist. We will map what your history supports."
+    },
+    {
+      "question": "Are mortgages for 1099 borrowers available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore mortgages for 1099 borrowers in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get mortgages for 1099 borrowers in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about mortgages for 1099 borrowers for your state."
+    },
+    {
+      "question": "How do I apply for mortgages for 1099 borrowers?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for mortgages for 1099 borrowers?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Apply as a 1099 borrower",
     "body": "Start with a loan officer and bring recent 1099s, bank statements, and a debt list."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

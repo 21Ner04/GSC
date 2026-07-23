@@ -1,12 +1,15 @@
 {
   "slug": "self-employed",
   "seo": {
-    "title": "Mortgages for Self-Employed Borrowers | Green Street Capital",
+    "title": "Mortgages for Self-Employed Borrowers | Mortgage Programs | GSC",
     "description": "Home loans for business owners and self-employed professionals. Bank statement and Non-QM options. NMLS #2066586.",
     "keywords": [
       "self employed mortgage",
       "business owner home loan",
-      "bank statement mortgage"
+      "bank statement mortgage",
+      "Mortgages for Self-Employed Borrowers New York",
+      "Mortgages for Self-Employed Borrowers Brooklyn",
+      "Mortgages for Self-Employed Borrowers near me"
     ]
   },
   "hero": {
@@ -16,6 +19,7 @@
   "intro": {
     "heading": "Self-Employed Financing",
     "paragraphs": [
+      "Searching for mortgages for self-employed borrowers near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for mortgages for self-employed borrowers and related programs — so you are not limited to one bank’s rules.",
       "Write-offs and business expenses can make tax returns look lower than real cash flow. We help self-employed borrowers explore conventional paths when they fit—and alternative documentation when they do not.",
       "Our goal is a realistic monthly payment and a file that underwriters can approve with confidence."
     ],
@@ -62,11 +66,36 @@
     {
       "question": "Can I use business bank accounts?",
       "answer": "Many bank statement programs allow business accounts with analysis of deposits and expenses."
+    },
+    {
+      "question": "Are mortgages for self-employed borrowers available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore mortgages for self-employed borrowers in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get mortgages for self-employed borrowers in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about mortgages for self-employed borrowers for your state."
+    },
+    {
+      "question": "How do I apply for mortgages for self-employed borrowers?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for mortgages for self-employed borrowers?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Get a self-employed mortgage review",
     "body": "Share your income structure with a loan officer and explore realistic options."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

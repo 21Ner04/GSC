@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 /** Duration of the exit choreography (ms). Keep in sync with motion transitions. */
-const EXIT_DURATION_MS = 1400;
+const EXIT_DURATION_MS = 800;
 /** Fallback if video never fires `ended` (ms). */
-const SHOW_FALLBACK_MS = 7200;
+const SHOW_FALLBACK_MS = 5100;
 
 export function IntroAnimation() {
   const [show, setShow] = useState(true);
@@ -191,10 +191,6 @@ function GifWithFallback({
           muted
           playsInline
           preload="auto"
-          // Play once, then start the smooth exit
-          onEnded={onEnded}
-          onError={() => setImgError(true)}
-          // Soft-pause visual noise once exit starts
           style={{
             opacity: isExiting ? 0.95 : 1,
             transition: "opacity 0.3s ease",

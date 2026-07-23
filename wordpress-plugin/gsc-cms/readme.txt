@@ -2,7 +2,7 @@
 Contributors: gsc
 Requires at least: 6.0
 Tested up to: 6.7
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 
 Headless CMS for the Green Street Capital Next.js website.
@@ -63,6 +63,9 @@ x-revalidate-secret: {secret}
 You can also click **Send test revalidate** on the settings page.
 
 == Changelog ==
+
+= 1.2.0 =
+* Optional calendlyUrl in site settings / REST site payload
 
 = 1.1.0 =
 * Full site settings (social, maps, fax, TikTok)

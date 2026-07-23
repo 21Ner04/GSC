@@ -163,10 +163,10 @@ export function Navbar({
               <span className="font-montserrat text-xl font-bold tracking-tight text-foreground md:text-2xl">
                 Green
               </span>
-              <span className="pl-3 font-montserrat text-xl font-bold tracking-tight text-foreground md:text-2xl">
+              <span className="font-montserrat text-xl font-bold tracking-tight text-foreground md:text-2xl">
                 Street
               </span>
-              <span className="pl-7 font-manrope text-xs font-bold uppercase tracking-widest text-primary md:text-sm">
+              <span className="font-manrope text-xs font-bold uppercase tracking-widest text-primary md:text-sm">
                 Capital
               </span>
             </div>

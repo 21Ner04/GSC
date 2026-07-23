@@ -1,12 +1,16 @@
 {
   "slug": "bank-statement-loans",
   "seo": {
-    "title": "Bank Statement Loans | Alternative Income Documentation | Green Street Capital",
+    "title": "Bank Statement Loans | NY NJ FL PA | Green Street Capital",
     "description": "Bank statement mortgage programs for self-employed and complex-income borrowers in NY, NJ, FL, PA. NMLS #2066586.",
     "keywords": [
       "bank statement loan",
       "bank statement mortgage",
-      "alternative documentation mortgage"
+      "alternative documentation mortgage",
+      "Bank Statement Loans New York",
+      "Bank Statement Loans Brooklyn",
+      "Bank Statement Loans near me",
+      "bank statement loans mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "How Bank Statement Loans Work",
     "paragraphs": [
+      "Searching for bank statement loans near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for bank statement loans and related programs — so you are not limited to one bank’s rules.",
       "Bank statement loans are designed for borrowers who have healthy cash flow that is not fully reflected on tax returns. Lenders review deposits over a defined period to estimate qualifying income.",
       "These programs can open doors for entrepreneurs, freelancers, and professionals with complex income—subject to credit, reserves, and property guidelines."
     ],
@@ -62,11 +67,36 @@
     {
       "question": "Can first-time buyers use bank statement loans?",
       "answer": "Sometimes, if the program and property type allow. Eligibility is case-by-case."
+    },
+    {
+      "question": "Are bank statement loans available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore bank statement loans in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get bank statement loans in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about bank statement loans for your state."
+    },
+    {
+      "question": "How do I apply for bank statement loans?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for bank statement loans?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "See if a bank statement loan fits",
     "body": "Connect with our team for a confidential review of your deposit history and goals."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

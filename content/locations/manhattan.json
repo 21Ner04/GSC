@@ -2,22 +2,27 @@
   "slug": "manhattan",
   "kind": "location",
   "seo": {
-    "title": "Mortgage Broker in Manhattan NYC | Condos, Co-ops & Jumbo Loans",
-    "description": "Manhattan mortgage broker for condos, co-ops, and high-value purchases. Jumbo, conventional, and specialty financing. Green Street Capital NMLS #2066586.",
+    "title": "Mortgage Broker Manhattan NYC | Condo, Co-op & Jumbo Loans",
+    "description": "Manhattan mortgage broker for condos, co-ops & jumbo purchases. Refinance, Non-QM & competitive pre-approvals. Green Street Capital NMLS #2066586.",
     "keywords": [
       "mortgage broker Manhattan",
-      "Manhattan condo financing",
-      "Manhattan co-op mortgage",
-      "jumbo loans NYC"
+      "Manhattan condo mortgage",
+      "Manhattan co-op financing",
+      "jumbo loans Manhattan",
+      "refinance Manhattan NYC",
+      "mortgage broker near me Manhattan",
+      "Upper East Side mortgage",
+      "Tribeca home loans"
     ]
   },
   "hero": {
-    "heading": "Mortgage Broker in Manhattan",
-    "subheading": "Financing for Manhattan condos, co-ops, and high-value residences—with clear guidance through board and lender requirements."
+    "heading": "Mortgage Broker in Manhattan, NYC",
+    "subheading": "Condo, co-op, and jumbo financing for Manhattan buyers — board-ready files, multiple lenders, licensed NY broker."
   },
   "intro": {
     "heading": "Manhattan Buyers We Support",
     "paragraphs": [
+      "If you searched for a mortgage broker in manhattan, nyc, home loans nearby, or a mortgage broker near me in this area, Green Street Capital can help. We are a licensed mortgage broker (NMLS #2066586) offering purchase, refinance, and specialty programs through multiple lenders.",
       "Manhattan purchases often involve higher price points, co-op boards, condo associations, and jumbo financing. Green Street Capital helps professionals, families, and investors structure loans that fit both the building’s guidelines and the lender’s overlays.",
       "We coordinate documentation early so you can move quickly when the right unit becomes available."
     ],
@@ -84,10 +89,42 @@
     {
       "question": "How fast can I get pre-approved?",
       "answer": "Timelines depend on how quickly complete documentation is provided. Contact a loan officer to start."
+    },
+    {
+      "question": "Who is a good mortgage broker for Manhattan condos?",
+      "answer": "Green Street Capital regularly finances Manhattan condos and co-ops as a licensed NY mortgage broker (NMLS #2066586). We prepare board- and lender-ready documentation."
+    },
+    {
+      "question": "Can I get a jumbo loan in Manhattan?",
+      "answer": "Yes. Many Manhattan purchases require jumbo financing. We compare jumbo guidelines for reserves, credit, and down payment."
+    },
+    {
+      "question": "Do you refinance Manhattan apartments?",
+      "answer": "Yes. We evaluate rate-and-term and cash-out refinance for co-ops and condos when equity and income support it."
+    },
+    {
+      "question": "Is there a mortgage broker near me in Manhattan?",
+      "answer": "We serve Manhattan buyers citywide with phone, video, and Brooklyn office meetings. Call 718-615-4545 or schedule online."
     }
   ],
   "cta": {
     "heading": "Plan your Manhattan purchase",
     "body": "Connect with a loan officer to discuss condo, co-op, or jumbo financing options."
-  }
+  },
+  "serviceAreas": [
+    "Upper East Side",
+    "Upper West Side",
+    "Midtown",
+    "Financial District",
+    "Tribeca",
+    "SoHo",
+    "Chelsea",
+    "Greenwich Village",
+    "Harlem",
+    "Lower East Side",
+    "Battery Park City",
+    "Murray Hill",
+    "Gramercy",
+    "Hell's Kitchen"
+  ]
 }

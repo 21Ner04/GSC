@@ -3,23 +3,29 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { getSite, getVideos } from "@/lib/cms";
-import { VideoBlogJsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import {
+  BreadcrumbJsonLd,
+  VideoBlogJsonLd,
+  WebPageJsonLd,
+} from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = buildPageMetadata(
-  {
-    title: "Video Blog | Mortgage Tips & Market Guidance | Green Street Capital",
-    description:
-      "Watch Green Street Capital video guides on mortgage programs, homebuying, refinance, and working with our licensed loan officers. NMLS #2066586.",
-    keywords: [
-      "mortgage video blog",
-      "homebuying tips",
-      "mortgage education",
-      "Green Street Capital YouTube",
-    ],
-  },
-  { path: "/video-blog" }
-);
+const videoSeo = {
+  title: "Video Blog | Mortgage Tips & Market Guidance",
+  description:
+    "Watch Green Street Capital guides on mortgage programs, homebuying, refinance, and working with licensed loan officers. NMLS #2066586.",
+  keywords: [
+    "mortgage video blog",
+    "homebuying tips",
+    "mortgage education",
+    "Green Street Capital YouTube",
+  ],
+};
+
+export const metadata: Metadata = buildPageMetadata(videoSeo, {
+  path: "/video-blog",
+});
 
 export default function VideoBlogPage() {
   const { items, youtubeChannel } = getVideos();
@@ -27,7 +33,21 @@ export default function VideoBlogPage() {
 
   return (
     <div className="w-full">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Video Blog", path: "/video-blog" },
+        ]}
+      />
+      <WebPageJsonLd
+        name={videoSeo.title}
+        description={videoSeo.description}
+        path="/video-blog"
+      />
       <VideoBlogJsonLd videos={items} />
+      <Breadcrumbs
+        items={[{ name: "Home", href: "/" }, { name: "Video Blog" }]}
+      />
       <div className="bg-gradient-to-br from-gray-50 to-white py-24 text-center">
         <div className="mx-auto max-w-4xl px-4">
           <h1 className="mb-6 font-montserrat text-4xl font-bold text-foreground md:text-5xl">

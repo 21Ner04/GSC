@@ -1,12 +1,16 @@
 {
   "slug": "investment",
   "seo": {
-    "title": "Investment Property Mortgages | Green Street Capital",
+    "title": "Investment Property Financing | Mortgage Programs | GSC",
     "description": "Financing for investment and rental properties including DSCR and conventional investor loans. NMLS #2066586.",
     "keywords": [
       "investment property mortgage",
       "rental property loan",
-      "investor mortgage broker"
+      "investor mortgage broker",
+      "Investment Property Financing New York",
+      "Investment Property Financing Brooklyn",
+      "Investment Property Financing near me",
+      "investment mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "Financing Rentals & Portfolio Growth",
     "paragraphs": [
+      "Searching for investment property financing near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for investment property financing and related programs — so you are not limited to one bank’s rules.",
       "Investment properties are underwritten differently from primary homes. We help investors compare conventional investor loans, DSCR products, and other specialty options based on the asset and your experience.",
       "Clear numbers on rents, reserves, and exit strategy make approvals smoother."
     ],
@@ -58,11 +63,36 @@
     {
       "question": "Is this the same as a primary residence loan?",
       "answer": "No. Investment property loans usually require more down payment, different pricing, and property-level analysis."
+    },
+    {
+      "question": "Are investment property financing available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore investment property financing in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get investment property financing in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about investment property financing for your state."
+    },
+    {
+      "question": "How do I apply for investment property financing?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for investment property financing?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Grow your rental portfolio",
     "body": "Apply with a loan officer experienced in investor financing."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }

@@ -1,12 +1,16 @@
 {
   "slug": "foreign-national-loans",
   "seo": {
-    "title": "Foreign National Loans | Green Street Capital",
+    "title": "Foreign National Loans | NY NJ FL PA | Green Street Capital",
     "description": "Mortgage options for foreign national buyers purchasing U.S. property. Specialty lender programs. NMLS #2066586.",
     "keywords": [
       "foreign national mortgage",
       "foreign national home loan",
-      "non-US citizen mortgage"
+      "non-US citizen mortgage",
+      "Foreign National Loans New York",
+      "Foreign National Loans Brooklyn",
+      "Foreign National Loans near me",
+      "foreign national loans mortgage"
     ]
   },
   "hero": {
@@ -16,6 +20,7 @@
   "intro": {
     "heading": "Buying in the U.S. as a Foreign National",
     "paragraphs": [
+      "Searching for foreign national loans near you in New York, New Jersey, Florida, or Pennsylvania? Green Street Capital is a licensed mortgage broker that compares multiple lenders for foreign national loans and related programs — so you are not limited to one bank’s rules.",
       "Foreign national financing typically requires larger down payments, strong reserves, and specialized lender overlays. Credit may be evaluated differently when U.S. credit history is limited.",
       "We coordinate with lenders experienced in these files and set expectations early about documentation, timelines, and cash to close."
     ],
@@ -58,11 +63,36 @@
     {
       "question": "Do I need a U.S. credit score?",
       "answer": "Not always. Some programs use alternative credit or foreign credit references. Requirements vary widely."
+    },
+    {
+      "question": "Are foreign national loans available in New York?",
+      "answer": "Yes. Green Street Capital helps eligible borrowers explore foreign national loans in New York (including NYC and surrounding areas) as a licensed mortgage broker. NMLS #2066586."
+    },
+    {
+      "question": "Can I get foreign national loans in New Jersey or Florida?",
+      "answer": "Often yes where licensed and program guidelines allow. We serve NY, NJ, FL, and PA — ask about foreign national loans for your state."
+    },
+    {
+      "question": "How do I apply for foreign national loans?",
+      "answer": "Schedule a free consultation or choose a loan officer on our Team page. We will review income, credit, property, and program fit."
+    },
+    {
+      "question": "What credit score do I need for foreign national loans?",
+      "answer": "Requirements vary by lender and program. We review your full profile — credit is only one factor alongside income, reserves, and property type."
     }
   ],
   "cta": {
     "heading": "Explore foreign national options",
     "body": "Speak with our team before you go under contract so financing is realistic."
   },
-  "kind": "specialty"
+  "kind": "specialty",
+  "serviceAreas": [
+    "New York",
+    "New York City",
+    "Brooklyn",
+    "Long Island",
+    "New Jersey",
+    "Florida",
+    "Pennsylvania"
+  ]
 }
