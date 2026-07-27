@@ -37,6 +37,7 @@ const GoogleIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 export interface TeamMember {
   id?: string;
   name: string;
+  title?: string;
   nmls: string;
   /** Optional headshot: /team/name.jpg */
   photo?: string;
@@ -51,7 +52,9 @@ export interface TeamMember {
     facebook?: string;
     tiktok?: string;
     youtube?: string;
+    googleMaps?: string;
     google?: string;
+    [key: string]: string | undefined;
   };
   applyLink?: string;
   /** Empty reserved slot */
@@ -306,6 +309,11 @@ export function TeamSignature({
               {member.socials?.youtube !== undefined && (
                 <SocialButton href={member.socials.youtube} label="YouTube">
                   <Youtube className="h-4 w-4" />
+                </SocialButton>
+              )}
+              {member.socials?.googleMaps !== undefined && (
+                <SocialButton href={member.socials.googleMaps} label="Google Maps">
+                  <GoogleIcon />
                 </SocialButton>
               )}
               {(member.socials?.google !== undefined || member.email) && (

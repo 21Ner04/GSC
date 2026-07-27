@@ -5,16 +5,22 @@ const COMPANY_SOCIALS = {
   facebook: "https://www.facebook.com/greenstreetcapital",
   tiktok: "https://www.tiktok.com/@gsc.mortgage",
   youtube: "https://www.youtube.com/@GSC.MORTGAGE",
+  googleMaps: "https://www.google.com/maps/place/Green+Street+Capital,+LLC+NMLS+2066586/@40.5905934,-73.9624855,17z/data=!3m2!4b1!5s0x89c2445e30371431:0x96e9dda46d51111c!4m6!3m5!1s0x89c2459fef3b7d45:0x3fecb4145a53c4d5!8m2!3d40.5905934!4d-73.9602968!16s%2Fg%2F11gl11ydc1",
 } as const;
 
-function socials(email?: string) {
-  return {
+function socials(email?: string, extraSocials?: Record<string, string>) {
+  const base = {
     instagram: COMPANY_SOCIALS.instagram,
     facebook: COMPANY_SOCIALS.facebook,
     tiktok: COMPANY_SOCIALS.tiktok,
     youtube: COMPANY_SOCIALS.youtube,
+    googleMaps: COMPANY_SOCIALS.googleMaps,
     google: email || "",
   };
+
+  if (!extraSocials) return base;
+
+  return { ...base, ...extraSocials };
 }
 
 /**
@@ -34,7 +40,9 @@ export const teamMembers: Record<string, TeamMember> = {
     email: "RKushnir@GSCMortgage.com",
     secureDocs: "https://documentguardian.com/filedrop/RKushnir@GSCMortgage.com",
     applyLink: "/apply",
-    socials: socials("RKushnir@GSCMortgage.com"),
+    socials: socials("RKushnir@GSCMortgage.com", {
+      facebook: "https://www.facebook.com/GSCMortgage",
+    }),
   },
   maxim: {
     id: "maxim-saleh",
@@ -48,7 +56,12 @@ export const teamMembers: Record<string, TeamMember> = {
     email: "MSaleh@GSCMortgage.com",
     secureDocs: "https://documentguardian.com/filedrop/MSaleh@GSCMortgage.com",
     applyLink: "/apply",
-    socials: socials("MSaleh@GSCMortgage.com"),
+    socials: socials("MSaleh@GSCMortgage.com", {
+      instagram: "https://www.instagram.com/maxim.saleh",
+      facebook: "https://www.facebook.com/profile.php?id=61556660701517",
+      tiktok: "https://www.tiktok.com/@maxim.saleh",
+      youtube: "https://www.youtube.com/@MaximSaleh",
+    }),
   },
   paul: {
     id: "paul-litvintsev",
@@ -62,7 +75,9 @@ export const teamMembers: Record<string, TeamMember> = {
     email: "Paul@GSCMortgage.com",
     secureDocs: "https://documentguardian.com/filedrop/Paul@GSCMortgage.com",
     applyLink: "/apply",
-    socials: socials("Paul@GSCMortgage.com"),
+    socials: socials("Paul@GSCMortgage.com", {
+      facebook: "https://www.facebook.com/GSCMortgage",
+    }),
   },
   eric: {
     id: "eric-kushnir",
@@ -76,7 +91,9 @@ export const teamMembers: Record<string, TeamMember> = {
     email: "EKushnir@GSCMortgage.com",
     secureDocs: "https://documentguardian.com/filedrop/EKushnir@GSCMortgage.com",
     applyLink: "/apply",
-    socials: socials("EKushnir@GSCMortgage.com"),
+    socials: socials("EKushnir@GSCMortgage.com", {
+      facebook: "https://www.facebook.com/GSCMortgage",
+    }),
   },
   rashid: {
     id: "rashid-muhammad",
@@ -219,6 +236,26 @@ export const teamMembers: Record<string, TeamMember> = {
     applyLink: "/apply",
     socials: socials("ASmolitsky@GSCMortgage.com"),
   },
+  fundedbyeric: {
+    id: "fundedbyeric",
+    name: "Fundedbyeric",
+    nmls: "TBD",
+    photo: "/team/fundedbyeric.jpg",
+    direct: "",
+    office: "",
+    tollFree: "",
+    fax: "",
+    email: "",
+    secureDocs: "",
+    applyLink: "/apply",
+    socials: socials("", {
+      "linktr.ee": "https://linktr.ee/Fundedbyeric",
+      instagram: "https://www.instagram.com/fundedbyeric_",
+      tiktok: "https://www.tiktok.com/@fundedbyeric",
+      youtube: "https://youtube.com/@fundedbyeric",
+      googleMaps: "https://www.google.com/maps/place/Green+Street+Capital,+LLC+NMLS+2066586/@40.5905934,-73.9624855,17z/data=!3m2!4b1!5s0x89c2445e30371431:0x96e9dda46d51111c!4m6!3m5!1s0x89c2459fef3b7d45:0x3fecb4145a53c4d5!8m2!3d40.5905934!4d-73.9602968!16s%2Fg%2F11gl11ydc1",
+    }),
+  },
 };
 
 /** All filled members (order on page). */
@@ -237,6 +274,7 @@ export const allTeam: TeamMember[] = [
   teamMembers.marinaArchili,
   teamMembers.galina,
   teamMembers.anna,
+  teamMembers.fundedbyeric,
 ];
 
 /** 14 cards for the grid (all filled). */

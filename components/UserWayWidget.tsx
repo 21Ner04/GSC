@@ -62,7 +62,8 @@ export default function UserWayWidget() {
         script.onload = () => {
           setTimeout(() => {
             if (window.userway) {
-              window.userway.account = 'greenstreetcapital';
+              const accountId = process.env.NEXT_PUBLIC_USERWAY_ACCOUNT_ID || 'greenstreetcapital';
+              window.userway.account = accountId;
               window.userway.position = 'bottom_right';
               window.userway.color = 'blue';
               window.userway.size = 'small';

@@ -23,6 +23,7 @@ import {
   getSite,
   getVideos,
 } from "@/lib/cms";
+import { allTeam } from "@/data/team";
 import { GoogleReviewsSection } from "@/components/GoogleReviewsSection";
 
 type MarketUpdate = {
@@ -523,14 +524,88 @@ export default function HomePageClient() {
         </div>
       </section>
 
+      {/* 8. Team Socials / Blogs section - below Video Blog */}
+      <section className="bg-white py-14 sm:py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="mb-3 font-montserrat text-2xl font-bold text-foreground sm:mb-4 sm:text-3xl md:text-4xl">
+              Meet Our Team
+            </h2>
+            <p className="mx-auto max-w-xl font-manrope text-sm text-muted-foreground sm:text-base">
+              Connect with our team on social media
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allTeam.filter(m => m.id !== 'paul-litvintsev').slice(0, 3).map((member) => (
+              <div
+                key={member.id}
+                className="card-stable rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:shadow-md"
+              >
+                <div className="w-16 h-16 mx-auto rounded-full bg-gray-100 overflow-hidden mb-4">
+                  {member.photo ? (
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-gray-400 text-xl">
+                      {member.name[0]}
+                    </div>
+                  )}
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-1 text-center">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4 text-center">
+                  {member.title || "Team Member"}
+                </p>
+                <div className="flex justify-center gap-3">
+                  {member.socials?.instagram && (
+                    <a
+                      href={member.socials.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition"
+                    >
+                      <Instagram className="h-4 w-4" />
+                    </a>
+                  )}
+                  {member.socials?.tiktok && (
+                    <a
+                      href={member.socials.tiktok}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M7 0C3.135 0 0 3.135 0 7v10c0 3.866 3.135 7 7 7h10c3.866 0 7-3.135 7-7V7c0-3.865-3.135-7-7-7H7zm0 2h10c3.313 0 6 2.687 6 6v10c0 3.314-2.687 6-6 6H7c-3.313 0-6-2.686-6-6V8c0-3.314 2.687-6 6-6z"/><path d="M14 2.5C14 2.224 13.776 2 13.5 2S13 2.224 13 2.5V7.5C13 7.776 13.224 8 13.5 8S14 7.776 14 7.5V2.5z"/><path d="M16 7.5C16 7.224 15.776 7 15.5 7S15 7.224 15 7.5v6c0 .276.224.5.5.5S16 13.776 16 13.5v-6z"/><path d="M17.5 9C17.224 9 17 9.224 17 9.5v3c0 .276.224.5.5.5S18 12.776 18 12.5v-3c0-.276-.224-.5-.5-.5z"/></svg>
+                    </a>
+                  )}
+                  {member.socials?.youtube && (
+                    <a
+                      href={member.socials.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition"
+                    >
+                      <Youtube className="h-4 w-4" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Market Updates (between videos and map — extra value block) */}
       <MarketUpdates />
 
       {/* 7. Google Map + Company Contacts */}
       <section className="bg-muted py-14 sm:py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="min-w-0 space-y-6 sm:space-y-8">
+          <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16 min-h-[500px]">
+            <div className="min-w-0 space-y-6 sm:space-y-8 h-full flex flex-col">
               <div>
                 <h2 className="mb-3 font-montserrat text-2xl font-bold text-foreground sm:mb-6 sm:text-3xl md:text-4xl">
                   {home.contact.heading}
@@ -539,14 +614,14 @@ export default function HomePageClient() {
                   {home.contact.subtitle}
                 </p>
               </div>
-              <div className="card-stable space-y-5 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:space-y-6 sm:p-8">
+              <div className="card-stable space-y-5 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:space-y-6 sm:p-8 flex-1 flex flex-col">
                 <div>
                   <h4 className="font-montserrat text-lg font-bold text-foreground sm:text-xl">
                     {site.legalName}
                   </h4>
                   <p className="text-sm text-muted-foreground">NMLS #{site.nmls}</p>
                 </div>
-                <div className="space-y-4 border-t border-gray-100 pt-4">
+                <div className="space-y-4 border-t border-gray-100 pt-4 flex-1 flex flex-col">
                   <div className="flex items-start">
                     <MapPin className="mr-3 mt-1 h-5 w-5 shrink-0 text-primary" />
                     <p className="min-w-0 font-medium text-foreground">
@@ -609,8 +684,8 @@ export default function HomePageClient() {
                 </div>
               </div>
             </div>
-            <div className="min-w-0">
-              <div className="h-64 w-full overflow-hidden rounded-2xl border border-gray-100 shadow-sm sm:h-80 md:h-96">
+            <div className="min-w-0 h-full">
+              <div className="h-full w-full overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
                 <iframe
                   title="Green Street Capital office location"
                   src={`https://maps.google.com/maps?q=${site.googleMapsEmbedQuery}&output=embed`}

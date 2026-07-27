@@ -88,12 +88,12 @@ export default function Contact() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="min-w-0">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 items-start">
+          <div className="min-w-0 flex flex-col">
             <h2 className="mb-6 font-montserrat text-2xl font-bold text-foreground sm:mb-8 sm:text-3xl">
               Get in Touch
             </h2>
-            <div className="card-stable space-y-6 rounded-2xl bg-muted p-5 sm:space-y-8 sm:rounded-3xl sm:p-8">
+            <div className="card-stable space-y-6 rounded-2xl bg-white border border-gray-100 p-5 shadow-xl sm:rounded-3xl sm:p-8">
               <div>
                 <h3 className="text-lg font-bold text-foreground sm:text-xl">
                   {site.legalName}
@@ -198,13 +198,13 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="min-w-0 space-y-6 sm:space-y-8">
-            <div className="card-stable rounded-2xl border border-gray-100 bg-white p-5 shadow-xl sm:rounded-3xl sm:p-8">
+          <div className="min-w-0 space-y-6 sm:space-y-8 flex flex-col">
+            <div className="card-stable rounded-2xl border border-gray-100 bg-white p-5 shadow-xl sm:rounded-3xl sm:p-8 flex-1 flex flex-col">
               <h3 className="mb-5 font-montserrat text-xl font-bold sm:mb-6 sm:text-2xl">
                 Send a Message
               </h3>
               {sent ? (
-                <div className="py-8 text-center sm:py-10">
+                <div className="py-8 text-center sm:py-10 flex-1 flex flex-col justify-center">
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                     <Mail className="h-8 w-8 text-primary" />
                   </div>
@@ -218,7 +218,7 @@ export default function Contact() {
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col justify-between">
                   {/* Honeypot — hidden from users */}
                   <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden>
                     <label htmlFor="contact-website">Website</label>
@@ -284,8 +284,8 @@ export default function Contact() {
               )}
             </div>
 
-            <div className="space-y-2">
-              <div className="h-56 w-full overflow-hidden rounded-2xl border border-gray-100 shadow-lg sm:h-64 sm:rounded-3xl">
+            <div className="space-y-6">
+              <div className="card-stable rounded-2xl border border-gray-100 bg-white p-5 shadow-xl sm:rounded-3xl sm:p-8 h-56 sm:h-64 overflow-hidden">
                 <iframe
                   title="Green Street Capital office location"
                   src={`https://maps.google.com/maps?q=${site.googleMapsEmbedQuery}&output=embed`}

@@ -113,7 +113,7 @@ export function Footer() {
               <li className="flex flex-wrap items-center gap-x-2 gap-y-1 pt-1 text-sm sm:text-base">
                 <Link
                   href="/locations"
-                  className="text-primary transition-colors hover:underline"
+                  className="text-gray-400 transition-colors hover:text-primary"
                 >
                   All locations
                 </Link>
@@ -122,7 +122,7 @@ export function Footer() {
                 </span>
                 <Link
                   href="/specialties"
-                  className="text-primary transition-colors hover:underline"
+                  className="text-gray-400 transition-colors hover:text-primary"
                 >
                   All specialties
                 </Link>
@@ -186,7 +186,7 @@ export function Footer() {
                   href={site.nmlsConsumerAccessUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
+                  className="text-gray-400 hover:text-primary"
                 >
                   NMLS Consumer Access
                 </a>
